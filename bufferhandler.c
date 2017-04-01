@@ -12,6 +12,8 @@
 #include "bufferhandler.h"
 #include "uart.h"
 
+#define LENGTH 10   //length of string received from BMS
+
 char tmpString[50] = "";
 char realString[50] = "";
 
@@ -26,7 +28,7 @@ void appendChar(char data){
 
 //checks if the temporary string is long enough to be put into the other string
 char isItLongEnough(){
-    if(index == 3) //(sizeof(yoString) / sizeof(&yoString[0])) == 3
+    if(index == LENGTH) //(sizeof(yoString) / sizeof(&yoString[0])) == 3
     {
         return 1;
     }else{
