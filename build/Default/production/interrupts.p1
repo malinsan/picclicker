@@ -18,30 +18,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4015 ]
 "21033
 [v _RC2IF `Vb ~T0 @X0 0 e@32037 ]
-"13099
-[s S608 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S608 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"13109
-[s S609 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S609 . TXD8 . TX8_9 ]
-"13114
-[s S610 :6 `uc 1 :1 `uc 1 ]
-[n S610 . . NOT_TX8 ]
-"13118
-[s S611 :6 `uc 1 :1 `uc 1 ]
-[n S611 . . nTX8 ]
-"13122
-[s S612 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S612 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
-"13098
-[u S607 `S608 1 `S609 1 `S610 1 `S611 1 `S612 1 ]
-[n S607 . . . . . . ]
-"13133
-[v _TXSTA1bits `VS607 ~T0 @X0 0 e@4013 ]
-"13375
-[v _TXREG1 `Vuc ~T0 @X0 0 e@4014 ]
-"12713
-[v _RCREG2 `Vuc ~T0 @X0 0 e@4010 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7738,37 +7714,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 "52
 [e $ ! _RC2IF 914  ]
 {
-[; ;interrupts.c: 53: while(!TXSTA1bits.TRMT);
-"53
-[e $U 915  ]
-[e :U 916 ]
-[e :U 915 ]
-[e $ ! != -> . . _TXSTA1bits 0 1 `i -> -> -> 0 `i `Vuc `i 916  ]
-[e :U 917 ]
-[; ;interrupts.c: 54: TXREG1 = RCREG2;
-"54
-[e = _TXREG1 _RCREG2 ]
-[; ;interrupts.c: 55: RC2IF = 0;
-"55
+[; ;interrupts.c: 57: RC2IF = 0;
+"57
 [e = _RC2IF -> -> 0 `i `b ]
-"56
+"58
 }
 [e :U 914 ]
-[; ;interrupts.c: 56: }
-[; ;interrupts.c: 60: }
-"60
+[; ;interrupts.c: 58: }
+[; ;interrupts.c: 62: }
+"62
 [e :UE 912 ]
 }
 [v F8203 `(v ~T0 @X0 1 tf ]
-"64
+"66
 [v _low_isr `ILF8203 ~T0 @X0 1 e ]
-"72
+"74
 {
-[; ;interrupts.c: 64: void low_priority interrupt low_isr(void)
-[; ;interrupts.c: 72: {
+[; ;interrupts.c: 66: void low_priority interrupt low_isr(void)
+[; ;interrupts.c: 74: {
 [e :U _low_isr ]
 [f ]
-[; ;interrupts.c: 82: }
-"82
-[e :UE 918 ]
+[; ;interrupts.c: 84: }
+"84
+[e :UE 915 ]
 }

@@ -10375,28 +10375,21 @@ char isEmpty();
 # 31 "uart.c"
 char UART_Init(const long int baudrate)
 {
-unsigned int x;
-
-x = (8000000/baudrate)/16 -1;
 
 
-TXSTA1 = 0b00100100;
-RCSTA1 = 0b10010000;
+TXSTA1 = 0x24;
+RCSTA1 = 0x90;
 RC1IE = 1;
 BAUDCON1bits.BRG16 = 0;
-
 SPBRG1 = 155;
 SPBRGH1 = 155;
-
-
-
 TRISC7 = 1;
 TRISC6 = 0;
 
-# 55
+
+
 RCSTA2 = 0b10010000;
 TXSTA2 = 0b00100100;
-
 RC2IE = 1;
 BAUDCON2bits.BRG16 = 0;
 SPBRG2 = 25;

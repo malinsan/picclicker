@@ -47,6 +47,9 @@ void main(void)
     InitApp();
     
     UART_Init(19200);
+    writeString("L 50", 1);
+    writeString("D 8", 1);
+    
     
     uint8_t var = 0;
     char result;

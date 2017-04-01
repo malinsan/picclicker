@@ -10240,8 +10240,8 @@ RC1IF = 0;
 }
 
 if(RC2IF){
-while(!TXSTA1bits.TRMT);
-TXREG1 = RCREG2;
+
+# 57
 RC2IF = 0;
 }
 
@@ -10253,8 +10253,8 @@ RC2IF = 0;
 
 void low_priority interrupt low_isr(void)
 
-# 72
+# 74
 {
 
-# 82
+# 84
 }

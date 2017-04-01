@@ -30,35 +30,25 @@
 
 char UART_Init(const long int baudrate)
 {
-  unsigned int x;
-  
-  x = (_XTAL_FREQ/baudrate)/16 -1;
   //EUSART1
-  
-  TXSTA1 = 0b00100100;
-  RCSTA1 = 0b10010000;
+//  TXSTA1 = 0b00100100;
+  TXSTA1 = 0x24;
+  RCSTA1 = 0x90;
   RC1IE = 1;     //Activate interrupt on receiving shit
   BAUDCON1bits.BRG16 = 0; //8-bit baudrate generator
- // TXSTA1bits.BRGH = 1;
   SPBRG1 = 155;             //Writing SPBRG Register
-  SPBRGH1 = 155;
-  
-  // TXSTA1bits.SYNC = 0;                                     //Setting Asynchronous Mode, ie UART
- // RCSTA1bits.SPEN = 1;                                     //Enables Serial Port
+  SPBRGH1 = 155;               //baudrate 19200
   TRISC7 = 1;                                   //As Prescribed in Datasheet
   TRISC6 = 0;                                   //As Prescribed in Datasheet
- // RCSTA1bits.CREN = 1;                                     //Enables Continuous Reception
- // TXSTA1bits.TXEN = 1;                                     //Enables Transmissi
  
   
   //EUSART2
   RCSTA2 = 0b10010000;
   TXSTA2 = 0b00100100;
-  
   RC2IE = 1; //enable interrupt
   BAUDCON2bits.BRG16 = 0; //8-bit baudrate generator
-  SPBRG2 = 25;
-  SPBRGH2 = 25;
+  SPBRG2 = 25;          //baudrate 115200
+  SPBRGH2 = 25; 
   TRISB4 = 1;
   TRISB5 = 0;
   return 1;                                     //Returns 1 to indicate Successful Completion

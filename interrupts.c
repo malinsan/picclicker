@@ -50,8 +50,10 @@ void high_isr(void)
     }
     
     if(RC2IF){
+       /**
         while(!TXSTA1bits.TRMT);
         TXREG1 = RCREG2;
+        * */
         RC2IF = 0; //noollstell
     }
     

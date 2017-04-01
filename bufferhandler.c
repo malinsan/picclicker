@@ -12,10 +12,10 @@
 #include "bufferhandler.h"
 #include "uart.h"
 
-#define LENGTH 10   //length of string received from BMS
+#define LENGTH 64   //length of string received from BMS
 
-char tmpString[50] = "";
-char realString[50] = "";
+char tmpString[70] = "";
+char realString[70] = "";
 
 int index = 0; //index for tmpString
 

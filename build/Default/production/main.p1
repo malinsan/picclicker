@@ -6,6 +6,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _InitApp `(v ~T0 @X0 0 ef ]
 "4 uart.h
 [v _UART_Init `(uc ~T0 @X0 0 ef1`Cl ]
+"25
+[v _writeString `(v ~T0 @X0 0 ef2`*uc`uc ]
 "10931 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
 [s S509 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S509 . TRISA0 TRISA1 TRISA2 TRISA3 . TRISA5 TRISA6 TRISA7 ]
@@ -7752,83 +7754,91 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 49: UART_Init(19200);
 "49
 [e ( _UART_Init (1 -> -> 19200 `i `l ]
+[; ;main.c: 50: writeString("L 50", 1);
+"50
+[e ( _writeString (2 , -> :s 1C `*uc -> -> 1 `i `uc ]
+[; ;main.c: 51: writeString("D 8", 1);
 "51
+[e ( _writeString (2 , -> :s 2C `*uc -> -> 1 `i `uc ]
+"54
 [v _var `uc ~T0 @X0 1 a ]
-[; ;main.c: 51: uint8_t var = 0;
+[; ;main.c: 54: uint8_t var = 0;
 [e = _var -> -> 0 `i `uc ]
-"52
-[v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 52: char result;
-[; ;main.c: 55: TRISAbits.TRISA0 = 0;
 "55
-[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 56: TRISAbits.TRISA1 = 0;
-"56
-[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 57: LATAbits.LATA0 = 0;
-"57
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 58: LATAbits.LATA1 = 0;
+[v _result `uc ~T0 @X0 1 a ]
+[; ;main.c: 55: char result;
+[; ;main.c: 58: TRISAbits.TRISA0 = 0;
 "58
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 59: TRISDbits.TRISD3 = 1;
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 59: TRISAbits.TRISA1 = 0;
 "59
-[e = . . _TRISDbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 61: clearBuffer();
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 60: LATAbits.LATA0 = 0;
+"60
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 61: LATAbits.LATA1 = 0;
 "61
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 62: TRISDbits.TRISD3 = 1;
+"62
+[e = . . _TRISDbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 64: clearBuffer();
+"64
 [e ( _clearBuffer ..  ]
-[; ;main.c: 63: while(1){
-"63
+[; ;main.c: 66: while(1){
+"66
 [e :U 914 ]
 {
-[; ;main.c: 66: if(isItLongEnough()){
-"66
+[; ;main.c: 69: if(isItLongEnough()){
+"69
 [e $ ! != -> ( _isItLongEnough ..  `i -> -> -> 0 `i `uc `i 916  ]
 {
-[; ;main.c: 67: LATAbits.LATA1 = 1;
-"67
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 68: wait_ms(1000);
-"68
-[e ( _wait_ms (1 -> 1000 `i ]
-[; ;main.c: 69: copyTmpBuffer();
-"69
-[e ( _copyTmpBuffer ..  ]
-[; ;main.c: 70: clearBuffer();
+[; ;main.c: 70: LATAbits.LATA1 = 1;
 "70
-[e ( _clearBuffer ..  ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 71: wait_ms(1000);
 "71
+[e ( _wait_ms (1 -> 1000 `i ]
+[; ;main.c: 72: copyTmpBuffer();
+"72
+[e ( _copyTmpBuffer ..  ]
+[; ;main.c: 73: clearBuffer();
+"73
+[e ( _clearBuffer ..  ]
+"74
 }
-[; ;main.c: 71: }else{
+[; ;main.c: 74: }else{
 [e $U 917  ]
 [e :U 916 ]
 {
-[; ;main.c: 72: LATAbits.LATA1 = 0;
-"72
+[; ;main.c: 75: LATAbits.LATA1 = 0;
+"75
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-"73
+"76
 }
 [e :U 917 ]
-[; ;main.c: 73: }
-[; ;main.c: 75: if(!PORTDbits.RD3){
-"75
+[; ;main.c: 76: }
+[; ;main.c: 78: if(!PORTDbits.RD3){
+"78
 [e $ ! ! != -> . . _PORTDbits 0 3 `i -> -> -> 0 `i `Vuc `i 918  ]
 {
-[; ;main.c: 76: writeResult(2);
-"76
+[; ;main.c: 79: writeResult(2);
+"79
 [e ( _writeResult (1 -> -> 2 `i `uc ]
-"77
-}
-[e :U 918 ]
 "80
 }
+[e :U 918 ]
+"83
+}
 [e :U 913 ]
-"63
+"66
 [e $U 914  ]
 [e :U 915 ]
-[; ;main.c: 77: }
 [; ;main.c: 80: }
-[; ;main.c: 124: }
-"124
+[; ;main.c: 83: }
+[; ;main.c: 127: }
+"127
 [e :UE 912 ]
 }
+[a 2C 68 32 56 0 ]
+[a 1C 76 32 53 48 0 ]

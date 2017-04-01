@@ -10165,9 +10165,9 @@ void writeResult(char dev);
 
 char isEmpty();
 
-# 15 "bufferhandler.c"
-char tmpString[50] = "";
-char realString[50] = "";
+# 17 "bufferhandler.c"
+char tmpString[70] = "";
+char realString[70] = "";
 
 int index = 0;
 
@@ -10180,7 +10180,7 @@ index++;
 
 
 char isItLongEnough(){
-if(index == 3)
+if(index == 64)
 {
 return 1;
 }else{
