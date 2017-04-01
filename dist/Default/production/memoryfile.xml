@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/Default/production\pic_serial_bms_v.2.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>131064</length>
+      <used>1382</used>
+      <free>129682</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3760</length>
+      <used>166</used>
+      <free>3594</free>
+    </memory>
+  </executable>
+</project>
