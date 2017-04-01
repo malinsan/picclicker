@@ -15,7 +15,7 @@
 #include <stdint.h>         /* For uint8_t definition */
 #include <stdbool.h>        /* For true/false definition */
 #include <string.h>
-#include "uart.h"
+#include "bufferhandler.h"
 
 #endif
 
@@ -25,7 +25,6 @@
 
 /* High-priority service */
 
-uint8_t flaggan = 0;
 
 #if defined(__XC) || defined(HI_TECH_C)
 void interrupt high_isr(void)

@@ -12,7 +12,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S484 . . . ]
 "10261
 [v _LATAbits `VS484 ~T0 @X0 0 e@3977 ]
-"17 uart.h
+"1 bufferhandler.h
 [v _appendChar `(v ~T0 @X0 0 ef1`uc ]
 "13412 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4015 ]
@@ -7701,85 +7701,74 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 56: extern char * strichr(const char *, int);
 [; ;string.h: 57: extern char * strrchr(const char *, int);
 [; ;string.h: 58: extern char * strrichr(const char *, int);
-[; ;uart.h: 4: char UART_Init(const long int baudrate);
-[; ;uart.h: 7: void UART_Write(char data, char dev);
-[; ;uart.h: 11: char trmtStatus();
-[; ;uart.h: 13: char UART_Data_Ready();
-[; ;uart.h: 15: char UART_Read(char dev);
-[; ;uart.h: 17: void appendChar(char data);
-[; ;uart.h: 19: char isItLongEnough();
-[; ;uart.h: 21: void clearBuffer();
-[; ;uart.h: 23: void copyTmpBuffer();
-[; ;uart.h: 25: void writeString(char str[], char dev);
-[; ;uart.h: 27: void writeResult(char dev);
-[; ;uart.h: 29: char isEmpty();
-"28 interrupts.c
-[v _flaggan `uc ~T0 @X0 1 e ]
-[i _flaggan
--> -> 0 `i `uc
-]
-[; ;interrupts.c: 28: uint8_t flaggan = 0;
-[v F8210 `(v ~T0 @X0 1 tf ]
-"31
-[v _high_isr `IF8210 ~T0 @X0 1 e ]
-"40
+[; ;bufferhandler.h: 1: void appendChar(char data);
+[; ;bufferhandler.h: 3: char isItLongEnough();
+[; ;bufferhandler.h: 5: void clearBuffer();
+[; ;bufferhandler.h: 7: void copyTmpBuffer();
+[; ;bufferhandler.h: 9: void writeString(char str[], char dev);
+[; ;bufferhandler.h: 11: void writeResult(char dev);
+[; ;bufferhandler.h: 13: char isEmpty();
+[v F8200 `(v ~T0 @X0 1 tf ]
+"30 interrupts.c
+[v _high_isr `IF8200 ~T0 @X0 1 e ]
+"39
 {
-[; ;interrupts.c: 31: void interrupt high_isr(void)
-[; ;interrupts.c: 40: {
+[; ;interrupts.c: 30: void interrupt high_isr(void)
+[; ;interrupts.c: 39: {
 [e :U _high_isr ]
 [f ]
-[; ;interrupts.c: 46: if(RC1IF){
-"46
+[; ;interrupts.c: 45: if(RC1IF){
+"45
 [e $ ! _RC1IF 913  ]
 {
-[; ;interrupts.c: 47: LATAbits.LATA0 = !LATAbits.LATA0;
-"47
+[; ;interrupts.c: 46: LATAbits.LATA0 = !LATAbits.LATA0;
+"46
 [e = . . _LATAbits 0 0 -> -> ! != -> . . _LATAbits 0 0 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[; ;interrupts.c: 48: appendChar(RCREG1);
-"48
+[; ;interrupts.c: 47: appendChar(RCREG1);
+"47
 [e ( _appendChar (1 _RCREG1 ]
-[; ;interrupts.c: 50: RC1IF = 0;
-"50
+[; ;interrupts.c: 49: RC1IF = 0;
+"49
 [e = _RC1IF -> -> 0 `i `b ]
-"51
+"50
 }
 [e :U 913 ]
-[; ;interrupts.c: 51: }
-[; ;interrupts.c: 53: if(RC2IF){
-"53
+[; ;interrupts.c: 50: }
+[; ;interrupts.c: 52: if(RC2IF){
+"52
 [e $ ! _RC2IF 914  ]
 {
-[; ;interrupts.c: 54: while(!TXSTA1bits.TRMT);
-"54
+[; ;interrupts.c: 53: while(!TXSTA1bits.TRMT);
+"53
 [e $U 915  ]
 [e :U 916 ]
 [e :U 915 ]
 [e $ ! != -> . . _TXSTA1bits 0 1 `i -> -> -> 0 `i `Vuc `i 916  ]
 [e :U 917 ]
-[; ;interrupts.c: 55: TXREG1 = RCREG2;
-"55
+[; ;interrupts.c: 54: TXREG1 = RCREG2;
+"54
 [e = _TXREG1 _RCREG2 ]
-[; ;interrupts.c: 56: RC2IF = 0;
-"56
+[; ;interrupts.c: 55: RC2IF = 0;
+"55
 [e = _RC2IF -> -> 0 `i `b ]
-"57
+"56
 }
 [e :U 914 ]
-[; ;interrupts.c: 57: }
-[; ;interrupts.c: 61: }
-"61
+[; ;interrupts.c: 56: }
+[; ;interrupts.c: 60: }
+"60
 [e :UE 912 ]
 }
-[v F8213 `(v ~T0 @X0 1 tf ]
-"65
-[v _low_isr `ILF8213 ~T0 @X0 1 e ]
-"73
+[v F8203 `(v ~T0 @X0 1 tf ]
+"64
+[v _low_isr `ILF8203 ~T0 @X0 1 e ]
+"72
 {
-[; ;interrupts.c: 65: void low_priority interrupt low_isr(void)
-[; ;interrupts.c: 73: {
+[; ;interrupts.c: 64: void low_priority interrupt low_isr(void)
+[; ;interrupts.c: 72: {
 [e :U _low_isr ]
 [f ]
-[; ;interrupts.c: 83: }
-"83
+[; ;interrupts.c: 82: }
+"82
 [e :UE 918 ]
 }

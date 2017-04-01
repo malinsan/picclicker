@@ -27,10 +27,6 @@
 
 
 
-char tmpString[50] = "";
-char realString[50] = "";
-
-int index = 0; //index for tmpString
 
 char UART_Init(const long int baudrate)
 {
@@ -113,50 +109,5 @@ void writeString(char str[], char dev)
     for(int i = 0; i<strlen(str); i++)
     {
         UART_Write(str[i], dev);
-    }
-}
-
-void appendChar(char data){
-    tmpString[index] = data;
-    index++;
-    
-}
-
-//checks if the temporary string is long enough to be put into the other string
-char isItLongEnough(){
-    if(index == 3) //(sizeof(yoString) / sizeof(&yoString[0])) == 3
-    {
-        return 1;
-    }else{
-        return 0;
-    }
-}
-
-void clearBuffer() {
-    for(int i = 0; i<strlen(tmpString); i++){
-        tmpString[i] = "";   
-    }
-    tmpString[0] = '\0';
-    index = 0;
-}
-
-void copyTmpBuffer(){
-    for(int i = 0; i<index; i++){
-        realString[i] = tmpString[i];
-    }
-}
-
-void writeResult(char dev)
-{
-    writeString(realString, dev);
-    wait_ms(1000);
-}
-
-char isEmpty(){
-    if(tmpString[0] == '\0' ){
-        return 1;
-        
-    }else{
-        return 0;
     }
 }

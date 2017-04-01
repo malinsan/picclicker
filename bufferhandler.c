@@ -7,7 +7,59 @@
 
 
 #include <xc.h>
+#include <string.h>
+#include "system.h"
+#include "bufferhandler.h"
+#include "uart.h"
 
-void main(void) {
-    return;
+char tmpString[50] = "";
+char realString[50] = "";
+
+int index = 0; //index for tmpString
+
+
+void appendChar(char data){
+    tmpString[index] = data;
+    index++;
+    
 }
+
+//checks if the temporary string is long enough to be put into the other string
+char isItLongEnough(){
+    if(index == 3) //(sizeof(yoString) / sizeof(&yoString[0])) == 3
+    {
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+void clearBuffer() {
+    for(int i = 0; i<strlen(tmpString); i++){
+        tmpString[i] = "";   
+    }
+    tmpString[0] = '\0';
+    index = 0;
+}
+
+void copyTmpBuffer(){
+    for(int i = 0; i<index; i++){
+        realString[i] = tmpString[i];
+    }
+}
+
+void writeResult(char dev)
+{
+    writeString(realString, dev);
+    wait_ms(1000);
+}
+
+char isEmpty(){
+    if(tmpString[0] == '\0' ){
+        return 1;
+        
+    }else{
+        return 0;
+    }
+}
+

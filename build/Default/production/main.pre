@@ -10213,7 +10213,7 @@ extern char * strrichr(const char *, int);
 # 21 "system.h"
 void ConfigureOscillator(void);
 
-void wait_ms(uint16_t);
+void wait_ms(int);
 
 # 13 "user.h"
 void InitApp(void);

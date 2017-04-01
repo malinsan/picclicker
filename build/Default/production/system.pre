@@ -10178,7 +10178,7 @@ typedef unsigned char bool;
 # 21 "system.h"
 void ConfigureOscillator(void);
 
-void wait_ms(uint16_t);
+void wait_ms(int);
 
 # 24 "system.c"
 void ConfigureOscillator(void)
@@ -10189,7 +10189,7 @@ OSCTUNEbits.PLLEN = 0b1;
 }
 
 # 35
-void wait_ms(uint16_t time)
+void wait_ms(int time)
 {
 static long timel = 0;
 timel = time * 1000l;

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=pic_serial_bms_v.3
+PROJECTNAME=PicClicker
 
 # Active Configuration
 DEFAULTCONF=Default

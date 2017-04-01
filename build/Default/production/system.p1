@@ -7654,7 +7654,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;system.h: 21: void ConfigureOscillator(void);
-[; ;system.h: 23: void wait_ms(uint16_t);
+[; ;system.h: 23: void wait_ms(int);
 "24 system.c
 [v _ConfigureOscillator `(v ~T0 @X0 1 ef ]
 "25
@@ -7674,14 +7674,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 912 ]
 }
 "35
-[v _wait_ms `(v ~T0 @X0 1 ef1`ui ]
+[v _wait_ms `(v ~T0 @X0 1 ef1`i ]
 "36
 {
-[; ;system.c: 35: void wait_ms(uint16_t time)
+[; ;system.c: 35: void wait_ms(int time)
 [; ;system.c: 36: {
 [e :U _wait_ms ]
 "35
-[v _time `ui ~T0 @X0 1 r1 ]
+[v _time `i ~T0 @X0 1 r1 ]
 "36
 [f ]
 "37

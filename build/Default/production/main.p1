@@ -38,7 +38,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "15 user.h
 [v _isItLongEnough `(uc ~T0 @X0 0 ef ]
 "23 system.h
-[v _wait_ms `(v ~T0 @X0 0 ef1`ui ]
+[v _wait_ms `(v ~T0 @X0 0 ef1`i ]
 "23 uart.h
 [v _copyTmpBuffer `(v ~T0 @X0 0 ef ]
 "9686 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
@@ -7720,7 +7720,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 57: extern char * strrchr(const char *, int);
 [; ;string.h: 58: extern char * strrichr(const char *, int);
 [; ;system.h: 21: void ConfigureOscillator(void);
-[; ;system.h: 23: void wait_ms(uint16_t);
+[; ;system.h: 23: void wait_ms(int);
 [; ;user.h: 13: void InitApp(void);
 [; ;user.h: 15: char isItLongEnough();
 [; ;uart.h: 4: char UART_Init(const long int baudrate);
@@ -7790,7 +7790,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;main.c: 68: wait_ms(1000);
 "68
-[e ( _wait_ms (1 -> -> 1000 `i `ui ]
+[e ( _wait_ms (1 -> 1000 `i ]
 [; ;main.c: 69: copyTmpBuffer();
 "69
 [e ( _copyTmpBuffer ..  ]

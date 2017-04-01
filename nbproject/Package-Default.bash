@@ -10,9 +10,9 @@ CND_CONF=Default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/pic_serial_bms_v.3.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=pic_serial_bms_v.3.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=picserialbmsv.3/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/PicClicker.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=PicClicker.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=picclicker/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/picserialbmsv.3/bin
+makeDirectory ${TMPDIR}/picclicker/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/picserialbmsv.3.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/picclicker.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/picserialbmsv.3.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/picclicker.tar *
 checkReturnCode
 
 # Cleanup

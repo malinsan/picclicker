@@ -10210,20 +10210,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 4 "uart.h"
-char UART_Init(const long int baudrate);
-
-
-void UART_Write(char data, char dev);
-
-
-
-char trmtStatus();
-
-char UART_Data_Ready();
-
-char UART_Read(char dev);
-
+# 1 "bufferhandler.h"
 void appendChar(char data);
 
 char isItLongEnough();
@@ -10238,16 +10225,13 @@ void writeResult(char dev);
 
 char isEmpty();
 
-# 28 "interrupts.c"
-uint8_t flaggan = 0;
-
-
+# 30 "interrupts.c"
 void interrupt high_isr(void)
 
-# 40
+# 39
 {
 
-# 46
+# 45
 if(RC1IF){
 LATAbits.LATA0 = !LATAbits.LATA0;
 appendChar(RCREG1);
@@ -10269,8 +10253,8 @@ RC2IF = 0;
 
 void low_priority interrupt low_isr(void)
 
-# 73
+# 72
 {
 
-# 83
+# 82
 }
