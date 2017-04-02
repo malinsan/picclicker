@@ -10179,17 +10179,12 @@ int index = 0;
 void appendChar(char data){
 tmpString[index] = data;
 index++;
-
 }
 
 
-char isItLongEnough(){
-if(index == 64)
+char isItLongEnough()
 {
-return 1;
-}else{
-return 0;
-}
+return index == 64;
 }
 
 void clearBuffer() {
@@ -10213,31 +10208,18 @@ wait_ms(1000);
 }
 
 char isEmpty(){
-if(tmpString[0] == '\0' ){
-return 1;
-
-}else{
-return 0;
-}
+return tmpString[0] == '\0';
 }
 
 char isValid(){
-if(tmpString[0] == 0x54){
-if(tmpString[1] == 0x59){
-if(tmpString[2] == 0x52){
-if(tmpString[3] == 0x49){
-if(tmpString[4] == 0x5F){
-return 1;
-}
-}
-}
-
-}
-}
-return 0;
+return tmpString[0] == 0x54 &&
+tmpString[1] == 0x59 &&
+tmpString[2] == 0x52 &&
+tmpString[3] == 0x49 &&
+tmpString[4] == 0x5F;
 }
 
 char parseTmpString(){
-
+return 0;
 }
 

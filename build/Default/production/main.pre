@@ -10248,7 +10248,26 @@ void writeResult(char dev);
 
 char isEmpty();
 
-# 38 "main.c"
+# 1 "bufferhandler.h"
+void appendChar(char data);
+
+char isItLongEnough();
+
+void clearBuffer();
+
+void copyTmpBuffer();
+
+void writeString(char str[], char dev);
+
+void writeResult(char dev);
+
+char isEmpty();
+
+char isValid();
+
+char parseTmpString();
+
+# 39 "main.c"
 void main(void)
 {
 
@@ -10301,6 +10320,6 @@ writeResult(2);
 
 }
 
-# 132
+# 133
 }
 

@@ -23,17 +23,12 @@ int index = 0; //index for tmpString
 void appendChar(char data){
     tmpString[index] = data;
     index++;
-    
 }
 
 //checks if the temporary string is long enough to be put into the other string
-char isItLongEnough(){
-    if(index == LENGTH) //(sizeof(yoString) / sizeof(&yoString[0])) == 3
-    {
-        return 1;
-    }else{
-        return 0;
-    }
+char isItLongEnough()
+{
+    return index == LENGTH;
 }
 
 void clearBuffer() {
@@ -57,31 +52,18 @@ void writeResult(char dev)
 }
 
 char isEmpty(){
-    if(tmpString[0] == '\0' ){
-        return 1;
-        
-    }else{
-        return 0;
-    }
+    return tmpString[0] == '\0';
 }
 
 char isValid(){
-    if(tmpString[0] == 0x54){
-        if(tmpString[1] == 0x59){
-            if(tmpString[2] == 0x52){
-                if(tmpString[3] == 0x49){
-                    if(tmpString[4] == 0x5F){
-                        return 1;
-                    }
-                }
-            }
-            
-        }
-    }
-    return 0;
+    return tmpString[0] == 0x54 &&  //if first position is = T
+            tmpString[1] == 0x59 && //if second position is = Y
+            tmpString[2] == 0x52 && //if third position is = R
+            tmpString[3] == 0x49 && //if fourth position is = I
+            tmpString[4] == 0x5F; //if fifth position is = _
 }
 
 char parseTmpString(){
-    
+    return 0;
 }
 

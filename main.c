@@ -21,6 +21,7 @@
 #include "system.h"        /* System funct/params, like osc/peripheral config */
 #include "user.h"          /* User funct/params, such as InitApp */
 #include "uart.h"
+#include "bufferhandler.h"
 
 
 /******************************************************************************/

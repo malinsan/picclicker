@@ -41,8 +41,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _clearBuffer `(v ~T0 @X0 0 ef ]
 "15 user.h
 [v _isItLongEnough `(uc ~T0 @X0 0 ef ]
-"71 main.c
-[v _isValid `(i ~T0 @X0 0 ef ]
+"15 bufferhandler.h
+[v _isValid `(uc ~T0 @X0 0 ef ]
 "23 system.h
 [v _wait_ms `(v ~T0 @X0 0 ef1`i ]
 "23 uart.h
@@ -7741,130 +7741,139 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart.h: 25: void writeString(char str[], char dev);
 [; ;uart.h: 27: void writeResult(char dev);
 [; ;uart.h: 29: char isEmpty();
-"38 main.c
+[; ;bufferhandler.h: 1: void appendChar(char data);
+[; ;bufferhandler.h: 3: char isItLongEnough();
+[; ;bufferhandler.h: 5: void clearBuffer();
+[; ;bufferhandler.h: 7: void copyTmpBuffer();
+[; ;bufferhandler.h: 9: void writeString(char str[], char dev);
+[; ;bufferhandler.h: 11: void writeResult(char dev);
+[; ;bufferhandler.h: 13: char isEmpty();
+[; ;bufferhandler.h: 15: char isValid();
+[; ;bufferhandler.h: 17: char parseTmpString();
+"39 main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"39
+"40
 {
-[; ;main.c: 38: void main(void)
-[; ;main.c: 39: {
+[; ;main.c: 39: void main(void)
+[; ;main.c: 40: {
 [e :U _main ]
 [f ]
-[; ;main.c: 44: ConfigureOscillator();
-"44
+[; ;main.c: 45: ConfigureOscillator();
+"45
 [e ( _ConfigureOscillator ..  ]
-[; ;main.c: 47: InitApp();
-"47
+[; ;main.c: 48: InitApp();
+"48
 [e ( _InitApp ..  ]
-[; ;main.c: 49: UART_Init(19200);
-"49
-[e ( _UART_Init (1 -> -> 19200 `i `l ]
-[; ;main.c: 50: writeString("L 50", 1);
+[; ;main.c: 50: UART_Init(19200);
 "50
-[e ( _writeString (2 , -> :s 1C `*uc -> -> 1 `i `uc ]
-[; ;main.c: 51: UART_Write(0x0D,1);
+[e ( _UART_Init (1 -> -> 19200 `i `l ]
+[; ;main.c: 51: writeString("L 50", 1);
 "51
-[e ( _UART_Write (2 , -> -> 13 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 52: writeString("D 8", 1);
+[e ( _writeString (2 , -> :s 1C `*uc -> -> 1 `i `uc ]
+[; ;main.c: 52: UART_Write(0x0D,1);
 "52
-[e ( _writeString (2 , -> :s 2C `*uc -> -> 1 `i `uc ]
-[; ;main.c: 53: UART_Write(0x0D,1);
-"53
 [e ( _UART_Write (2 , -> -> 13 `i `uc -> -> 1 `i `uc ]
-"55
-[v _var `uc ~T0 @X0 1 a ]
-[; ;main.c: 55: uint8_t var = 0;
-[e = _var -> -> 0 `i `uc ]
+[; ;main.c: 53: writeString("D 8", 1);
+"53
+[e ( _writeString (2 , -> :s 2C `*uc -> -> 1 `i `uc ]
+[; ;main.c: 54: UART_Write(0x0D,1);
+"54
+[e ( _UART_Write (2 , -> -> 13 `i `uc -> -> 1 `i `uc ]
 "56
+[v _var `uc ~T0 @X0 1 a ]
+[; ;main.c: 56: uint8_t var = 0;
+[e = _var -> -> 0 `i `uc ]
+"57
 [v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 56: char result;
-[; ;main.c: 59: TRISAbits.TRISA0 = 0;
-"59
-[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 60: TRISAbits.TRISA1 = 0;
+[; ;main.c: 57: char result;
+[; ;main.c: 60: TRISAbits.TRISA0 = 0;
 "60
-[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 61: LATAbits.LATA0 = 0;
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 61: TRISAbits.TRISA1 = 0;
 "61
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 62: LATAbits.LATA1 = 0;
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 62: LATAbits.LATA0 = 0;
 "62
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 63: TRISDbits.TRISD3 = 1;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 63: LATAbits.LATA1 = 0;
 "63
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 64: TRISDbits.TRISD3 = 1;
+"64
 [e = . . _TRISDbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 65: clearBuffer();
-"65
+[; ;main.c: 66: clearBuffer();
+"66
 [e ( _clearBuffer ..  ]
-[; ;main.c: 67: while(1){
-"67
+[; ;main.c: 68: while(1){
+"68
 [e :U 914 ]
 {
-[; ;main.c: 70: if(isItLongEnough()){
-"70
+[; ;main.c: 71: if(isItLongEnough()){
+"71
 [e $ ! != -> ( _isItLongEnough ..  `i -> -> -> 0 `i `uc `i 916  ]
 {
-[; ;main.c: 71: if(isValid()){
-"71
-[e $ ! != ( _isValid ..  -> 0 `i 917  ]
-{
-[; ;main.c: 72: LATAbits.LATA1 = 1;
+[; ;main.c: 72: if(isValid()){
 "72
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 73: wait_ms(1000);
+[e $ ! != -> ( _isValid ..  `i -> -> -> 0 `i `uc `i 917  ]
+{
+[; ;main.c: 73: LATAbits.LATA1 = 1;
 "73
-[e ( _wait_ms (1 -> 1000 `i ]
-[; ;main.c: 74: copyTmpBuffer();
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 74: wait_ms(1000);
 "74
-[e ( _copyTmpBuffer ..  ]
-[; ;main.c: 75: clearBuffer();
+[e ( _wait_ms (1 -> 1000 `i ]
+[; ;main.c: 75: copyTmpBuffer();
 "75
-[e ( _clearBuffer ..  ]
+[e ( _copyTmpBuffer ..  ]
+[; ;main.c: 76: clearBuffer();
 "76
+[e ( _clearBuffer ..  ]
+"77
 }
-[; ;main.c: 76: }else{
+[; ;main.c: 77: }else{
 [e $U 918  ]
 [e :U 917 ]
 {
-[; ;main.c: 77: clearBuffer();
-"77
-[e ( _clearBuffer ..  ]
+[; ;main.c: 78: clearBuffer();
 "78
-}
-[e :U 918 ]
+[e ( _clearBuffer ..  ]
 "79
 }
-[; ;main.c: 78: }
-[; ;main.c: 79: }else{
+[e :U 918 ]
+"80
+}
+[; ;main.c: 79: }
+[; ;main.c: 80: }else{
 [e $U 919  ]
 [e :U 916 ]
 {
-[; ;main.c: 80: LATAbits.LATA1 = 0;
-"80
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 81: LATAbits.LATA1 = 0;
 "81
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+"82
 }
 [e :U 919 ]
-[; ;main.c: 81: }
-[; ;main.c: 83: if(!PORTDbits.RD3){
-"83
+[; ;main.c: 82: }
+[; ;main.c: 84: if(!PORTDbits.RD3){
+"84
 [e $ ! ! != -> . . _PORTDbits 0 3 `i -> -> -> 0 `i `Vuc `i 920  ]
 {
-[; ;main.c: 84: writeResult(2);
-"84
-[e ( _writeResult (1 -> -> 2 `i `uc ]
+[; ;main.c: 85: writeResult(2);
 "85
+[e ( _writeResult (1 -> -> 2 `i `uc ]
+"86
 }
 [e :U 920 ]
-"88
+"89
 }
 [e :U 913 ]
-"67
+"68
 [e $U 914  ]
 [e :U 915 ]
-[; ;main.c: 85: }
-[; ;main.c: 88: }
-[; ;main.c: 132: }
-"132
+[; ;main.c: 86: }
+[; ;main.c: 89: }
+[; ;main.c: 133: }
+"133
 [e :UE 912 ]
 }
 [a 2C 68 32 56 0 ]

@@ -5,16 +5,16 @@
 [d frameptr 4065 ]
 "23 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _appendChar appendChar `(v  1 e 1 0 ]
-"30
+"29
 [v _isItLongEnough isItLongEnough `(uc  1 e 1 0 ]
-"39
+"34
 [v _clearBuffer clearBuffer `(v  1 e 1 0 ]
-"47
+"42
 [v _copyTmpBuffer copyTmpBuffer `(v  1 e 1 0 ]
-"53
+"48
 [v _writeResult writeResult `(v  1 e 1 0 ]
-"68
-[v _isValid isValid `(i  1 e 2 0 ]
+"58
+[v _isValid isValid `(uc  1 e 1 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftadd.c
@@ -41,7 +41,7 @@
 [v _high_isr high_isr `II(v  1 e 1 0 ]
 "66
 [v _low_isr low_isr `IIL(v  1 e 1 0 ]
-"38 C:\Users\tomas\Documents\GIT\PicClicker\main.c
+"39 C:\Users\tomas\Documents\GIT\PicClicker\main.c
 [v _main main `(v  1 e 1 0 ]
 "24 C:\Users\tomas\Documents\GIT\PicClicker\system.c
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
@@ -323,21 +323,21 @@
 [v _TRISC6 TRISC6 `VEb  1 e 0 @31910 ]
 "21759
 [v _TRISC7 TRISC7 `VEb  1 e 0 @31911 ]
-"38 C:\Users\tomas\Documents\GIT\PicClicker\main.c
+"39 C:\Users\tomas\Documents\GIT\PicClicker\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"55
+"56
 [v main@var var `uc  1 a 1 48 ]
-"132
+"133
 } 0
-"53 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+"48 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _writeResult writeResult `(v  1 e 1 0 ]
 {
 [v writeResult@dev dev `uc  1 a 1 wreg ]
 [v writeResult@dev dev `uc  1 a 1 wreg ]
-"55
+"50
 [v writeResult@dev dev `uc  1 a 1 47 ]
-"57
+"52
 } 0
 "97 C:\Users\tomas\Documents\GIT\PicClicker\uart.c
 [v _writeString writeString `(v  1 e 1 0 ]
@@ -377,29 +377,29 @@
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 37 ]
 "129
 } 0
-"68 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
-[v _isValid isValid `(i  1 e 2 0 ]
+"58 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+[v _isValid isValid `(uc  1 e 1 0 ]
 {
-"82
+"64
 } 0
-"30
+"29
 [v _isItLongEnough isItLongEnough `(uc  1 e 1 0 ]
 {
-"37
+"32
 } 0
-"47
+"42
 [v _copyTmpBuffer copyTmpBuffer `(v  1 e 1 0 ]
 {
-"48
+"43
 [v copyTmpBuffer@i i `i  1 a 2 34 ]
-"51
+"46
 } 0
-"39
+"34
 [v _clearBuffer clearBuffer `(v  1 e 1 0 ]
 {
-"40
+"35
 [v clearBuffer@i i `i  1 a 2 39 ]
-"45
+"40
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
@@ -442,5 +442,5 @@
 [v appendChar@data data `uc  1 a 1 wreg ]
 [v appendChar@data data `uc  1 a 1 wreg ]
 [v appendChar@data data `uc  1 a 1 0 ]
-"27
+"26
 } 0
