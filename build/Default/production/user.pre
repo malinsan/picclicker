@@ -10213,8 +10213,6 @@ extern char * strrichr(const char *, int);
 # 13 "user.h"
 void InitApp(void);
 
-char isItLongEnough();
-
 # 29 "user.c"
 void InitApp(void)
 {

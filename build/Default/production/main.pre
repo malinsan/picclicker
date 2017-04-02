@@ -10218,8 +10218,6 @@ void wait_ms(int);
 # 13 "user.h"
 void InitApp(void);
 
-char isItLongEnough();
-
 # 4 "uart.h"
 char UART_Init(const long int baudrate);
 

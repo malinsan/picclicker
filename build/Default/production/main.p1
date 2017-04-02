@@ -39,7 +39,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISDbits `VS514 ~T0 @X0 0 e@3989 ]
 "21 uart.h
 [v _clearBuffer `(v ~T0 @X0 0 ef ]
-"15 user.h
+"19
 [v _isItLongEnough `(uc ~T0 @X0 0 ef ]
 "15 bufferhandler.h
 [v _isValid `(uc ~T0 @X0 0 ef ]
@@ -7728,7 +7728,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.h: 21: void ConfigureOscillator(void);
 [; ;system.h: 23: void wait_ms(int);
 [; ;user.h: 13: void InitApp(void);
-[; ;user.h: 15: char isItLongEnough();
 [; ;uart.h: 4: char UART_Init(const long int baudrate);
 [; ;uart.h: 7: void UART_Write(char data, char dev);
 [; ;uart.h: 11: char trmtStatus();

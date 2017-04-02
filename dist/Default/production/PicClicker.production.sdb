@@ -3,17 +3,17 @@
 [d edition pro ]
 [d chip 18F47J53 ]
 [d frameptr 4065 ]
-"23 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+"24 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _appendChar appendChar `(v  1 e 1 0 ]
-"29
+"30
 [v _isItLongEnough isItLongEnough `(uc  1 e 1 0 ]
-"34
+"39
 [v _clearBuffer clearBuffer `(v  1 e 1 0 ]
-"42
+"47
 [v _copyTmpBuffer copyTmpBuffer `(v  1 e 1 0 ]
-"48
+"53
 [v _writeResult writeResult `(v  1 e 1 0 ]
-"58
+"67
 [v _isValid isValid `(uc  1 e 1 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
@@ -55,11 +55,11 @@
 [v _writeString writeString `(v  1 e 1 0 ]
 "29 C:\Users\tomas\Documents\GIT\PicClicker\user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
-"17 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+"19 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _tmpString tmpString `[70]uc  1 e 70 0 ]
-"18
-[v _realString realString `[70]uc  1 e 70 0 ]
 "20
+[v _realString realString `[70]uc  1 e 70 0 ]
+"21
 [v _index index `i  1 e 2 0 ]
 "1092 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
 [v _PPSCON PPSCON `VEuc  1 e 1 @3775 ]
@@ -330,14 +330,14 @@
 [v main@var var `uc  1 a 1 48 ]
 "133
 } 0
-"48 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+"53 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _writeResult writeResult `(v  1 e 1 0 ]
 {
 [v writeResult@dev dev `uc  1 a 1 wreg ]
 [v writeResult@dev dev `uc  1 a 1 wreg ]
-"50
+"55
 [v writeResult@dev dev `uc  1 a 1 47 ]
-"52
+"57
 } 0
 "97 C:\Users\tomas\Documents\GIT\PicClicker\uart.c
 [v _writeString writeString `(v  1 e 1 0 ]
@@ -377,29 +377,29 @@
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 37 ]
 "129
 } 0
-"58 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+"67 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _isValid isValid `(uc  1 e 1 0 ]
 {
-"64
+"76
 } 0
-"29
+"30
 [v _isItLongEnough isItLongEnough `(uc  1 e 1 0 ]
 {
-"32
+"37
 } 0
-"42
+"47
 [v _copyTmpBuffer copyTmpBuffer `(v  1 e 1 0 ]
 {
-"43
+"48
 [v copyTmpBuffer@i i `i  1 a 2 34 ]
-"46
+"51
 } 0
-"34
+"39
 [v _clearBuffer clearBuffer `(v  1 e 1 0 ]
 {
-"35
-[v clearBuffer@i i `i  1 a 2 39 ]
 "40
+[v clearBuffer@i i `i  1 a 2 39 ]
+"45
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
@@ -436,11 +436,11 @@
 {
 "62
 } 0
-"23 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+"24 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _appendChar appendChar `(v  1 e 1 0 ]
 {
 [v appendChar@data data `uc  1 a 1 wreg ]
 [v appendChar@data data `uc  1 a 1 wreg ]
 [v appendChar@data data `uc  1 a 1 0 ]
-"26
+"27
 } 0

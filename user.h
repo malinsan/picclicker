@@ -12,4 +12,3 @@
 
 void InitApp(void);         /* I/O and Peripheral Initialization */
 
-char isItLongEnough(); // is the string long enough??

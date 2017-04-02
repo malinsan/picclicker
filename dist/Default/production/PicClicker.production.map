@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.41\dat\en_msgs.txt -cs \
   -h+dist/Default/production\PicClicker.production.sym \
   --cmf=dist/Default/production\PicClicker.production.cmf -z -Q18F47J53 \
-  -oC:\Users\tomas\AppData\Local\Temp\saso.2 \
+  -oC:\Users\tomas\AppData\Local\Temp\sa6o.2 \
   -Mdist/Default/production/PicClicker.production.map -E1 -ver=XC8 \
   -ASTACK=0ECh-0eafh -pstack=STACK -ACODE=00h-01FFF7h -ACONST=00h-01FFF7h \
   -ASMALLCONST=0F00h-0FFFhx496,01FF00h-01FFF7h \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\tomas\AppData\Local\Temp\saso.obj \
+  C:\Users\tomas\AppData\Local\Temp\sa6o.obj \
   dist/Default/production\PicClicker.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tomas\AppData\Local\Temp\saso.obj
+C:\Users\tomas\AppData\Local\Temp\sa6o.obj
                 init                                 A6       A6        4        C       0
                 reset_vec                             0        0        4        0       0
                 config                            1FFF8    1FFF8        8    1FFF8       0
@@ -48,26 +48,26 @@ dist/Default/production\PicClicker.production.obj
                 intcode                               8        8        6        4       0
                 temp                                 38       38        1        1       1
                 smallconst                          F00      F00        C      780       0
-                text16                             131C     131C       18      786       0
+                text16                             1318     1318       18      786       0
                 intcode_body                        FAE      FAE       9A      786       0
-                text13                             1346     1346        C      786       0
-                text12                             12E2     12E2       1E      786       0
-                text11                             126A     126A       32      786       0
+                text13                             1342     1342        C      786       0
+                text12                             12DE     12DE       1E      786       0
+                text11                             1266     1266       32      786       0
                 text10                             1152     1152       54      786       0
                 text9                              11A6     11A6       46      786       0
                 text8                              11EC     11EC       40      786       0
-                text7                              1334     1334       12      786       0
-                text6                              122C     122C       3E      786       0
+                text7                              1330     1330       12      786       0
+                text6                              122C     122C       3A      786       0
                 text5                              10FC     10FC       56      786       0
                 text4                              10A6     10A6       56      786       0
-                text3                              1300     1300       1C      786       0
+                text3                              12FC     12FC       1C      786       0
                 text2                              1048     1048       5E      786       0
-                text1                              12C2     12C2       20      786       0
+                text1                              12BE     12BE       20      786       0
                 text0                               F0C      F0C       A2      786       0
                 cstackCOMRAM                          1        1       31        1       1
                 bssBANK0                             60       60       8C       60       1
                 bssCOMRAM                            32       32        6        1       1
-                cinit                              129C     129C       26      786       0
+                cinit                              1298     1298       26      786       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -77,23 +77,23 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8        6         0
                 init                                 A6       A6        4         0
                 reset_vec                             0        0        4         0
-                text16                             131C     131C       18         0
+                text16                             1318     1318       18         0
                 intcode_body                        FAE      FAE       9A         0
-                text13                             1346     1346        C         0
-                text12                             12E2     12E2       1E         0
-                text11                             126A     126A       32         0
+                text13                             1342     1342        C         0
+                text12                             12DE     12DE       1E         0
+                text11                             1266     1266       32         0
                 text10                             1152     1152       54         0
                 text9                              11A6     11A6       46         0
                 text8                              11EC     11EC       40         0
-                text7                              1334     1334       12         0
-                text6                              122C     122C       3E         0
+                text7                              1330     1330       12         0
+                text6                              122C     122C       3A         0
                 text5                              10FC     10FC       56         0
                 text4                              10A6     10A6       56         0
-                text3                              1300     1300       1C         0
+                text3                              12FC     12FC       1C         0
                 text2                              1048     1048       5E         0
-                text1                              12C2     12C2       20         0
+                text1                              12BE     12BE       20         0
                 text0                               F0C      F0C       A2         0
-                cinit                              129C     129C       26         0
+                cinit                              1298     1298       26         0
 
         CLASS   CONST          
 
@@ -163,7 +163,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 intcodelo                      000018  000092  0000AA         C       0  CODE    
                 bssBANK0                       000060  00008C  0000EC        60       1  BANK0   
                 smallconst                     000F00  00000C  000F0C       780       0  SMALLCON
-                text0                          000F0C  000446  001352       786       0  CODE    
+                text0                          000F0C  000442  00134E       786       0  CODE    
                 config                         01FFF8  000008  020000     1FFF8       0  CONFIG  
 
 
@@ -190,17 +190,17 @@ UNUSED ADDRESS RANGES
         CODE             00004-00007               4
                          0000E-00017               A
                          000AA-00EFF             E56
-                         01352-1FFF7           1ECA6
+                         0134E-1FFF7           1ECAA
         COMRAM           00039-0005F              27
         CONST            00004-00007               4
                          0000E-00017               A
                          000AA-00EFF             E56
-                         01352-1FFF7           1ECA6
-        MEDIUMCONST      01352-0FFFF            ECAE
+                         0134E-1FFF7           1ECAA
+        MEDIUMCONST      0134E-0FFFF            ECB2
                          10F00-1FFF7            F0F8
         RAM              000EC-00EAF             100
         SFR              00EB0-00FFF              60
-        SMALLCONST       01352-1FFF7             100
+        SMALLCONST       0134E-1FFF7             100
         STACK            000EC-00EAF             DC4
 
                                   Symbol Table
@@ -212,9 +212,9 @@ UART_Write@data               cstackCOMRAM  00023
 UART_Write@dev                cstackCOMRAM  00022
 _BAUDCON1bits                 (abs)         00F7E
 _BAUDCON2bits                 (abs)         00F7C
-_ConfigureOscillator          text13        01346
+_ConfigureOscillator          text13        01342
 _INTCON                       (abs)         00FF2
-_InitApp                      text12        012E2
+_InitApp                      text12        012DE
 _LATAbits                     (abs)         00F89
 _OSCCONbits                   (abs)         00FD3
 _OSCTUNEbits                  (abs)         00F9B
@@ -247,8 +247,8 @@ _TXSTA1                       (abs)         00FAD
 _TXSTA1bits                   (abs)         00FAD
 _TXSTA2                       (abs)         00FA8
 _TXSTA2bits                   (abs)         00FA8
-_UART_Init                    text11        0126A
-_UART_Write                   text3         01300
+_UART_Init                    text11        01266
+_UART_Write                   text3         012FC
 __CFG_ADCSEL$BIT10            (abs)         00000
 __CFG_CFGPLLEN$OFF            (abs)         00000
 __CFG_CLKOEC$ON               (abs)         00000
@@ -453,47 +453,47 @@ ___rparam_used                (abs)         00001
 ___sp                         stack         00000
 __accesstop                   (abs)         00060
 __activetblptr                (abs)         00002
-__end_of_ConfigureOscillator  text13        01352
-__end_of_InitApp              text12        01300
-__end_of_UART_Init            text11        0129C
-__end_of_UART_Write           text3         0131C
+__end_of_ConfigureOscillator  text13        0134E
+__end_of_InitApp              text12        012FC
+__end_of_UART_Init            text11        01298
+__end_of_UART_Write           text3         01318
 __end_of___lmul               text5         01152
-__end_of__initialization      cinit         012B4
-__end_of_appendChar           text16        01334
+__end_of__initialization      cinit         012B0
+__end_of_appendChar           text16        01330
 __end_of_clearBuffer          text9         011EC
 __end_of_copyTmpBuffer        text8         0122C
 __end_of_high_isr             intcode_body  01048
-__end_of_isItLongEnough       text7         01346
-__end_of_isValid              text6         0126A
+__end_of_isItLongEnough       text7         01342
+__end_of_isValid              text6         01266
 __end_of_low_isr              intcodelo     000A6
 __end_of_main                 text0         00FAE
 __end_of_strlen               text10        011A6
 __end_of_wait_ms              text4         010FC
-__end_of_writeResult          text1         012E2
+__end_of_writeResult          text1         012DE
 __end_of_writeString          text2         010A6
-__initialization              cinit         0129C
+__initialization              cinit         01298
 __mediumconst                 mediumconst   00000
 __pbssBANK0                   bssBANK0      00060
 __pbssCOMRAM                  bssCOMRAM     00032
-__pcinit                      cinit         0129C
+__pcinit                      cinit         01298
 __pcstackCOMRAM               cstackCOMRAM  00001
 __pintcode                    intcode       00008
 __pintcode_body               intcode_body  00FAE
 __pintcodelo                  intcodelo     00018
 __psmallconst                 smallconst    00F00
 __ptext0                      text0         00F0C
-__ptext1                      text1         012C2
+__ptext1                      text1         012BE
 __ptext10                     text10        01152
-__ptext11                     text11        0126A
-__ptext12                     text12        012E2
-__ptext13                     text13        01346
-__ptext16                     text16        0131C
+__ptext11                     text11        01266
+__ptext12                     text12        012DE
+__ptext13                     text13        01342
+__ptext16                     text16        01318
 __ptext2                      text2         01048
-__ptext3                      text3         01300
+__ptext3                      text3         012FC
 __ptext4                      text4         010A6
 __ptext5                      text5         010FC
 __ptext6                      text6         0122C
-__ptext7                      text7         01334
+__ptext7                      text7         01330
 __ptext8                      text8         011EC
 __ptext9                      text9         011A6
 __ramtop                      ramtop        00F00
@@ -515,27 +515,26 @@ __size_of_wait_ms             (abs)         00000
 __size_of_writeResult         (abs)         00000
 __size_of_writeString         (abs)         00000
 __smallconst                  smallconst    00F00
-_appendChar                   text16        0131C
+_appendChar                   text16        01318
 _clearBuffer                  text9         011A6
 _copyTmpBuffer                text8         011EC
 _high_isr                     intcode       00008
 _index                        bssCOMRAM     00036
-_isItLongEnough               text7         01334
+_isItLongEnough               text7         01330
 _isValid                      text6         0122C
-_isValid$699                  cstackCOMRAM  00022
 _low_isr                      intcodelo     00018
 _main                         text0         00F0C
 _realString                   bssBANK0      00060
 _strlen                       text10        01152
 _tmpString                    bssBANK0      000A6
 _wait_ms                      text4         010A6
-_writeResult                  text1         012C2
+_writeResult                  text1         012BE
 _writeString                  text2         01048
 appendChar@data               cstackCOMRAM  00001
 btemp                         temp          00038
 clearBuffer@i                 cstackCOMRAM  00028
 copyTmpBuffer@i               cstackCOMRAM  00023
-end_of_initialization         cinit         012B4
+end_of_initialization         cinit         012B0
 int$flags                     temp          00038
 int_func                      intcode_body  00FAE
 intlevel0                     text          00000
@@ -546,7 +545,7 @@ main@var                      cstackCOMRAM  00031
 stackhi                       (abs)         00EAF
 stacklo                       (abs)         000EC
 start                         init          000A6
-start_initialization          cinit         0129C
+start_initialization          cinit         01298
 strlen@cp                     cstackCOMRAM  00026
 strlen@s                      cstackCOMRAM  00022
 wait_ms@time                  cstackCOMRAM  0002E
@@ -601,7 +600,7 @@ Total ram usage:        1 bytes
 
  *************** function _writeResult *****************
  Defined at:
-		line 48 in file "bufferhandler.c"
+		line 53 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
   dev             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -760,7 +759,7 @@ Total ram usage:       12 bytes
 
  *************** function _isValid *****************
  Defined at:
-		line 58 in file "bufferhandler.c"
+		line 67 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -775,10 +774,10 @@ Total ram usage:       12 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
  This function calls:
@@ -790,7 +789,7 @@ Total ram usage:        1 bytes
 
  *************** function _isItLongEnough *****************
  Defined at:
-		line 29 in file "bufferhandler.c"
+		line 30 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -820,7 +819,7 @@ Total ram usage:        0 bytes
 
  *************** function _copyTmpBuffer *****************
  Defined at:
-		line 42 in file "bufferhandler.c"
+		line 47 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -850,7 +849,7 @@ Total ram usage:        3 bytes
 
  *************** function _clearBuffer *****************
  Defined at:
-		line 34 in file "bufferhandler.c"
+		line 39 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1063,7 +1062,7 @@ Total ram usage:       15 bytes
 
  *************** function _appendChar *****************
  Defined at:
-		line 23 in file "bufferhandler.c"
+		line 24 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1095,19 +1094,19 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 bufferhandler.c
-		_isValid       		CODE           	122C	0000	63
-		_writeResult   		CODE           	12C2	0000	33
-		_appendChar    		CODE           	131C	0000	25
+		_isValid       		CODE           	122C	0000	59
+		_writeResult   		CODE           	12BE	0000	33
+		_appendChar    		CODE           	1318	0000	25
 		_copyTmpBuffer 		CODE           	11EC	0000	65
 		_clearBuffer   		CODE           	11A6	0000	71
-		_isItLongEnough		CODE           	1334	0000	19
+		_isItLongEnough		CODE           	1330	0000	19
 
-bufferhandler.c estimated size: 276
+bufferhandler.c estimated size: 272
 
 uart.c
 		_writeString   		CODE           	1048	0000	95
-		_UART_Init     		CODE           	126A	0000	51
-		_UART_Write    		CODE           	1300	0000	29
+		_UART_Init     		CODE           	1266	0000	51
+		_UART_Write    		CODE           	12FC	0000	29
 
 uart.c estimated size: 175
 
@@ -1123,7 +1122,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c estimated size: 87
 
 shared
-		__initialization		CODE           	129C	0000	25
+		__initialization		CODE           	1298	0000	25
 
 shared estimated size: 25
 
@@ -1133,7 +1132,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c estimated size: 85
 
 user.c
-		_InitApp       		CODE           	12E2	0000	31
+		_InitApp       		CODE           	12DE	0000	31
 
 user.c estimated size: 31
 
@@ -1143,7 +1142,7 @@ main.c
 main.c estimated size: 163
 
 system.c
-		_ConfigureOscillator		CODE           	1346	0000	13
+		_ConfigureOscillator		CODE           	1342	0000	13
 		_wait_ms       		CODE           	10A6	0000	87
 
 system.c estimated size: 100

@@ -10122,6 +10122,9 @@ void ConfigureOscillator(void);
 
 void wait_ms(int);
 
+# 13 "user.h"
+void InitApp(void);
+
 # 1 "bufferhandler.h"
 void appendChar(char data);
 
@@ -10169,10 +10172,9 @@ void writeResult(char dev);
 
 char isEmpty();
 
-# 17 "bufferhandler.c"
+# 19 "bufferhandler.c"
 char tmpString[70] = "";
 char realString[70] = "";
-
 int index = 0;
 
 
@@ -10184,7 +10186,11 @@ index++;
 
 char isItLongEnough()
 {
-return index == 64;
+if(index == 64){
+return 1;
+}else{
+return 0;
+}
 }
 
 void clearBuffer() {
@@ -10208,15 +10214,22 @@ wait_ms(1000);
 }
 
 char isEmpty(){
-return tmpString[0] == '\0';
+if(tmpString[0] == '\0'){
+return 1;
+}else{
+return 0;
+}
 }
 
 char isValid(){
-return tmpString[0] == 0x54 &&
+if(tmpString[0] == 0x54 &&
 tmpString[1] == 0x59 &&
 tmpString[2] == 0x52 &&
 tmpString[3] == 0x49 &&
-tmpString[4] == 0x5F;
+tmpString[4] == 0x5F){
+return 1;
+}
+return 0;
 }
 
 char parseTmpString(){

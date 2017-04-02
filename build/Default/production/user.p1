@@ -7667,7 +7667,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 57: extern char * strrchr(const char *, int);
 [; ;string.h: 58: extern char * strrichr(const char *, int);
 [; ;user.h: 13: void InitApp(void);
-[; ;user.h: 15: char isItLongEnough();
 "29 user.c
 [v _InitApp `(v ~T0 @X0 1 ef ]
 "30
