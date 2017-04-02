@@ -10225,6 +10225,10 @@ void writeResult(char dev);
 
 char isEmpty();
 
+char isValid();
+
+char parseTmpString();
+
 # 30 "interrupts.c"
 void interrupt high_isr(void)
 

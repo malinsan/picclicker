@@ -65,3 +65,23 @@ char isEmpty(){
     }
 }
 
+char isValid(){
+    if(tmpString[0] == 0x54){
+        if(tmpString[1] == 0x59){
+            if(tmpString[2] == 0x52){
+                if(tmpString[3] == 0x49){
+                    if(tmpString[4] == 0x5F){
+                        return 1;
+                    }
+                }
+            }
+            
+        }
+    }
+    return 0;
+}
+
+char parseTmpString(){
+    
+}
+

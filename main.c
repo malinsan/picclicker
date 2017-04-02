@@ -48,8 +48,9 @@ void main(void)
     
     UART_Init(19200);
     writeString("L 50", 1);
+    UART_Write(0x0D,1);
     writeString("D 8", 1);
-    
+    UART_Write(0x0D,1);
     
     uint8_t var = 0;
     char result;
@@ -67,13 +68,17 @@ void main(void)
         
         
        if(isItLongEnough()){
-            LATAbits.LATA1 = 1;
-            wait_ms(1000);
-            copyTmpBuffer(); //copies tmpBuffer to the real string and empties the tmpBuffer
-            clearBuffer();
-        }else{
-            LATAbits.LATA1 = 0;
-        }
+           if(isValid()){
+               LATAbits.LATA1 = 1;
+                wait_ms(1000);
+                copyTmpBuffer(); //copies tmpBuffer to the real string and empties the tmpBuffer
+                clearBuffer();
+           }else{
+               clearBuffer();
+           }
+       }else{
+           LATAbits.LATA1 = 0;
+       }
         
         if(!PORTDbits.RD3){
             writeResult(2);

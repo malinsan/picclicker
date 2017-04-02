@@ -8,6 +8,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _UART_Init `(uc ~T0 @X0 0 ef1`Cl ]
 "25
 [v _writeString `(v ~T0 @X0 0 ef2`*uc`uc ]
+"7
+[v _UART_Write `(v ~T0 @X0 0 ef2`uc`uc ]
 "10931 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
 [s S509 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S509 . TRISA0 TRISA1 TRISA2 TRISA3 . TRISA5 TRISA6 TRISA7 ]
@@ -39,6 +41,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _clearBuffer `(v ~T0 @X0 0 ef ]
 "15 user.h
 [v _isItLongEnough `(uc ~T0 @X0 0 ef ]
+"71 main.c
+[v _isValid `(i ~T0 @X0 0 ef ]
 "23 system.h
 [v _wait_ms `(v ~T0 @X0 0 ef1`i ]
 "23 uart.h
@@ -7757,87 +7761,110 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 50: writeString("L 50", 1);
 "50
 [e ( _writeString (2 , -> :s 1C `*uc -> -> 1 `i `uc ]
-[; ;main.c: 51: writeString("D 8", 1);
+[; ;main.c: 51: UART_Write(0x0D,1);
 "51
+[e ( _UART_Write (2 , -> -> 13 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 52: writeString("D 8", 1);
+"52
 [e ( _writeString (2 , -> :s 2C `*uc -> -> 1 `i `uc ]
-"54
-[v _var `uc ~T0 @X0 1 a ]
-[; ;main.c: 54: uint8_t var = 0;
-[e = _var -> -> 0 `i `uc ]
+[; ;main.c: 53: UART_Write(0x0D,1);
+"53
+[e ( _UART_Write (2 , -> -> 13 `i `uc -> -> 1 `i `uc ]
 "55
+[v _var `uc ~T0 @X0 1 a ]
+[; ;main.c: 55: uint8_t var = 0;
+[e = _var -> -> 0 `i `uc ]
+"56
 [v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 55: char result;
-[; ;main.c: 58: TRISAbits.TRISA0 = 0;
-"58
-[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 59: TRISAbits.TRISA1 = 0;
+[; ;main.c: 56: char result;
+[; ;main.c: 59: TRISAbits.TRISA0 = 0;
 "59
-[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 60: LATAbits.LATA0 = 0;
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 60: TRISAbits.TRISA1 = 0;
 "60
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 61: LATAbits.LATA1 = 0;
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 61: LATAbits.LATA0 = 0;
 "61
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 62: TRISDbits.TRISD3 = 1;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 62: LATAbits.LATA1 = 0;
 "62
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 63: TRISDbits.TRISD3 = 1;
+"63
 [e = . . _TRISDbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 64: clearBuffer();
-"64
+[; ;main.c: 65: clearBuffer();
+"65
 [e ( _clearBuffer ..  ]
-[; ;main.c: 66: while(1){
-"66
+[; ;main.c: 67: while(1){
+"67
 [e :U 914 ]
 {
-[; ;main.c: 69: if(isItLongEnough()){
-"69
+[; ;main.c: 70: if(isItLongEnough()){
+"70
 [e $ ! != -> ( _isItLongEnough ..  `i -> -> -> 0 `i `uc `i 916  ]
 {
-[; ;main.c: 70: LATAbits.LATA1 = 1;
-"70
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 71: wait_ms(1000);
+[; ;main.c: 71: if(isValid()){
 "71
-[e ( _wait_ms (1 -> 1000 `i ]
-[; ;main.c: 72: copyTmpBuffer();
-"72
-[e ( _copyTmpBuffer ..  ]
-[; ;main.c: 73: clearBuffer();
-"73
-[e ( _clearBuffer ..  ]
-"74
-}
-[; ;main.c: 74: }else{
-[e $U 917  ]
-[e :U 916 ]
+[e $ ! != ( _isValid ..  -> 0 `i 917  ]
 {
-[; ;main.c: 75: LATAbits.LATA1 = 0;
+[; ;main.c: 72: LATAbits.LATA1 = 1;
+"72
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 73: wait_ms(1000);
+"73
+[e ( _wait_ms (1 -> 1000 `i ]
+[; ;main.c: 74: copyTmpBuffer();
+"74
+[e ( _copyTmpBuffer ..  ]
+[; ;main.c: 75: clearBuffer();
 "75
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[e ( _clearBuffer ..  ]
 "76
 }
+[; ;main.c: 76: }else{
+[e $U 918  ]
 [e :U 917 ]
-[; ;main.c: 76: }
-[; ;main.c: 78: if(!PORTDbits.RD3){
-"78
-[e $ ! ! != -> . . _PORTDbits 0 3 `i -> -> -> 0 `i `Vuc `i 918  ]
 {
-[; ;main.c: 79: writeResult(2);
-"79
-[e ( _writeResult (1 -> -> 2 `i `uc ]
-"80
+[; ;main.c: 77: clearBuffer();
+"77
+[e ( _clearBuffer ..  ]
+"78
 }
 [e :U 918 ]
+"79
+}
+[; ;main.c: 78: }
+[; ;main.c: 79: }else{
+[e $U 919  ]
+[e :U 916 ]
+{
+[; ;main.c: 80: LATAbits.LATA1 = 0;
+"80
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+"81
+}
+[e :U 919 ]
+[; ;main.c: 81: }
+[; ;main.c: 83: if(!PORTDbits.RD3){
 "83
+[e $ ! ! != -> . . _PORTDbits 0 3 `i -> -> -> 0 `i `Vuc `i 920  ]
+{
+[; ;main.c: 84: writeResult(2);
+"84
+[e ( _writeResult (1 -> -> 2 `i `uc ]
+"85
+}
+[e :U 920 ]
+"88
 }
 [e :U 913 ]
-"66
+"67
 [e $U 914  ]
 [e :U 915 ]
-[; ;main.c: 80: }
-[; ;main.c: 83: }
-[; ;main.c: 127: }
-"127
+[; ;main.c: 85: }
+[; ;main.c: 88: }
+[; ;main.c: 132: }
+"132
 [e :UE 912 ]
 }
 [a 2C 68 32 56 0 ]

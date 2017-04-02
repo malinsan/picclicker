@@ -10262,8 +10262,9 @@ InitApp();
 
 UART_Init(19200);
 writeString("L 50", 1);
+UART_Write(0x0D,1);
 writeString("D 8", 1);
-
+UART_Write(0x0D,1);
 
 uint8_t var = 0;
 char result;
@@ -10281,10 +10282,14 @@ while(1){
 
 
 if(isItLongEnough()){
+if(isValid()){
 LATAbits.LATA1 = 1;
 wait_ms(1000);
 copyTmpBuffer();
 clearBuffer();
+}else{
+clearBuffer();
+}
 }else{
 LATAbits.LATA1 = 0;
 }
@@ -10296,6 +10301,6 @@ writeResult(2);
 
 }
 
-# 127
+# 132
 }
 

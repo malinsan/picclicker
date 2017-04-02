@@ -11,3 +11,7 @@ void writeString(char str[], char dev);
 void writeResult(char dev);
 
 char isEmpty();
+
+char isValid();
+
+char parseTmpString();

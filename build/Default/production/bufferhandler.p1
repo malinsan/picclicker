@@ -7644,6 +7644,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bufferhandler.h: 9: void writeString(char str[], char dev);
 [; ;bufferhandler.h: 11: void writeResult(char dev);
 [; ;bufferhandler.h: 13: char isEmpty();
+[; ;bufferhandler.h: 15: char isValid();
+[; ;bufferhandler.h: 17: char parseTmpString();
 [; ;uart.h: 4: char UART_Init(const long int baudrate);
 [; ;uart.h: 7: void UART_Write(char data, char dev);
 [; ;uart.h: 11: char trmtStatus();
@@ -7849,6 +7851,74 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bufferhandler.c: 66: }
 "66
 [e :UE 927 ]
+}
+"68
+[v _isValid `(uc ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 68: char isValid(){
+[e :U _isValid ]
+[f ]
+[; ;bufferhandler.c: 69: if(tmpString[0] == 0x54){
+"69
+[e $ ! == -> *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 84 `i 931  ]
+{
+[; ;bufferhandler.c: 70: if(tmpString[1] == 0x59){
+"70
+[e $ ! == -> *U + &U _tmpString * -> -> -> 1 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 89 `i 932  ]
+{
+[; ;bufferhandler.c: 71: if(tmpString[2] == 0x52){
+"71
+[e $ ! == -> *U + &U _tmpString * -> -> -> 2 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 82 `i 933  ]
+{
+[; ;bufferhandler.c: 72: if(tmpString[3] == 0x49){
+"72
+[e $ ! == -> *U + &U _tmpString * -> -> -> 3 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 73 `i 934  ]
+{
+[; ;bufferhandler.c: 73: if(tmpString[4] == 0x5F){
+"73
+[e $ ! == -> *U + &U _tmpString * -> -> -> 4 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 95 `i 935  ]
+{
+[; ;bufferhandler.c: 74: return 1;
+"74
+[e ) -> -> 1 `i `uc ]
+[e $UE 930  ]
+"75
+}
+[e :U 935 ]
+"76
+}
+[e :U 934 ]
+"77
+}
+[e :U 933 ]
+"79
+}
+[e :U 932 ]
+"80
+}
+[e :U 931 ]
+[; ;bufferhandler.c: 75: }
+[; ;bufferhandler.c: 76: }
+[; ;bufferhandler.c: 77: }
+[; ;bufferhandler.c: 79: }
+[; ;bufferhandler.c: 80: }
+[; ;bufferhandler.c: 81: return 0;
+"81
+[e ) -> -> 0 `i `uc ]
+[e $UE 930  ]
+[; ;bufferhandler.c: 82: }
+"82
+[e :UE 930 ]
+}
+"84
+[v _parseTmpString `(uc ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 84: char parseTmpString(){
+[e :U _parseTmpString ]
+[f ]
+[; ;bufferhandler.c: 86: }
+"86
+[e :UE 936 ]
 }
 [a 1C 0 ]
 
