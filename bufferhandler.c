@@ -111,16 +111,15 @@ char parseString(){
             break;
     }
     
+    //now assemble the SOC
     char tmpsoc [3] = "";
-    tmpsoc[0] = allDataString[50];
-    tmpsoc[1] = allDataString[51];
-    tmpsoc[2] = allDataString[52];
-    
-    int SOC [3] = "";
-    SOC[0] = allDataString[50];
-    SOC[1] = allDataString[51];
-    SOC[2] = allDataString[52];
-    
+    int k = 0;
+    for(int i = pos; i< (pos+3); i++){
+        tmpsoc[k] = allDataString[i];
+        k++;
+    }
+    //SOC
+    int SOC = atoi(tmpsoc);
     
     
     return 0;

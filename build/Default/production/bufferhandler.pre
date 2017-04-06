@@ -10374,22 +10374,34 @@ if(allDataString[i] == 0x3B){
 break;
 }
 }
-
 char* chg = createCHG(pos);
+
+
 int ichg = atoi(chg);
 
+# 101
+int startPos = 50;
+switch(pos){
+case 1 :
+startPos = 50;
+break;
+case 2 :
+startPos = 51;
+break;
+case 3 :
+startPos = 52;
+break;
+}
 
 
 char tmpsoc [3] = "";
-tmpsoc[0] = allDataString[50];
-tmpsoc[1] = allDataString[51];
-tmpsoc[2] = allDataString[52];
+int k = 0;
+for(int i = pos; i< (pos+3); i++){
+tmpsoc[k] = allDataString[i];
+k++;
+}
 
-int SOC [3] = "";
-SOC[0] = allDataString[50];
-SOC[1] = allDataString[51];
-SOC[2] = allDataString[52];
-
+int SOC = atoi(tmpsoc);
 
 
 return 0;
@@ -10411,3 +10423,4 @@ break;
 }
 return tmp;
 }
+
