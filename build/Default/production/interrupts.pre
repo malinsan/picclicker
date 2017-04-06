@@ -10227,7 +10227,9 @@ char isEmpty();
 
 char isValid();
 
-char parseTmpString();
+char parseString();
+
+char* createCHG(int);
 
 # 30 "interrupts.c"
 void interrupt high_isr(void)

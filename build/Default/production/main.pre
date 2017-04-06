@@ -10263,7 +10263,9 @@ char isEmpty();
 
 char isValid();
 
-char parseTmpString();
+char parseString();
+
+char* createCHG(int);
 
 # 39 "main.c"
 void main(void)

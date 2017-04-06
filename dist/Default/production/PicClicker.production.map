@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.41\dat\en_msgs.txt -cs \
   -h+dist/Default/production\PicClicker.production.sym \
   --cmf=dist/Default/production\PicClicker.production.cmf -z -Q18F47J53 \
-  -oC:\Users\tomas\AppData\Local\Temp\sa6o.2 \
+  -oC:\Users\tomas\AppData\Local\Temp\s5g8.2 \
   -Mdist/Default/production/PicClicker.production.map -E1 -ver=XC8 \
-  -ASTACK=0ECh-0eafh -pstack=STACK -ACODE=00h-01FFF7h -ACONST=00h-01FFF7h \
+  -ASTACK=0FCh-0eafh -pstack=STACK -ACODE=00h-01FFF7h -ACONST=00h-01FFF7h \
   -ASMALLCONST=0F00h-0FFFhx496,01FF00h-01FFF7h \
   -AMEDIUMCONST=0F00h-0FFFFh,010F00h-01FFF7h -ACOMRAM=01h-05Fh \
   -AABS1=00h-0EAFh -ABIGRAM=01h-0EAFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\tomas\AppData\Local\Temp\sa6o.obj \
+  C:\Users\tomas\AppData\Local\Temp\s5g8.obj \
   dist/Default/production\PicClicker.production.obj 
 
 Object code version is 3.11
@@ -39,35 +39,38 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tomas\AppData\Local\Temp\sa6o.obj
+C:\Users\tomas\AppData\Local\Temp\s5g8.obj
                 init                                 A6       A6        4        C       0
                 reset_vec                             0        0        4        0       0
                 config                            1FFF8    1FFF8        8    1FFF8       0
 dist/Default/production\PicClicker.production.obj
                 intcodelo                            18       18       8E        C       0
                 intcode                               8        8        6        4       0
-                temp                                 38       38        1        1       1
+                temp                                 41       41        1        1       1
                 smallconst                          F00      F00        C      780       0
-                text16                             1318     1318       18      786       0
-                intcode_body                        FAE      FAE       9A      786       0
-                text13                             1342     1342        C      786       0
-                text12                             12DE     12DE       1E      786       0
-                text11                             1266     1266       32      786       0
-                text10                             1152     1152       54      786       0
-                text9                              11A6     11A6       46      786       0
-                text8                              11EC     11EC       40      786       0
-                text7                              1330     1330       12      786       0
-                text6                              122C     122C       3A      786       0
-                text5                              10FC     10FC       56      786       0
-                text4                              10A6     10A6       56      786       0
-                text3                              12FC     12FC       1C      786       0
-                text2                              1048     1048       5E      786       0
-                text1                              12BE     12BE       20      786       0
-                text0                               F0C      F0C       A2      786       0
-                cstackCOMRAM                          1        1       31        1       1
+                text16                             13CA     13CA       18      786       0
+                intcode_body                        FC4      FC4       9A      786       0
+                text13                             13F4     13F4        C      786       0
+                text12                             13AC     13AC       1E      786       0
+                text11                             1332     1332       32      786       0
+                text10                             114A     114A       64      786       0
+                text9                              1208     1208       5A      786       0
+                text8                              1262     1262       54      786       0
+                text7                              13E2     13E2       12      786       0
+                text6                              12F8     12F8       3A      786       0
+                text5                              10D4     10D4       76      786       0
+                text4                              11AE     11AE       5A      786       0
+                text3                              138C     138C       20      786       0
+                text2                              105E     105E       76      786       0
+                text1                              1364     1364       28      786       0
+                text0                               F0C      F0C       B8      786       0
+                cstackCOMRAM                          1        1       21        1       1
+                cstackBANK0                          EC       EC       10       60       1
                 bssBANK0                             60       60       8C       60       1
-                bssCOMRAM                            32       32        6        1       1
-                cinit                              1298     1298       26      786       0
+                dataCOMRAM                           3B       3B        6        1       1
+                bssCOMRAM                            22       22       19        1       1
+                cinit                              12B6     12B6       42      786       0
+                idataCOMRAM                        1400     1400        6      786       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -77,23 +80,24 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8        6         0
                 init                                 A6       A6        4         0
                 reset_vec                             0        0        4         0
-                text16                             1318     1318       18         0
-                intcode_body                        FAE      FAE       9A         0
-                text13                             1342     1342        C         0
-                text12                             12DE     12DE       1E         0
-                text11                             1266     1266       32         0
-                text10                             1152     1152       54         0
-                text9                              11A6     11A6       46         0
-                text8                              11EC     11EC       40         0
-                text7                              1330     1330       12         0
-                text6                              122C     122C       3A         0
-                text5                              10FC     10FC       56         0
-                text4                              10A6     10A6       56         0
-                text3                              12FC     12FC       1C         0
-                text2                              1048     1048       5E         0
-                text1                              12BE     12BE       20         0
-                text0                               F0C      F0C       A2         0
-                cinit                              1298     1298       26         0
+                text16                             13CA     13CA       18         0
+                intcode_body                        FC4      FC4       9A         0
+                text13                             13F4     13F4        C         0
+                text12                             13AC     13AC       1E         0
+                text11                             1332     1332       32         0
+                text10                             114A     114A       64         0
+                text9                              1208     1208       5A         0
+                text8                              1262     1262       54         0
+                text7                              13E2     13E2       12         0
+                text6                              12F8     12F8       3A         0
+                text5                              10D4     10D4       76         0
+                text4                              11AE     11AE       5A         0
+                text3                              138C     138C       20         0
+                text2                              105E     105E       76         0
+                text1                              1364     1364       28         0
+                text0                               F0C      F0C       B8         0
+                cinit                              12B6     12B6       42         0
+                idataCOMRAM                        1400     1400        6         0
 
         CLASS   CONST          
 
@@ -103,9 +107,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 38       38        1         1
-                cstackCOMRAM                          1        1       31         1
-                bssCOMRAM                            32       32        6         1
+                temp                                 41       41        1         1
+                cstackCOMRAM                          1        1       21         1
+                dataCOMRAM                           3B       3B        6         1
+                bssCOMRAM                            22       22       19         1
 
         CLASS   ABS1           
 
@@ -114,6 +119,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
+                cstackBANK0                          EC       EC       10         1
                 bssBANK0                             60       60       8C         1
 
         CLASS   BANK1          
@@ -158,19 +164,19 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000038  000039         1       1  COMRAM  
+                cstackCOMRAM                   000001  000041  000042         1       1  COMRAM  
                 intcode                        000008  000006  00000E         4       0  CODE    
                 intcodelo                      000018  000092  0000AA         C       0  CODE    
-                bssBANK0                       000060  00008C  0000EC        60       1  BANK0   
+                bssBANK0                       000060  00009C  0000FC        60       1  BANK0   
                 smallconst                     000F00  00000C  000F0C       780       0  SMALLCON
-                text0                          000F0C  000442  00134E       786       0  CODE    
+                text0                          000F0C  0004FA  001406       786       0  CODE    
                 config                         01FFF8  000008  020000     1FFF8       0  CONFIG  
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            000EC-000FF              14
+        BANK0            000FC-000FF               4
         BANK1            00100-001FF             100
         BANK10           00A00-00AFF             100
         BANK11           00B00-00BFF             100
@@ -185,36 +191,36 @@ UNUSED ADDRESS RANGES
         BANK7            00700-007FF             100
         BANK8            00800-008FF             100
         BANK9            00900-009FF             100
-        BIGRAM           00039-0005F              27
-                         000EC-00EAF             DC4
+        BIGRAM           00042-0005F              1E
+                         000FC-00EAF             DB4
         CODE             00004-00007               4
                          0000E-00017               A
                          000AA-00EFF             E56
-                         0134E-1FFF7           1ECAA
-        COMRAM           00039-0005F              27
+                         01406-1FFF7           1EBF2
+        COMRAM           00042-0005F              1E
         CONST            00004-00007               4
                          0000E-00017               A
                          000AA-00EFF             E56
-                         0134E-1FFF7           1ECAA
-        MEDIUMCONST      0134E-0FFFF            ECB2
+                         01406-1FFF7           1EBF2
+        MEDIUMCONST      01406-0FFFF            EBFA
                          10F00-1FFF7            F0F8
-        RAM              000EC-00EAF             100
+        RAM              000FC-00EAF             100
         SFR              00EB0-00FFF              60
-        SMALLCONST       0134E-1FFF7             100
-        STACK            000EC-00EAF             DC4
+        SMALLCONST       01406-1FFF7             100
+        STACK            000FC-00EAF             DB4
 
                                   Symbol Table
 
-?___lmul                      cstackCOMRAM  00022
-?_strlen                      cstackCOMRAM  00022
-UART_Init@baudrate            cstackCOMRAM  00022
-UART_Write@data               cstackCOMRAM  00023
-UART_Write@dev                cstackCOMRAM  00022
+?___lmul                      cstackBANK0   000EC
+?_strlen                      cstackBANK0   000EC
+UART_Init@baudrate            cstackBANK0   000EC
+UART_Write@data               cstackBANK0   000ED
+UART_Write@dev                cstackBANK0   000EC
 _BAUDCON1bits                 (abs)         00F7E
 _BAUDCON2bits                 (abs)         00F7C
-_ConfigureOscillator          text13        01342
+_ConfigureOscillator          text13        013F4
 _INTCON                       (abs)         00FF2
-_InitApp                      text12        012DE
+_InitApp                      text12        013AC
 _LATAbits                     (abs)         00F89
 _OSCCONbits                   (abs)         00FD3
 _OSCTUNEbits                  (abs)         00F9B
@@ -247,8 +253,8 @@ _TXSTA1                       (abs)         00FAD
 _TXSTA1bits                   (abs)         00FAD
 _TXSTA2                       (abs)         00FA8
 _TXSTA2bits                   (abs)         00FA8
-_UART_Init                    text11        01266
-_UART_Write                   text3         012FC
+_UART_Init                    text11        01332
+_UART_Write                   text3         0138C
 __CFG_ADCSEL$BIT10            (abs)         00000
 __CFG_CFGPLLEN$OFF            (abs)         00000
 __CFG_CLKOEC$ON               (abs)         00000
@@ -303,12 +309,15 @@ __Hclrtext                    clrtext       00000
 __Hcomram                     comram        00000
 __Hconfig                     config        20000
 __Hconst                      const         00000
+__HcstackBANK0                cstackBANK0   00000
 __HcstackCOMRAM               cstackCOMRAM  00000
 __Hdata                       data          00000
+__HdataCOMRAM                 dataCOMRAM    00000
 __Hfarbss                     farbss        00000
 __Hfardata                    fardata       00000
 __Hibigdata                   ibigdata      00000
 __Hidata                      idata         00000
+__HidataCOMRAM                idataCOMRAM   00000
 __Hidloc                      idloc         00000
 __Hifardata                   ifardata      00000
 __Hinit                       init          000AA
@@ -336,11 +345,11 @@ __Hrparam                     rparam        00000
 __Hsfr                        sfr           00000
 __Hsmallconst                 smallconst    00F0C
 __Hspace_0                    (abs)         20000
-__Hspace_1                    (abs)         000EC
+__Hspace_1                    (abs)         000FC
 __Hspace_2                    (abs)         00000
 __Hstack                      stack         00000
 __Hstruct                     struct        00000
-__Htemp                       temp          00039
+__Htemp                       temp          00042
 __Htext                       text          00000
 __Htext0                      text0         00000
 __Htext1                      text1         00000
@@ -385,12 +394,15 @@ __Lclrtext                    clrtext       00000
 __Lcomram                     comram        00000
 __Lconfig                     config        1FFF8
 __Lconst                      const         00000
+__LcstackBANK0                cstackBANK0   00000
 __LcstackCOMRAM               cstackCOMRAM  00000
 __Ldata                       data          00000
+__LdataCOMRAM                 dataCOMRAM    00000
 __Lfarbss                     farbss        00000
 __Lfardata                    fardata       00000
 __Libigdata                   ibigdata      00000
 __Lidata                      idata         00000
+__LidataCOMRAM                idataCOMRAM   00000
 __Lidloc                      idloc         00000
 __Lifardata                   ifardata      00000
 __Linit                       init          000A6
@@ -422,7 +434,7 @@ __Lspace_1                    (abs)         00000
 __Lspace_2                    (abs)         00000
 __Lstack                      stack         00000
 __Lstruct                     struct        00000
-__Ltemp                       temp          00038
+__Ltemp                       temp          00041
 __Ltext                       text          00000
 __Ltext0                      text0         00000
 __Ltext1                      text1         00000
@@ -440,62 +452,65 @@ __Ltext7                      text7         00000
 __Ltext8                      text8         00000
 __Ltext9                      text9         00000
 __S0                          (abs)         20000
-__S1                          (abs)         000EC
+__S1                          (abs)         000FC
 __S2                          (abs)         00000
 ___inthi_sp                   stack         00000
 ___intlo_sp                   stack         00000
-___lmul                       text5         010FC
-___lmul@multiplicand          cstackCOMRAM  00026
-___lmul@multiplier            cstackCOMRAM  00022
-___lmul@product               cstackCOMRAM  0002A
+___lmul                       text5         010D4
+___lmul@multiplicand          cstackBANK0   000F0
+___lmul@multiplier            cstackBANK0   000EC
+___lmul@product               cstackBANK0   000F4
 ___param_bank                 (abs)         00000
 ___rparam_used                (abs)         00001
 ___sp                         stack         00000
 __accesstop                   (abs)         00060
-__activetblptr                (abs)         00002
-__end_of_ConfigureOscillator  text13        0134E
-__end_of_InitApp              text12        012FC
-__end_of_UART_Init            text11        01298
-__end_of_UART_Write           text3         01318
-__end_of___lmul               text5         01152
-__end_of__initialization      cinit         012B0
-__end_of_appendChar           text16        01330
-__end_of_clearBuffer          text9         011EC
-__end_of_copyTmpBuffer        text8         0122C
-__end_of_high_isr             intcode_body  01048
-__end_of_isItLongEnough       text7         01342
-__end_of_isValid              text6         01266
+__activetblptr                (abs)         00003
+__end_of_ConfigureOscillator  text13        01400
+__end_of_InitApp              text12        013CA
+__end_of_UART_Init            text11        01364
+__end_of_UART_Write           text3         013AC
+__end_of___lmul               text5         0114A
+__end_of__initialization      cinit         012EE
+__end_of_appendChar           text16        013E2
+__end_of_clearBuffer          text9         01262
+__end_of_copyTmpBuffer        text8         012B6
+__end_of_high_isr             intcode_body  0105E
+__end_of_isItLongEnough       text7         013F4
+__end_of_isValid              text6         01332
 __end_of_low_isr              intcodelo     000A6
-__end_of_main                 text0         00FAE
-__end_of_strlen               text10        011A6
-__end_of_wait_ms              text4         010FC
-__end_of_writeResult          text1         012DE
-__end_of_writeString          text2         010A6
-__initialization              cinit         01298
+__end_of_main                 text0         00FC4
+__end_of_strlen               text10        011AE
+__end_of_wait_ms              text4         01208
+__end_of_writeResult          text1         0138C
+__end_of_writeString          text2         010D4
+__initialization              cinit         012B6
 __mediumconst                 mediumconst   00000
 __pbssBANK0                   bssBANK0      00060
-__pbssCOMRAM                  bssCOMRAM     00032
-__pcinit                      cinit         01298
+__pbssCOMRAM                  bssCOMRAM     00022
+__pcinit                      cinit         012B6
+__pcstackBANK0                cstackBANK0   000EC
 __pcstackCOMRAM               cstackCOMRAM  00001
+__pdataCOMRAM                 dataCOMRAM    0003B
+__pidataCOMRAM                idataCOMRAM   01400
 __pintcode                    intcode       00008
-__pintcode_body               intcode_body  00FAE
+__pintcode_body               intcode_body  00FC4
 __pintcodelo                  intcodelo     00018
 __psmallconst                 smallconst    00F00
 __ptext0                      text0         00F0C
-__ptext1                      text1         012BE
-__ptext10                     text10        01152
-__ptext11                     text11        01266
-__ptext12                     text12        012DE
-__ptext13                     text13        01342
-__ptext16                     text16        01318
-__ptext2                      text2         01048
-__ptext3                      text3         012FC
-__ptext4                      text4         010A6
-__ptext5                      text5         010FC
-__ptext6                      text6         0122C
-__ptext7                      text7         01330
-__ptext8                      text8         011EC
-__ptext9                      text9         011A6
+__ptext1                      text1         01364
+__ptext10                     text10        0114A
+__ptext11                     text11        01332
+__ptext12                     text12        013AC
+__ptext13                     text13        013F4
+__ptext16                     text16        013CA
+__ptext2                      text2         0105E
+__ptext3                      text3         0138C
+__ptext4                      text4         011AE
+__ptext5                      text5         010D4
+__ptext6                      text6         012F8
+__ptext7                      text7         013E2
+__ptext8                      text8         01262
+__ptext9                      text9         01208
 __ramtop                      ramtop        00F00
 __size_of_ConfigureOscillator (abs)         00000
 __size_of_InitApp             (abs)         00000
@@ -515,45 +530,48 @@ __size_of_wait_ms             (abs)         00000
 __size_of_writeResult         (abs)         00000
 __size_of_writeString         (abs)         00000
 __smallconst                  smallconst    00F00
-_appendChar                   text16        01318
-_clearBuffer                  text9         011A6
-_copyTmpBuffer                text8         011EC
+_allDataString                bssBANK0      00060
+_appendChar                   text16        013CA
+_clearBuffer                  text9         01208
+_copyTmpBuffer                text8         01262
 _high_isr                     intcode       00008
-_index                        bssCOMRAM     00036
-_isItLongEnough               text7         01330
-_isValid                      text6         0122C
+_index                        bssCOMRAM     00039
+_isItLongEnough               text7         013E2
+_isValid                      text6         012F8
 _low_isr                      intcodelo     00018
 _main                         text0         00F0C
-_realString                   bssBANK0      00060
-_strlen                       text10        01152
+_parsedString                 bssCOMRAM     00022
+_strlen                       text10        0114A
 _tmpString                    bssBANK0      000A6
-_wait_ms                      text4         010A6
-_writeResult                  text1         012BE
-_writeString                  text2         01048
+_wait_ms                      text4         011AE
+_writeResult                  text1         01364
+_writeString                  text2         0105E
 appendChar@data               cstackCOMRAM  00001
-btemp                         temp          00038
-clearBuffer@i                 cstackCOMRAM  00028
-copyTmpBuffer@i               cstackCOMRAM  00023
-end_of_initialization         cinit         012B0
-int$flags                     temp          00038
-int_func                      intcode_body  00FAE
+btemp                         temp          00041
+clearBuffer@i                 cstackBANK0   000F2
+copyTmpBuffer@i               cstackBANK0   000ED
+end_of_initialization         cinit         012EE
+int$flags                     temp          00041
+int_func                      intcode_body  00FC4
 intlevel0                     text          00000
 intlevel1                     text          00000
 intlevel2                     text          00000
 intlevel3                     text          00000
-main@var                      cstackCOMRAM  00031
+main@var                      cstackBANK0   000FB
+parseString@F8385             bssCOMRAM     00036
+parseString@F8387             dataCOMRAM    0003B
 stackhi                       (abs)         00EAF
-stacklo                       (abs)         000EC
+stacklo                       (abs)         000FC
 start                         init          000A6
-start_initialization          cinit         01298
-strlen@cp                     cstackCOMRAM  00026
-strlen@s                      cstackCOMRAM  00022
-wait_ms@time                  cstackCOMRAM  0002E
+start_initialization          cinit         012B6
+strlen@cp                     cstackBANK0   000F0
+strlen@s                      cstackBANK0   000EC
+wait_ms@time                  cstackBANK0   000F8
 wait_ms@timel                 bssCOMRAM     00032
-writeResult@dev               cstackCOMRAM  00030
-writeString@dev               cstackCOMRAM  0002A
-writeString@i                 cstackCOMRAM  0002D
-writeString@str               cstackCOMRAM  00028
+writeResult@dev               cstackBANK0   000FA
+writeString@dev               cstackBANK0   000F4
+writeString@i                 cstackBANK0   000F7
+writeString@str               cstackBANK0   000F2
 
 
 FUNCTION INFORMATION:
@@ -564,7 +582,7 @@ FUNCTION INFORMATION:
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  var             1   48[COMRAM] unsigned char 
+  var             1   15[BANK0 ] unsigned char 
   result          1    0        unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
@@ -576,9 +594,9 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        1 bytes
  Hardware stack levels required when called:    6
  This function calls:
@@ -600,11 +618,11 @@ Total ram usage:        1 bytes
 
  *************** function _writeResult *****************
  Defined at:
-		line 53 in file "bufferhandler.c"
+		line 56 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
   dev             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  dev             1   47[COMRAM] unsigned char 
+  dev             1   14[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -615,9 +633,9 @@ Total ram usage:        1 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -633,11 +651,11 @@ Total ram usage:        1 bytes
  Defined at:
 		line 97 in file "uart.c"
  Parameters:    Size  Location     Type
-  str             2   39[COMRAM] PTR unsigned char 
-		 -> realString(70), STR_2(4), STR_1(5), 
-  dev             1   41[COMRAM] unsigned char 
+  str             2    6[BANK0 ] PTR unsigned char 
+		 -> allDataString(70), STR_2(4), STR_1(5), 
+  dev             1    8[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  i               2   44[COMRAM] int 
+  i               2   11[BANK0 ] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -647,10 +665,10 @@ Total ram usage:        1 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       7       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        7 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -668,9 +686,9 @@ Total ram usage:        7 bytes
 		line 61 in file "uart.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
-  dev             1   33[COMRAM] unsigned char 
+  dev             1    0[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  data            1   34[COMRAM] unsigned char 
+  data            1    1[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -680,10 +698,10 @@ Total ram usage:        7 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
@@ -699,7 +717,7 @@ Total ram usage:        2 bytes
  Defined at:
 		line 35 in file "system.c"
  Parameters:    Size  Location     Type
-  time            2   45[COMRAM] int 
+  time            2   12[BANK0 ] int 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -711,10 +729,10 @@ Total ram usage:        2 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -730,12 +748,12 @@ Total ram usage:        2 bytes
  Defined at:
 		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c"
  Parameters:    Size  Location     Type
-  multiplier      4   33[COMRAM] unsigned long 
-  multiplicand    4   37[COMRAM] unsigned long 
+  multiplier      4    0[BANK0 ] unsigned long 
+  multiplicand    4    4[BANK0 ] unsigned long 
  Auto vars:     Size  Location     Type
-  product         4   41[COMRAM] unsigned long 
+  product         4    8[BANK0 ] unsigned long 
  Return value:  Size  Location     Type
-                  4   33[COMRAM] unsigned long 
+                  4    0[BANK0 ] unsigned long 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -743,10 +761,10 @@ Total ram usage:        2 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       8       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:        12       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      12       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       12 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
@@ -759,7 +777,7 @@ Total ram usage:       12 bytes
 
  *************** function _isValid *****************
  Defined at:
-		line 67 in file "bufferhandler.c"
+		line 70 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -789,7 +807,7 @@ Total ram usage:        0 bytes
 
  *************** function _isItLongEnough *****************
  Defined at:
-		line 30 in file "bufferhandler.c"
+		line 33 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -819,11 +837,11 @@ Total ram usage:        0 bytes
 
  *************** function _copyTmpBuffer *****************
  Defined at:
-		line 47 in file "bufferhandler.c"
+		line 50 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2   34[COMRAM] int 
+  i               2    1[BANK0 ] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -834,9 +852,9 @@ Total ram usage:        0 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        3 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
@@ -849,11 +867,11 @@ Total ram usage:        3 bytes
 
  *************** function _clearBuffer *****************
  Defined at:
-		line 39 in file "bufferhandler.c"
+		line 42 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2   39[COMRAM] int 
+  i               2    6[BANK0 ] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -864,9 +882,9 @@ Total ram usage:        3 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -881,13 +899,13 @@ Total ram usage:        2 bytes
  Defined at:
 		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c"
  Parameters:    Size  Location     Type
-  s               2   33[COMRAM] PTR const unsigned char 
-		 -> realString(70), tmpString(70), STR_2(4), STR_1(5), 
+  s               2    0[BANK0 ] PTR const unsigned char 
+		 -> allDataString(70), tmpString(70), STR_2(4), STR_1(5), 
  Auto vars:     Size  Location     Type
-  cp              2   37[COMRAM] PTR const unsigned char 
-		 -> realString(70), tmpString(70), STR_2(4), STR_1(5), 
+  cp              2    4[BANK0 ] PTR const unsigned char 
+		 -> allDataString(70), tmpString(70), STR_2(4), STR_1(5), 
  Return value:  Size  Location     Type
-                  2   33[COMRAM] unsigned int 
+                  2    0[BANK0 ] unsigned int 
  Registers used:
 		wreg, fsr0l, fsr0h, status,2, status,0, tblptrl, tblptrh, tblptru
  Tracked objects:
@@ -895,10 +913,10 @@ Total ram usage:        2 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        6 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
@@ -914,7 +932,7 @@ Total ram usage:        6 bytes
  Defined at:
 		line 31 in file "uart.c"
  Parameters:    Size  Location     Type
-  baudrate        4   33[COMRAM] const long 
+  baudrate        4    0[BANK0 ] const long 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -926,10 +944,10 @@ Total ram usage:        6 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        4 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
@@ -1062,7 +1080,7 @@ Total ram usage:       15 bytes
 
  *************** function _appendChar *****************
  Defined at:
-		line 24 in file "bufferhandler.c"
+		line 27 in file "bufferhandler.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1094,21 +1112,21 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 bufferhandler.c
-		_isValid       		CODE           	122C	0000	59
-		_writeResult   		CODE           	12BE	0000	33
-		_appendChar    		CODE           	1318	0000	25
-		_copyTmpBuffer 		CODE           	11EC	0000	65
-		_clearBuffer   		CODE           	11A6	0000	71
-		_isItLongEnough		CODE           	1330	0000	19
+		_isValid       		CODE           	12F8	0000	59
+		_writeResult   		CODE           	1364	0000	41
+		_appendChar    		CODE           	13CA	0000	25
+		_copyTmpBuffer 		CODE           	1262	0000	85
+		_clearBuffer   		CODE           	1208	0000	91
+		_isItLongEnough		CODE           	13E2	0000	19
 
-bufferhandler.c estimated size: 272
+bufferhandler.c estimated size: 320
 
 uart.c
-		_writeString   		CODE           	1048	0000	95
-		_UART_Init     		CODE           	1266	0000	51
-		_UART_Write    		CODE           	12FC	0000	29
+		_writeString   		CODE           	105E	0000	119
+		_UART_Init     		CODE           	1332	0000	51
+		_UART_Write    		CODE           	138C	0000	33
 
-uart.c estimated size: 175
+uart.c estimated size: 203
 
 interrupts.c
 		_high_isr      		CODE           	0008	0000	161
@@ -1117,33 +1135,33 @@ interrupts.c
 interrupts.c estimated size: 304
 
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
-		___lmul        		CODE           	10FC	0000	87
+		___lmul        		CODE           	10D4	0000	119
 
-C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c estimated size: 87
+C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c estimated size: 119
 
 shared
-		__initialization		CODE           	1298	0000	25
+		__initialization		CODE           	12B6	0000	57
 
-shared estimated size: 25
+shared estimated size: 57
 
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
-		_strlen        		CODE           	1152	0000	85
+		_strlen        		CODE           	114A	0000	101
 
-C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c estimated size: 85
+C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c estimated size: 101
 
 user.c
-		_InitApp       		CODE           	12DE	0000	31
+		_InitApp       		CODE           	13AC	0000	31
 
 user.c estimated size: 31
 
 main.c
-		_main          		CODE           	0F0C	0000	163
+		_main          		CODE           	0F0C	0000	185
 
-main.c estimated size: 163
+main.c estimated size: 185
 
 system.c
-		_ConfigureOscillator		CODE           	1342	0000	13
-		_wait_ms       		CODE           	10A6	0000	87
+		_ConfigureOscillator		CODE           	13F4	0000	13
+		_wait_ms       		CODE           	11AE	0000	91
 
-system.c estimated size: 100
+system.c estimated size: 104
 

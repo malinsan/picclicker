@@ -14,4 +14,6 @@ char isEmpty();
 
 char isValid();
 
-char parseTmpString();
+char parseString();
+
+char* createCHG(int);

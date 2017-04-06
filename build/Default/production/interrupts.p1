@@ -7685,10 +7685,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bufferhandler.h: 11: void writeResult(char dev);
 [; ;bufferhandler.h: 13: char isEmpty();
 [; ;bufferhandler.h: 15: char isValid();
-[; ;bufferhandler.h: 17: char parseTmpString();
-[v F8202 `(v ~T0 @X0 1 tf ]
+[; ;bufferhandler.h: 17: char parseString();
+[; ;bufferhandler.h: 19: char* createCHG(int);
+[v F8204 `(v ~T0 @X0 1 tf ]
 "30 interrupts.c
-[v _high_isr `IF8202 ~T0 @X0 1 e ]
+[v _high_isr `IF8204 ~T0 @X0 1 e ]
 "39
 {
 [; ;interrupts.c: 30: void interrupt high_isr(void)
@@ -7727,9 +7728,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "62
 [e :UE 912 ]
 }
-[v F8205 `(v ~T0 @X0 1 tf ]
+[v F8207 `(v ~T0 @X0 1 tf ]
 "66
-[v _low_isr `ILF8205 ~T0 @X0 1 e ]
+[v _low_isr `ILF8207 ~T0 @X0 1 e ]
 "74
 {
 [; ;interrupts.c: 66: void low_priority interrupt low_isr(void)

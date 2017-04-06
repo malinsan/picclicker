@@ -7748,7 +7748,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bufferhandler.h: 11: void writeResult(char dev);
 [; ;bufferhandler.h: 13: char isEmpty();
 [; ;bufferhandler.h: 15: char isValid();
-[; ;bufferhandler.h: 17: char parseTmpString();
+[; ;bufferhandler.h: 17: char parseString();
+[; ;bufferhandler.h: 19: char* createCHG(int);
 "39 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 "40

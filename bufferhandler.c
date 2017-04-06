@@ -8,6 +8,8 @@
 
 #include <xc.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "system.h"
 #include "user.h"
 #include "bufferhandler.h"
@@ -17,7 +19,8 @@
 
 
 char tmpString[70] = "";
-char realString[70] = "";
+char allDataString[70] = "";
+char parsedString[16] = "";
 int index = 0; //index for tmpString
 
 
@@ -46,13 +49,13 @@ void clearBuffer() {
 
 void copyTmpBuffer(){
     for(int i = 0; i<index; i++){
-        realString[i] = tmpString[i];
+        allDataString[i] = tmpString[i];
     }
 }
 
 void writeResult(char dev)
 {
-    writeString(realString, dev);
+    writeString(allDataString, dev);
     wait_ms(1000);
 }
 
@@ -75,7 +78,68 @@ char isValid(){
     return 0;
 }
 
-char parseTmpString(){
+char parseString(){
+    
+    //check to see how large CHG is, can be in 1-3 positions, [46,47,48]
+    int pos = 0;
+    for(int i = 47; i<49; i++){
+        pos++;
+        if(allDataString[i] == 0x3B){ //if the string = ';' then we are done 
+            break;
+        }
+    }
+    char* chg = createCHG(pos);
+    
+    //CHG
+    int ichg = atoi(chg);
+    
+    
+    //depending on 'pos', 
+    //1: plats 50-52 should be SOC
+    //2: plats 51-53
+    //3: plats 52-54
+    int startPos = 50;
+    switch(pos){
+        case 1 :
+            startPos = 50;
+            break;
+        case 2 :
+            startPos = 51;
+            break;
+        case 3 :
+            startPos = 52;
+            break;
+    }
+    
+    char tmpsoc [3] = "";
+    tmpsoc[0] = allDataString[50];
+    tmpsoc[1] = allDataString[51];
+    tmpsoc[2] = allDataString[52];
+    
+    int SOC [3] = "";
+    SOC[0] = allDataString[50];
+    SOC[1] = allDataString[51];
+    SOC[2] = allDataString[52];
+    
+    
+    
     return 0;
+}
+
+
+char* createCHG(int pos){
+    char *tmp = "";
+    switch(pos){
+        case 1 :
+            *tmp = allDataString[46];
+            break;
+        case 2 :
+            *tmp = allDataString[46] + allDataString[47];
+            break;
+        case 3 : 
+            *tmp = allDataString[46] + allDataString[47] + allDataString[48];
+            break;
+    }
+    return tmp;
 }
 
