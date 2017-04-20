@@ -74,6 +74,7 @@ void main(void)
                 wait_ms(1000);
                 copyTmpBuffer(); //copies tmpBuffer to the real string and empties the tmpBuffer
                 clearBuffer();
+                parseString(); //parse the allDataString into a string with the things we want
            }else{
                clearBuffer();
            }

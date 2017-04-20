@@ -55,7 +55,7 @@ void copyTmpBuffer(){
 
 void writeResult(char dev)
 {
-    writeString(allDataString, dev);
+    writeString(parsedString, dev);
     wait_ms(1000);
 }
 
@@ -114,15 +114,16 @@ char parseString(){
     //now assemble the SOC
     char tmpsoc [3] = "";
     int k = 0;
-    for(int i = pos; i< (pos+3); i++){
+    for(int i = startPos; i< (startPos+3); i++){
         tmpsoc[k] = allDataString[i];
         k++;
     }
     //SOC
     int SOC = atoi(tmpsoc);
     
+    parsedString = "SOC"+SOC+";CHG"+ichg+";ACK;";
     
-    return 0;
+    return 1;
 }
 
 
