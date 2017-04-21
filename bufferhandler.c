@@ -23,7 +23,7 @@ char allDataString[70] = "";
 char parsedString[17] = "";
 int index = 0; //index for tmpString
 
-int positions[10]; //variable to save all the positions of the BMS string, to be used in parsing
+int positions[11]; //variable to save all the positions of the BMS string, to be used in parsing
 
 //append the received char to the tmpString
 void appendChar(char data){
@@ -87,6 +87,14 @@ char isValid(){
  * 
  */
 char parseString(){
+    
+    //find SOC
+    //SOC should be at position 10 (9) in the positions array
+    int socPos = positions[9];
+    
+    
+    
+    
     
     //check to see how large CHG is, can be in 1-3 positions, [46,47,48]
     int pos = 0;
@@ -168,6 +176,8 @@ void checkString(){
         positions[i] = checkPos(i);
         positions[i+1] = positions[i] + 1;
     }
+    
+    positions[10] = '\0';
 }
 
 //check which position where the current attribute ends in the string
