@@ -57,7 +57,8 @@ void copyTmpBuffer(){
 
 void writeResult(char dev)
 {
-    writeString(parsedString, dev);
+//    writeString(parsedString, dev);
+    writeString(allDataString, dev);
     wait_ms(1000);
 }
 
@@ -89,56 +90,25 @@ char isValid(){
 char parseString(){
     
     //find SOC
-    //SOC should be at position 10 (9) in the positions array
-    int socPos = positions[9];
-    
-    
-    
-    
-    
-    //check to see how large CHG is, can be in 1-3 positions, [46,47,48]
-    int pos = 0;
-    for(int i = 47; i<49; i++){
-        pos++;
-        if(allDataString[i] == 0x3B){ //if the string = ';' then we are done 
-            break;
-        }
-    }
-    char* chg = createCHG(pos);
-    
-    //CHG
-    int ichg = atoi(chg);
-    
-    
-    //depending on 'pos', 
-    //1: plats 50-52 should be SOC
-    //2: plats 51-53
-    //3: plats 52-54
-    int startPos = 50;
-    switch(pos){
-        case 1 :
-            startPos = 50;
-            break;
-        case 2 :
-            startPos = 51;
-            break;
-        case 3 :
-            startPos = 52;
-            break;
-    }
-    
-    //now assemble the SOC
-    char tmpsoc [3] = "";
+    //SOCs startposition should be at the end of the one before SOC in the string, that is position[8]
+    //SOCs endposition should be at positions[9]
+    int socStartPos = positions[8]+1; //+1 and -1 to get rid of the ;
+    int socEndPos = positions[9]-1;
+    int socSize = (socEndPos - socStartPos)+1; //get size of SOC
+    //take what is at SOC and transform into a two-digit number 
+    int SOC[socSize];
+    //put SOC from allDataString into SOC
     int k = 0;
-    for(int i = startPos; i< (startPos+3); i++){
-        tmpsoc[k] = allDataString[i];
+    for(int i = socStartPos; i<=socEndPos; i++){
+        SOC[k] = allDataString[i];
         k++;
     }
-    //SOC
-    int SOC = atoi(tmpsoc);
     
-    //"SOC"+SOC+";CHG"+ichg+";ACK;"
-    strncpy(parsedString, "hej", 17);
+    
+    
+    
+    
+    
             
     return 1;
 }
@@ -170,7 +140,7 @@ void checkString(){
     //every string starts with the "TYRI_0_1;"
     //therefore we start at pos=9 to check
     //so then we have the time positions from pos=9 until we reach a new ';' and so on    
-    positions[0] = 9;
+    positions[0] = 8;
     
     for(int i = 0; i<10;i++){
         positions[i] = checkPos(i);
