@@ -103,14 +103,38 @@ char parseString(){
         SOC[k] = allDataString[i];
         k++;
     }
-    
-    
-    
-    
-    
-    
             
     return 1;
+}
+
+//transforms an array of ints into a two digit number, up to a size of 3
+int transformToTwoDigitNumber(int number[], int size){
+    
+    int result = 0;
+    switch(size){
+        case 1: //when size is 1, the number is a decimal between 0.0 - 0.9
+            if(number[0] >= 5){
+                return 1;
+            }else{
+                return 0;
+            }
+        case 2: //when size is 2, the number is a number between 10-99
+            result = number[0];
+            if(number[1] >= 5){
+                return result++;
+            }else{
+                return result;
+            }
+        case 3: 
+            result = (number[0]*10)+(number[1]);
+            if(number[2] >= 5){
+                 result++;
+                 return result;
+            }else{
+                return result;
+            }           
+    }
+    
 }
 
 
