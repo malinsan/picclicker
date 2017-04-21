@@ -16,4 +16,6 @@ char isValid();
 
 char parseString();
 
+int lenHelper(int);
+
 char* createCHG(int);

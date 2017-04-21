@@ -87,6 +87,9 @@ char isValid(){
  * SOCxx;CHGzz;ACK;
  * 
  */
+int SOC[3] = 0;
+int toCharArray[3] = 0;
+    
 char parseString(){
     
     //find SOC
@@ -96,18 +99,40 @@ char parseString(){
     int socEndPos = positions[9]-1;
     int socSize = (socEndPos - socStartPos)+1; //get size of SOC
     //take what is at SOC and transform into a two-digit number 
-    int SOC[socSize];
     //put SOC from allDataString into SOC
     int k = 0;
     for(int i = socStartPos; i<=socEndPos; i++){
         SOC[k] = allDataString[i];
         k++;
     }
-            
+    
+    //transform the int into a char
+    int tmp = transformToTwoDigitNumber(SOC, socSize);
+    
+    int count = lenHelper(tmp) - 1;
+    while(tmp > 0){
+        toCharArray[count] = tmp%10;
+        tmp /= 10;
+        count --;
+    }
+    
+      
+    return 1;
+}
+
+
+//simple function to get the length of an int
+int lenHelper(int x){
+    if(x>=1000) return 4;
+    if(x>=100) return 3;
+    if(x>=10) return 2;
     return 1;
 }
 
 //transforms an array of ints into a two digit number, up to a size of 3
+//e.g 793 => 79
+//e.g 79 => 8
+//e.g 7 => 1
 int transformToTwoDigitNumber(int number[], int size){
     
     int result = 0;
@@ -179,6 +204,7 @@ int checkPos(int pos){
     for(int i = pos+1; i < strlen(allDataString); i++){
         if(allDataString[i] == 0x3B){
             pos = i;
+            break;
         }
     }
     return pos;
