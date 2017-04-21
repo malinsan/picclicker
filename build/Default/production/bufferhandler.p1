@@ -9,6 +9,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _createCHG `(*uc ~T0 @X0 0 ef1`i ]
 "55 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdlib.h
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.41\include\string.h
+[v _strncpy `(*uc ~T0 @X0 0 ef3`*uc`*Cuc`ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7760,13 +7762,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;bufferhandler.c: 22: char allDataString[70] = "";
 "23
-[v _parsedString `uc ~T0 @X0 -> 16 `i e ]
+[v _parsedString `uc ~T0 @X0 -> 17 `i e ]
 [i _parsedString
 :U ..
 -> 0 `c
 ..
 ]
-[; ;bufferhandler.c: 23: char parsedString[16] = "";
+[; ;bufferhandler.c: 23: char parsedString[17] = "";
 "24
 [v _index `i ~T0 @X0 1 e ]
 [i _index
@@ -7903,9 +7905,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _dev `uc ~T0 @X0 1 r1 ]
 "57
 [f ]
-[; ;bufferhandler.c: 58: writeString(allDataString, dev);
+[; ;bufferhandler.c: 58: writeString(parsedString, dev);
 "58
-[e ( _writeString (2 , &U _allDataString _dev ]
+[e ( _writeString (2 , &U _parsedString _dev ]
 [; ;bufferhandler.c: 59: wait_ms(1000);
 "59
 [e ( _wait_ms (1 -> 1000 `i ]
@@ -7975,18 +7977,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 "79
 [e :UE 935 ]
 }
-"81
+"87
 [v _parseString `(uc ~T0 @X0 1 ef ]
 {
-[; ;bufferhandler.c: 81: char parseString(){
+[; ;bufferhandler.c: 87: char parseString(){
 [e :U _parseString ]
 [f ]
-"84
+"90
 [v _pos `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 84: int pos = 0;
+[; ;bufferhandler.c: 90: int pos = 0;
 [e = _pos -> 0 `i ]
-[; ;bufferhandler.c: 85: for(int i = 47; i<49; i++){
-"85
+[; ;bufferhandler.c: 91: for(int i = 47; i<49; i++){
+"91
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 47 `i ]
@@ -7994,83 +7996,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 939  ]
 [e :U 938 ]
 {
-[; ;bufferhandler.c: 86: pos++;
-"86
+[; ;bufferhandler.c: 92: pos++;
+"92
 [e ++ _pos -> 1 `i ]
-[; ;bufferhandler.c: 87: if(allDataString[i] == 0x3B){
-"87
+[; ;bufferhandler.c: 93: if(allDataString[i] == 0x3B){
+"93
 [e $ ! == -> *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> 59 `i 941  ]
 {
-[; ;bufferhandler.c: 88: break;
-"88
+[; ;bufferhandler.c: 94: break;
+"94
 [e $U 939  ]
-"89
+"95
 }
 [e :U 941 ]
-"90
+"96
 }
-"85
+"91
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 49 `i 938  ]
 [e :U 939 ]
-"90
+"96
 }
-"91
+"97
 [v _chg `*uc ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 89: }
-[; ;bufferhandler.c: 90: }
-[; ;bufferhandler.c: 91: char* chg = createCHG(pos);
+[; ;bufferhandler.c: 95: }
+[; ;bufferhandler.c: 96: }
+[; ;bufferhandler.c: 97: char* chg = createCHG(pos);
 [e = _chg ( _createCHG (1 _pos ]
-"94
+"100
 [v _ichg `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 94: int ichg = atoi(chg);
+[; ;bufferhandler.c: 100: int ichg = atoi(chg);
 [e = _ichg ( _atoi (1 -> _chg `*Cuc ]
-"101
+"107
 [v _startPos `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 101: int startPos = 50;
+[; ;bufferhandler.c: 107: int startPos = 50;
 [e = _startPos -> 50 `i ]
-[; ;bufferhandler.c: 102: switch(pos){
-"102
+[; ;bufferhandler.c: 108: switch(pos){
+"108
 [e $U 943  ]
 {
-[; ;bufferhandler.c: 103: case 1 :
-"103
-[e :U 944 ]
-[; ;bufferhandler.c: 104: startPos = 50;
-"104
-[e = _startPos -> 50 `i ]
-[; ;bufferhandler.c: 105: break;
-"105
-[e $U 942  ]
-[; ;bufferhandler.c: 106: case 2 :
-"106
-[e :U 945 ]
-[; ;bufferhandler.c: 107: startPos = 51;
-"107
-[e = _startPos -> 51 `i ]
-[; ;bufferhandler.c: 108: break;
-"108
-[e $U 942  ]
-[; ;bufferhandler.c: 109: case 3 :
+[; ;bufferhandler.c: 109: case 1 :
 "109
-[e :U 946 ]
-[; ;bufferhandler.c: 110: startPos = 52;
+[e :U 944 ]
+[; ;bufferhandler.c: 110: startPos = 50;
 "110
-[e = _startPos -> 52 `i ]
+[e = _startPos -> 50 `i ]
 [; ;bufferhandler.c: 111: break;
 "111
 [e $U 942  ]
+[; ;bufferhandler.c: 112: case 2 :
 "112
-}
-[; ;bufferhandler.c: 112: }
+[e :U 945 ]
+[; ;bufferhandler.c: 113: startPos = 51;
+"113
+[e = _startPos -> 51 `i ]
+[; ;bufferhandler.c: 114: break;
+"114
 [e $U 942  ]
-"102
+[; ;bufferhandler.c: 115: case 3 :
+"115
+[e :U 946 ]
+[; ;bufferhandler.c: 116: startPos = 52;
+"116
+[e = _startPos -> 52 `i ]
+[; ;bufferhandler.c: 117: break;
+"117
+[e $U 942  ]
+"118
+}
+[; ;bufferhandler.c: 118: }
+[e $U 942  ]
+"108
 [e :U 943 ]
 [e [\ _pos , $ -> 1 `i 944
  , $ -> 2 `i 945
  , $ -> 3 `i 946
  942 ]
-"112
+"118
 [e :U 942 ]
 [v F8386 `uc ~T0 @X0 -> 3 `i s ]
 [i F8386
@@ -8078,111 +8080,115 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"115
+"121
 [v _tmpsoc `uc ~T0 @X0 -> 3 `i a ]
-[; ;bufferhandler.c: 115: char tmpsoc [3] = "";
+[; ;bufferhandler.c: 121: char tmpsoc [3] = "";
 [e = _tmpsoc F8386 ]
-"116
+"122
 [v _k `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 116: int k = 0;
+[; ;bufferhandler.c: 122: int k = 0;
 [e = _k -> 0 `i ]
-[; ;bufferhandler.c: 117: for(int i = pos; i< (pos+3); i++){
-"117
+[; ;bufferhandler.c: 123: for(int i = startPos; i< (startPos+3); i++){
+"123
 {
 [v _i `i ~T0 @X0 1 a ]
-[e = _i _pos ]
+[e = _i _startPos ]
 [e $U 950  ]
 [e :U 947 ]
 {
-[; ;bufferhandler.c: 118: tmpsoc[k] = allDataString[i];
-"118
+[; ;bufferhandler.c: 124: tmpsoc[k] = allDataString[i];
+"124
 [e = *U + &U _tmpsoc * -> -> _k `ui `ux -> -> # *U &U _tmpsoc `ui `ux *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux ]
-[; ;bufferhandler.c: 119: k++;
-"119
+[; ;bufferhandler.c: 125: k++;
+"125
 [e ++ _k -> 1 `i ]
-"120
+"126
 }
-"117
+"123
 [e ++ _i -> 1 `i ]
 [e :U 950 ]
-[e $ < _i + _pos -> 3 `i 947  ]
+[e $ < _i + _startPos -> 3 `i 947  ]
 [e :U 948 ]
-"120
-}
-"122
-[v _SOC `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 120: }
-[; ;bufferhandler.c: 122: int SOC = atoi(tmpsoc);
-[e = _SOC ( _atoi (1 -> &U _tmpsoc `*Cuc ]
-[; ;bufferhandler.c: 125: return 0;
-"125
-[e ) -> -> 0 `i `uc ]
-[e $UE 937  ]
-[; ;bufferhandler.c: 126: }
 "126
+}
+"128
+[v _SOC `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 126: }
+[; ;bufferhandler.c: 128: int SOC = atoi(tmpsoc);
+[e = _SOC ( _atoi (1 -> &U _tmpsoc `*Cuc ]
+[; ;bufferhandler.c: 131: strncpy(parsedString, "hej",17);
+"131
+[e ( _strncpy (3 , , &U _parsedString :s 2C -> -> 17 `i `ui ]
+[; ;bufferhandler.c: 133: return 1;
+"133
+[e ) -> -> 1 `i `uc ]
+[e $UE 937  ]
+[; ;bufferhandler.c: 134: }
+"134
 [e :UE 937 ]
 }
-"129
+"137
 [v _createCHG `(*uc ~T0 @X0 1 ef1`i ]
 {
-[; ;bufferhandler.c: 129: char* createCHG(int pos){
+[; ;bufferhandler.c: 137: char* createCHG(int pos){
 [e :U _createCHG ]
 [v _pos `i ~T0 @X0 1 r1 ]
 [f ]
-"130
+"138
 [v _tmp `*uc ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 130: char *tmp = "";
-[e = _tmp -> :s 2C `*uc ]
-[; ;bufferhandler.c: 131: switch(pos){
-"131
+[; ;bufferhandler.c: 138: char *tmp = "";
+[e = _tmp -> :s 3C `*uc ]
+[; ;bufferhandler.c: 139: switch(pos){
+"139
 [e $U 953  ]
 {
-[; ;bufferhandler.c: 132: case 1 :
-"132
-[e :U 954 ]
-[; ;bufferhandler.c: 133: *tmp = allDataString[46];
-"133
-[e = *U _tmp *U + &U _allDataString * -> -> -> 46 `i `ui `ux -> -> # *U &U _allDataString `ui `ux ]
-[; ;bufferhandler.c: 134: break;
-"134
-[e $U 952  ]
-[; ;bufferhandler.c: 135: case 2 :
-"135
-[e :U 955 ]
-[; ;bufferhandler.c: 136: *tmp = allDataString[46] + allDataString[47];
-"136
-[e = *U _tmp -> + -> *U + &U _allDataString * -> -> -> 46 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> *U + &U _allDataString * -> -> -> 47 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i `uc ]
-[; ;bufferhandler.c: 137: break;
-"137
-[e $U 952  ]
-[; ;bufferhandler.c: 138: case 3 :
-"138
-[e :U 956 ]
-[; ;bufferhandler.c: 139: *tmp = allDataString[46] + allDataString[47] + allDataString[48];
-"139
-[e = *U _tmp -> + + -> *U + &U _allDataString * -> -> -> 46 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> *U + &U _allDataString * -> -> -> 47 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> *U + &U _allDataString * -> -> -> 48 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i `uc ]
-[; ;bufferhandler.c: 140: break;
+[; ;bufferhandler.c: 140: case 1 :
 "140
-[e $U 952  ]
+[e :U 954 ]
+[; ;bufferhandler.c: 141: *tmp = allDataString[46];
 "141
-}
-[; ;bufferhandler.c: 141: }
+[e = *U _tmp *U + &U _allDataString * -> -> -> 46 `i `ui `ux -> -> # *U &U _allDataString `ui `ux ]
+[; ;bufferhandler.c: 142: break;
+"142
 [e $U 952  ]
-"131
+[; ;bufferhandler.c: 143: case 2 :
+"143
+[e :U 955 ]
+[; ;bufferhandler.c: 144: *tmp = allDataString[46] + allDataString[47];
+"144
+[e = *U _tmp -> + -> *U + &U _allDataString * -> -> -> 46 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> *U + &U _allDataString * -> -> -> 47 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i `uc ]
+[; ;bufferhandler.c: 145: break;
+"145
+[e $U 952  ]
+[; ;bufferhandler.c: 146: case 3 :
+"146
+[e :U 956 ]
+[; ;bufferhandler.c: 147: *tmp = allDataString[46] + allDataString[47] + allDataString[48];
+"147
+[e = *U _tmp -> + + -> *U + &U _allDataString * -> -> -> 46 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> *U + &U _allDataString * -> -> -> 47 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> *U + &U _allDataString * -> -> -> 48 `i `ui `ux -> -> # *U &U _allDataString `ui `ux `i `uc ]
+[; ;bufferhandler.c: 148: break;
+"148
+[e $U 952  ]
+"149
+}
+[; ;bufferhandler.c: 149: }
+[e $U 952  ]
+"139
 [e :U 953 ]
 [e [\ _pos , $ -> 1 `i 954
  , $ -> 2 `i 955
  , $ -> 3 `i 956
  952 ]
-"141
+"149
 [e :U 952 ]
-[; ;bufferhandler.c: 142: return tmp;
-"142
+[; ;bufferhandler.c: 150: return tmp;
+"150
 [e ) _tmp ]
 [e $UE 951  ]
-[; ;bufferhandler.c: 143: }
-"143
+[; ;bufferhandler.c: 151: }
+"151
 [e :UE 951 ]
 }
+[a 2C 104 101 106 0 ]
 [a 1C 0 ]
-[a 2C 0 ]
+[a 3C 0 ]

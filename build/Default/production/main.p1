@@ -47,6 +47,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _wait_ms `(v ~T0 @X0 0 ef1`i ]
 "23 uart.h
 [v _copyTmpBuffer `(v ~T0 @X0 0 ef ]
+"17 bufferhandler.h
+[v _parseString `(uc ~T0 @X0 0 ef ]
 "9686 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
 [s S462 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S462 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
@@ -7828,52 +7830,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 76: clearBuffer();
 "76
 [e ( _clearBuffer ..  ]
+[; ;main.c: 77: parseString();
 "77
+[e ( _parseString ..  ]
+"78
 }
-[; ;main.c: 77: }else{
+[; ;main.c: 78: }else{
 [e $U 918  ]
 [e :U 917 ]
 {
-[; ;main.c: 78: clearBuffer();
-"78
-[e ( _clearBuffer ..  ]
+[; ;main.c: 79: clearBuffer();
 "79
-}
-[e :U 918 ]
+[e ( _clearBuffer ..  ]
 "80
 }
-[; ;main.c: 79: }
-[; ;main.c: 80: }else{
+[e :U 918 ]
+"81
+}
+[; ;main.c: 80: }
+[; ;main.c: 81: }else{
 [e $U 919  ]
 [e :U 916 ]
 {
-[; ;main.c: 81: LATAbits.LATA1 = 0;
-"81
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 82: LATAbits.LATA1 = 0;
 "82
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+"83
 }
 [e :U 919 ]
-[; ;main.c: 82: }
-[; ;main.c: 84: if(!PORTDbits.RD3){
-"84
+[; ;main.c: 83: }
+[; ;main.c: 85: if(!PORTDbits.RD3){
+"85
 [e $ ! ! != -> . . _PORTDbits 0 3 `i -> -> -> 0 `i `Vuc `i 920  ]
 {
-[; ;main.c: 85: writeResult(2);
-"85
-[e ( _writeResult (1 -> -> 2 `i `uc ]
+[; ;main.c: 86: writeResult(2);
 "86
+[e ( _writeResult (1 -> -> 2 `i `uc ]
+"87
 }
 [e :U 920 ]
-"89
+"90
 }
 [e :U 913 ]
 "68
 [e $U 914  ]
 [e :U 915 ]
-[; ;main.c: 86: }
-[; ;main.c: 89: }
-[; ;main.c: 133: }
-"133
+[; ;main.c: 87: }
+[; ;main.c: 90: }
+[; ;main.c: 134: }
+"134
 [e :UE 912 ]
 }
 [a 2C 68 32 56 0 ]

@@ -15,7 +15,9 @@
 [v _writeResult writeResult `(v  1 e 1 0 ]
 "70
 [v _isValid isValid `(uc  1 e 1 0 ]
-"129
+"87
+[v _parseString parseString `(uc  1 e 1 0 ]
+"137
 [v _createCHG createCHG `(*.32uc  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\atoi.c
 [v _atoi atoi `(i  1 e 2 0 ]
@@ -41,6 +43,8 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncpy.c
+[v _strncpy strncpy `(*.39uc  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
@@ -67,6 +71,8 @@
 [v _tmpString tmpString `[70]uc  1 e 70 0 ]
 "22
 [v _allDataString allDataString `[70]uc  1 e 70 0 ]
+"23
+[v _parsedString parsedString `[17]uc  1 e 17 0 ]
 "24
 [v _index index `i  1 e 2 0 ]
 "1092 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
@@ -75,7 +81,7 @@
 [v _RPOR8 RPOR8 `VEuc  1 e 1 @3784 ]
 "1315
 [v _RPINR16 RPINR16 `VEuc  1 e 1 @3831 ]
-[s S367 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S371 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -85,7 +91,7 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "8139
-[s S466 . 1 `uc 1 ABDEN2 1 0 :1:0 
+[s S470 . 1 `uc 1 ABDEN2 1 0 :1:0 
 `uc 1 WUE2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG162 1 0 :1:3 
@@ -94,17 +100,17 @@
 `uc 1 RCIDL2 1 0 :1:6 
 `uc 1 ABDOVF2 1 0 :1:7 
 ]
-[s S475 . 1 `uc 1 . 1 0 :4:0 
+[s S479 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXCKP2 1 0 :1:4 
 `uc 1 RXDTP2 1 0 :1:5 
 `uc 1 RCMT2 1 0 :1:6 
 ]
-[u S480 . 1 `S367 1 . 1 0 `S466 1 . 1 0 `S475 1 . 1 0 ]
-[v _BAUDCON2bits BAUDCON2bits `VES480  1 e 1 @3964 ]
+[u S484 . 1 `S371 1 . 1 0 `S470 1 . 1 0 `S479 1 . 1 0 ]
+[v _BAUDCON2bits BAUDCON2bits `VES484  1 e 1 @3964 ]
 "8228
 [v _SPBRGH2 SPBRGH2 `VEuc  1 e 1 @3965 ]
 "8307
-[s S376 . 1 `uc 1 ABDEN1 1 0 :1:0 
+[s S380 . 1 `uc 1 ABDEN1 1 0 :1:0 
 `uc 1 WUE1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG161 1 0 :1:3 
@@ -113,30 +119,30 @@
 `uc 1 RCIDL1 1 0 :1:6 
 `uc 1 ABDOVF1 1 0 :1:7 
 ]
-[s S385 . 1 `uc 1 . 1 0 :4:0 
+[s S389 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 `uc 1 DTRXP1 1 0 :1:5 
 `uc 1 RCMT 1 0 :1:6 
 ]
-[s S390 . 1 `uc 1 . 1 0 :4:0 
+[s S394 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP1 1 0 :1:4 
 `uc 1 RXDTP1 1 0 :1:5 
 `uc 1 RCMT1 1 0 :1:6 
 ]
-[s S395 . 1 `uc 1 . 1 0 :4:0 
+[s S399 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXCKP1 1 0 :1:4 
 ]
-[s S398 . 1 `uc 1 . 1 0 :5:0 
+[s S402 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXCKP 1 0 :1:5 
 ]
-[s S401 . 1 `uc 1 . 1 0 :1:0 
+[s S405 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 W4E 1 0 :1:1 
 ]
-[u S404 . 1 `S367 1 . 1 0 `S376 1 . 1 0 `S385 1 . 1 0 `S390 1 . 1 0 `S395 1 . 1 0 `S398 1 . 1 0 `S401 1 . 1 0 ]
-[v _BAUDCON1bits BAUDCON1bits `VES404  1 e 1 @3966 ]
+[u S408 . 1 `S371 1 . 1 0 `S380 1 . 1 0 `S389 1 . 1 0 `S394 1 . 1 0 `S399 1 . 1 0 `S402 1 . 1 0 `S405 1 . 1 0 ]
+[v _BAUDCON1bits BAUDCON1bits `VES408  1 e 1 @3966 ]
 "8753
 [v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @3967 ]
-[s S191 . 1 `uc 1 RD0 1 0 :1:0 
+[s S195 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -146,7 +152,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "9721
-[s S200 . 1 `uc 1 PMD0 1 0 :1:0 
+[s S204 . 1 `uc 1 PMD0 1 0 :1:0 
 `uc 1 PMD1 1 0 :1:1 
 `uc 1 PMD2 1 0 :1:2 
 `uc 1 PMD3 1 0 :1:3 
@@ -155,7 +161,7 @@
 `uc 1 PMD6 1 0 :1:6 
 `uc 1 PMD7 1 0 :1:7 
 ]
-[s S209 . 1 `uc 1 SCL2 1 0 :1:0 
+[s S213 . 1 `uc 1 SCL2 1 0 :1:0 
 `uc 1 SDA2 1 0 :1:1 
 `uc 1 RP19 1 0 :1:2 
 `uc 1 RP20 1 0 :1:3 
@@ -164,11 +170,11 @@
 `uc 1 RP23 1 0 :1:6 
 `uc 1 RP24 1 0 :1:7 
 ]
-[s S218 . 1 `uc 1 . 1 0 :7:0 
+[s S222 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S221 . 1 `S191 1 . 1 0 `S200 1 . 1 0 `S209 1 . 1 0 `S218 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES221  1 e 1 @3971 ]
+[u S225 . 1 `S195 1 . 1 0 `S204 1 . 1 0 `S213 1 . 1 0 `S222 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES225  1 e 1 @3971 ]
 [s S22 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
@@ -214,25 +220,25 @@
 "11103
 [u S158 . 1 `S149 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES158  1 e 1 @3989 ]
-[s S321 . 1 `uc 1 TUN 1 0 :6:0 
+[s S325 . 1 `uc 1 TUN 1 0 :6:0 
 `uc 1 PLLEN 1 0 :1:6 
 `uc 1 INTSRC 1 0 :1:7 
 ]
 "11530
-[s S325 . 1 `uc 1 TUN0 1 0 :1:0 
+[s S329 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
 `uc 1 TUN4 1 0 :1:4 
 `uc 1 TUN5 1 0 :1:5 
 ]
-[u S332 . 1 `S321 1 . 1 0 `S325 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES332  1 e 1 @3995 ]
+[u S336 . 1 `S325 1 . 1 0 `S329 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES336  1 e 1 @3995 ]
 "11579
 [v _RCSTA2 RCSTA2 `VEuc  1 e 1 @3996 ]
 "12568
 [v _TXSTA2 TXSTA2 `VEuc  1 e 1 @4008 ]
-[s S512 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S516 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -242,7 +248,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "12600
-[s S585 . 1 `uc 1 TX9D2 1 0 :1:0 
+[s S589 . 1 `uc 1 TX9D2 1 0 :1:0 
 `uc 1 TRMT2 1 0 :1:1 
 `uc 1 BRGH2 1 0 :1:2 
 `uc 1 SENDB2 1 0 :1:3 
@@ -251,12 +257,12 @@
 `uc 1 TX92 1 0 :1:6 
 `uc 1 CSRC2 1 0 :1:7 
 ]
-[s S594 . 1 `uc 1 TXD82 1 0 :1:0 
+[s S598 . 1 `uc 1 TXD82 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_92 1 0 :1:6 
 ]
-[u S598 . 1 `S512 1 . 1 0 `S585 1 . 1 0 `S594 1 . 1 0 ]
-[v _TXSTA2bits TXSTA2bits `VES598  1 e 1 @4008 ]
+[u S602 . 1 `S516 1 . 1 0 `S589 1 . 1 0 `S598 1 . 1 0 ]
+[v _TXSTA2bits TXSTA2bits `VES602  1 e 1 @4008 ]
 "12694
 [v _TXREG2 TXREG2 `VEuc  1 e 1 @4009 ]
 "12713
@@ -268,17 +274,17 @@
 "13088
 [v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4013 ]
 "13133
-[s S521 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S525 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S525 . 1 `uc 1 . 1 0 :6:0 
+[s S529 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_TX8 1 0 :1:6 
 ]
-[s S528 . 1 `uc 1 . 1 0 :6:0 
+[s S532 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S531 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S535 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -287,30 +293,30 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[u S540 . 1 `S512 1 . 1 0 `S521 1 . 1 0 `S525 1 . 1 0 `S528 1 . 1 0 `S531 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES540  1 e 1 @4013 ]
+[u S544 . 1 `S516 1 . 1 0 `S525 1 . 1 0 `S529 1 . 1 0 `S532 1 . 1 0 `S535 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES544  1 e 1 @4013 ]
 "13375
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4014 ]
 "13412
 [v _RCREG1 RCREG1 `VEuc  1 e 1 @4015 ]
 "13449
 [v _SPBRG1 SPBRG1 `VEuc  1 e 1 @4016 ]
-[s S291 . 1 `uc 1 SCS 1 0 :2:0 
+[s S295 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 FLTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "17813
-[s S297 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S301 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S304 . 1 `S291 1 . 1 0 `S297 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES304  1 e 1 @4051 ]
+[u S308 . 1 `S295 1 . 1 0 `S301 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES308  1 e 1 @4051 ]
 "18656
 [v _INTCON INTCON `VEuc  1 e 1 @4082 ]
 "21023
@@ -335,8 +341,8 @@
 [v _main main `(v  1 e 1 0 ]
 {
 "56
-[v main@var var `uc  1 a 1 12 ]
-"133
+[v main@var var `uc  1 a 1 31 ]
+"134
 } 0
 "56 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _writeResult writeResult `(v  1 e 1 0 ]
@@ -344,17 +350,17 @@
 [v writeResult@dev dev `uc  1 a 1 wreg ]
 [v writeResult@dev dev `uc  1 a 1 wreg ]
 "58
-[v writeResult@dev dev `uc  1 a 1 35 ]
+[v writeResult@dev dev `uc  1 a 1 37 ]
 "60
 } 0
 "97 C:\Users\tomas\Documents\GIT\PicClicker\uart.c
 [v _writeString writeString `(v  1 e 1 0 ]
 {
 "99
-[v writeString@i i `i  1 a 2 9 ]
+[v writeString@i i `i  1 a 2 7 ]
 "97
-[v writeString@str str `*.34uc  1 p 2 4 ]
-[v writeString@dev dev `uc  1 p 1 6 ]
+[v writeString@str str `*.34uc  1 p 2 2 ]
+[v writeString@dev dev `uc  1 p 1 4 ]
 "103
 } 0
 "61
@@ -370,7 +376,7 @@
 "35 C:\Users\tomas\Documents\GIT\PicClicker\system.c
 [v _wait_ms wait_ms `(v  1 e 1 0 ]
 {
-[v wait_ms@time time `i  1 p 2 33 ]
+[v wait_ms@time time `i  1 p 2 8 ]
 "37
 [v wait_ms@timel timel `l  1 s 4 timel ]
 "40
@@ -379,11 +385,86 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 {
 "17
-[v ___lmul@product product `ul  1 a 4 8 ]
+[v ___lmul@product product `ul  1 a 4 33 ]
 "15
 [v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
+} 0
+"87 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+[v _parseString parseString `(uc  1 e 1 0 ]
+{
+"123
+[v parseString@i_730 i `i  1 a 2 25 ]
+"91
+[v parseString@i i `i  1 a 2 29 ]
+"121
+[v parseString@tmpsoc tmpsoc `[3]uc  1 a 3 18 ]
+"107
+[v parseString@startPos startPos `i  1 a 2 27 ]
+"90
+[v parseString@pos pos `i  1 a 2 23 ]
+"122
+[v parseString@k k `i  1 a 2 21 ]
+"97
+[v parseString@chg chg `*.32uc  1 a 2 16 ]
+"128
+[v parseString@SOC SOC `i  1 a 2 14 ]
+"100
+[v parseString@ichg ichg `i  1 a 2 12 ]
+"118
+[v parseString@F8386 F8386 `[3]uc  1 s 3 F8386 ]
+"134
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncpy.c
+[v _strncpy strncpy `(*.39uc  1 e 2 0 ]
+{
+"15
+[v strncpy@cp cp `*.39uc  1 a 2 33 ]
+"8
+[v strncpy@to to `*.39uc  1 p 2 0 ]
+[v strncpy@from from `*.32Cuc  1 p 2 2 ]
+[v strncpy@size size `ui  1 p 2 4 ]
+"27
+} 0
+"137 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+[v _createCHG createCHG `(*.32uc  1 e 2 0 ]
+{
+"138
+[v createCHG@tmp tmp `*.32uc  1 a 2 0 ]
+"137
+[v createCHG@pos pos `i  1 p 2 33 ]
+"151
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+{
+"7
+[v atoi@a a `i  1 a 2 7 ]
+"8
+[v atoi@sign sign `uc  1 a 1 6 ]
+"5
+[v atoi@s s `*.34Cuc  1 p 2 2 ]
+"24
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 35 ]
+"15
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 0 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 33 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 35 ]
+"53
 } 0
 "70 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _isValid isValid `(uc  1 e 1 0 ]
@@ -406,14 +487,14 @@
 [v _clearBuffer clearBuffer `(v  1 e 1 0 ]
 {
 "43
-[v clearBuffer@i i `i  1 a 2 4 ]
+[v clearBuffer@i i `i  1 a 2 2 ]
 "48
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "6
-[v strlen@cp cp `*.34Cuc  1 a 2 2 ]
+[v strlen@cp cp `*.34Cuc  1 a 2 0 ]
 "4
 [v strlen@s s `*.34Cuc  1 p 2 33 ]
 "13
@@ -421,7 +502,7 @@
 "31 C:\Users\tomas\Documents\GIT\PicClicker\uart.c
 [v _UART_Init UART_Init `(uc  1 e 1 0 ]
 {
-[v UART_Init@baudrate baudrate `Cl  1 p 4 0 ]
+[v UART_Init@baudrate baudrate `Cl  1 p 4 33 ]
 "58
 } 0
 "29 C:\Users\tomas\Documents\GIT\PicClicker\user.c

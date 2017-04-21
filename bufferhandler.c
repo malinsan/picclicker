@@ -20,10 +20,12 @@
 
 char tmpString[70] = "";
 char allDataString[70] = "";
-char parsedString[16] = "";
+char parsedString[17] = "";
 int index = 0; //index for tmpString
 
+int positions[10]; //variable to save all the positions of the BMS string, to be used in parsing
 
+//append the received char to the tmpString
 void appendChar(char data){
     tmpString[index] = data;
     index++;
@@ -72,12 +74,18 @@ char isValid(){
             tmpString[1] == 0x59 && //if second position is = Y
             tmpString[2] == 0x52 && //if third position is = R
             tmpString[3] == 0x49 && //if fourth position is = I
-            tmpString[4] == 0x5F){
+            tmpString[4] == 0x5F){//if fifth position is = _
         return 1;
-    } //if fifth position is = _
+    } 
     return 0;
 }
 
+
+/*
+ * Transforms the allDataString into a parsedString that only contains 
+ * SOCxx;CHGzz;ACK;
+ * 
+ */
 char parseString(){
     
     //check to see how large CHG is, can be in 1-3 positions, [46,47,48]
@@ -121,8 +129,9 @@ char parseString(){
     //SOC
     int SOC = atoi(tmpsoc);
     
-    parsedString = "SOC"+SOC+";CHG"+ichg+";ACK;";
-    
+    //"SOC"+SOC+";CHG"+ichg+";ACK;"
+    strncpy(parsedString, "hej", 17);
+            
     return 1;
 }
 
@@ -140,6 +149,34 @@ char* createCHG(int pos){
             *tmp = allDataString[46] + allDataString[47] + allDataString[48];
             break;
     }
+    //then see if tmp is a negative number
+    //if negative CHG = 1
+    //if positive CHG = 0
     return tmp;
+}
+
+
+//check the allDataString and set the positions for getting CHG and SOC 
+void checkString(){
+    //every string is made out of 10 modules, each separated by a ';' = 0x3B
+    //every string starts with the "TYRI_0_1;"
+    //therefore we start at pos=9 to check
+    //so then we have the time positions from pos=9 until we reach a new ';' and so on    
+    positions[0] = 9;
+    
+    for(int i = 0; i<10;i++){
+        positions[i] = checkPos(i);
+        positions[i+1] = positions[i] + 1;
+    }
+}
+
+//check which position where the current attribute ends in the string
+int checkPos(int pos){
+    for(int i = pos+1; i < strlen(allDataString); i++){
+        if(allDataString[i] == 0x3B){
+            pos = i;
+        }
+    }
+    return pos;
 }
 
