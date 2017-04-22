@@ -10265,7 +10265,13 @@ char isValid();
 
 char parseString();
 
-char* createCHG(int);
+int lenHelper(int);
+
+int transformToTwoDigitNumber(int [], int);
+
+void checkString();
+
+int checkPos(int);
 
 # 39 "main.c"
 void main(void)

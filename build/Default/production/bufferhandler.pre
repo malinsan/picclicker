@@ -10273,7 +10273,13 @@ char isValid();
 
 char parseString();
 
-char* createCHG(int);
+int lenHelper(int);
+
+int transformToTwoDigitNumber(int [], int);
+
+void checkString();
+
+int checkPos(int);
 
 # 4 "uart.h"
 char UART_Init(const long int baudrate);
@@ -10368,6 +10374,10 @@ return 0;
 }
 
 # 90
+int SOC[3] = 0;
+int toCharArray[3] = 0;
+char charSOC[3] = "";
+
 char parseString(){
 
 
@@ -10377,7 +10387,6 @@ int socStartPos = positions[8]+1;
 int socEndPos = positions[9]-1;
 int socSize = (socEndPos - socStartPos)+1;
 
-int SOC[socSize] = 0;
 
 int k = 0;
 for(int i = socStartPos; i<=socEndPos; i++){
@@ -10385,14 +10394,54 @@ SOC[k] = allDataString[i];
 k++;
 }
 
-
 int tmp = transformToTwoDigitNumber(SOC, socSize);
-int toCharArray[lenHelper(tmp)] = 0;
+
 
 int count = lenHelper(tmp) - 1;
 while(tmp > 0){
-
+toCharArray[count] = tmp%10;
+charSOC[count] = (tmp%10)+48;
+tmp /= 10;
+count --;
 }
+
+
+
+int chgStart = positions[6] + 1;
+int chgStop = positions[7] - 1;
+
+
+char CHG = '0';
+
+if(allDataString[chgStart] == 0x2D){
+CHG = '1';
+}
+
+
+
+
+int parsedStringSize = 13 + count;
+int n = 4;
+
+parsedString[0] = 'S';
+parsedString[1] = 'O';
+parsedString[2] = 'C';
+parsedString[3] = charSOC[0];
+if(count > 0){
+parsedString[4] = charSOC[1];
+n ++;
+}
+parsedString[n] = ";";
+parsedString[n+1] = "C";
+parsedString[n+2] = "H";
+parsedString[n+3] = "G";
+parsedString[n+4] = CHG;
+parsedString[n+5] = ";";
+parsedString[n+6] = "A";
+parsedString[n+7] = "C";
+parsedString[n+8] = "K";
+parsedString[n+9] = ";";
+
 
 
 return 1;
@@ -10407,7 +10456,7 @@ if(x>=10) return 2;
 return 1;
 }
 
-# 133
+# 176
 int transformToTwoDigitNumber(int number[], int size){
 
 int result = 0;
@@ -10435,26 +10484,6 @@ return result;
 }
 }
 
-}
-
-
-char* createCHG(int pos){
-char *tmp = "";
-switch(pos){
-case 1 :
-*tmp = allDataString[46];
-break;
-case 2 :
-*tmp = allDataString[46] + allDataString[47];
-break;
-case 3 :
-*tmp = allDataString[46] + allDataString[47] + allDataString[48];
-break;
-}
-
-
-
-return tmp;
 }
 
 

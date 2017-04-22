@@ -18,4 +18,8 @@ char parseString();
 
 int lenHelper(int);
 
-char* createCHG(int);
+int transformToTwoDigitNumber(int [], int);
+
+void checkString();
+
+int checkPos(int);

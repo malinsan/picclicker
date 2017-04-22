@@ -7751,7 +7751,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bufferhandler.h: 13: char isEmpty();
 [; ;bufferhandler.h: 15: char isValid();
 [; ;bufferhandler.h: 17: char parseString();
-[; ;bufferhandler.h: 19: char* createCHG(int);
+[; ;bufferhandler.h: 19: int lenHelper(int);
+[; ;bufferhandler.h: 21: int transformToTwoDigitNumber(int [], int);
+[; ;bufferhandler.h: 23: void checkString();
+[; ;bufferhandler.h: 25: int checkPos(int);
 "39 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 "40

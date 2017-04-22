@@ -124,11 +124,38 @@ char parseString(){
     int chgStop = positions[7] - 1;
     
     //guessing that we only have to check for a '-' = 0x2D
-    int CHG = 0;
+    char CHG = '0';
     //if the first letter/number is a '-'
     if(allDataString[chgStart] == 0x2D){
-        CHG = 1;
+        CHG = '1';
     }
+    
+    //now we have SOC and CHG
+    //since strcpy(array, sentence) doesn't work and i can't seem to find any other way around this...
+    //lets fill it the hard way then!
+    int parsedStringSize = 13 + count;
+    int n = 4;
+    
+    parsedString[0] = 'S';
+    parsedString[1] = 'O';
+    parsedString[2] = 'C';
+    parsedString[3] = charSOC[0];
+    if(count > 0){
+        parsedString[4] = charSOC[1];
+        n ++; //n becomes 5
+    }
+    parsedString[n] = ";";
+    parsedString[n+1] = "C";
+    parsedString[n+2] = "H";
+    parsedString[n+3] = "G";
+    parsedString[n+4] = CHG;
+    parsedString[n+5] = ";";
+    parsedString[n+6] = "A";
+    parsedString[n+7] = "C";
+    parsedString[n+8] = "K";
+    parsedString[n+9] = ";";
+    
+    
       
     return 1;
 }
@@ -173,26 +200,6 @@ int transformToTwoDigitNumber(int number[], int size){
             }           
     }
     
-}
-
-
-char* createCHG(int pos){
-    char *tmp = "";
-    switch(pos){
-        case 1 :
-            *tmp = allDataString[46];
-            break;
-        case 2 :
-            *tmp = allDataString[46] + allDataString[47];
-            break;
-        case 3 : 
-            *tmp = allDataString[46] + allDataString[47] + allDataString[48];
-            break;
-    }
-    //then see if tmp is a negative number
-    //if negative CHG = 1
-    //if positive CHG = 0
-    return tmp;
 }
 
 

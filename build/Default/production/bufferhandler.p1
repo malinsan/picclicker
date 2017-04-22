@@ -1,23 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"21025 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
-[v _RC1IF `Vb ~T0 @X0 0 e@31989 ]
-"10240
-[s S485 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S485 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
-"10250
-[s S486 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S486 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
-"10239
-[u S484 `S485 1 `S486 1 ]
-[n S484 . . . ]
-"10261
-[v _LATAbits `VS484 ~T0 @X0 0 e@3977 ]
-"1 bufferhandler.h
-[v _appendChar `(v ~T0 @X0 0 ef1`uc ]
-"13412 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f47j53.h
-[v _RCREG1 `Vuc ~T0 @X0 0 e@4015 ]
-"21033
-[v _RC2IF `Vb ~T0 @X0 0 e@32037 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.41\include\string.h
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"9 bufferhandler.h
+[v _writeString `(v ~T0 @X0 0 ef2`*uc`uc ]
+"23 system.h
+[v _wait_ms `(v ~T0 @X0 0 ef1`i ]
+"21 bufferhandler.h
+[v _transformToTwoDigitNumber `(i ~T0 @X0 0 ef2`*i`i ]
+"19
+[v _lenHelper `(i ~T0 @X0 0 ef1`i ]
+"25
+[v _checkPos `(i ~T0 @X0 0 ef1`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7621,35 +7614,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
@@ -7677,6 +7641,88 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 56: extern char * strichr(const char *, int);
 [; ;string.h: 57: extern char * strrchr(const char *, int);
 [; ;string.h: 58: extern char * strrichr(const char *, int);
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;stdlib.h: 7: typedef unsigned short wchar_t;
+[; ;stdlib.h: 15: typedef struct {
+[; ;stdlib.h: 16: int rem;
+[; ;stdlib.h: 17: int quot;
+[; ;stdlib.h: 18: } div_t;
+[; ;stdlib.h: 19: typedef struct {
+[; ;stdlib.h: 20: unsigned rem;
+[; ;stdlib.h: 21: unsigned quot;
+[; ;stdlib.h: 22: } udiv_t;
+[; ;stdlib.h: 23: typedef struct {
+[; ;stdlib.h: 24: long quot;
+[; ;stdlib.h: 25: long rem;
+[; ;stdlib.h: 26: } ldiv_t;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: unsigned long quot;
+[; ;stdlib.h: 29: unsigned long rem;
+[; ;stdlib.h: 30: } uldiv_t;
+[; ;stdlib.h: 53: extern double atof(const char *);
+[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 55: extern int atoi(const char *);
+[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 57: extern long atol(const char *);
+[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 60: extern int rand(void);
+[; ;stdlib.h: 61: extern void srand(unsigned int);
+[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 75: extern void * malloc(size_t);
+[; ;stdlib.h: 76: extern void free(void *);
+[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 86: extern int atexit(void (*)(void));
+[; ;stdlib.h: 87: extern char * getenv(const char *);
+[; ;stdlib.h: 88: extern char ** environ;
+[; ;stdlib.h: 89: extern int system(char *);
+[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 92: extern int abs(int);
+[; ;stdlib.h: 93: extern long labs(long);
+[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
+[; ;system.h: 21: void ConfigureOscillator(void);
+[; ;system.h: 23: void wait_ms(int);
+[; ;user.h: 13: void InitApp(void);
 [; ;bufferhandler.h: 1: void appendChar(char data);
 [; ;bufferhandler.h: 3: char isItLongEnough();
 [; ;bufferhandler.h: 5: void clearBuffer();
@@ -7690,57 +7736,693 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bufferhandler.h: 21: int transformToTwoDigitNumber(int [], int);
 [; ;bufferhandler.h: 23: void checkString();
 [; ;bufferhandler.h: 25: int checkPos(int);
-[v F8210 `(v ~T0 @X0 1 tf ]
-"30 interrupts.c
-[v _high_isr `IF8210 ~T0 @X0 1 e ]
+[; ;uart.h: 4: char UART_Init(const long int baudrate);
+[; ;uart.h: 7: void UART_Write(char data, char dev);
+[; ;uart.h: 11: char trmtStatus();
+[; ;uart.h: 13: char UART_Data_Ready();
+[; ;uart.h: 15: char UART_Read(char dev);
+[; ;uart.h: 17: void appendChar(char data);
+[; ;uart.h: 19: char isItLongEnough();
+[; ;uart.h: 21: void clearBuffer();
+[; ;uart.h: 23: void copyTmpBuffer();
+[; ;uart.h: 25: void writeString(char str[], char dev);
+[; ;uart.h: 27: void writeResult(char dev);
+[; ;uart.h: 29: char isEmpty();
+"21 bufferhandler.c
+[v _tmpString `uc ~T0 @X0 -> 70 `i e ]
+[i _tmpString
+:U ..
+-> 0 `c
+..
+]
+[; ;bufferhandler.c: 21: char tmpString[70] = "";
+"22
+[v _allDataString `uc ~T0 @X0 -> 70 `i e ]
+[i _allDataString
+:U ..
+-> 0 `c
+..
+]
+[; ;bufferhandler.c: 22: char allDataString[70] = "";
+"23
+[v _parsedString `uc ~T0 @X0 -> 17 `i e ]
+[i _parsedString
+:U ..
+-> 0 `c
+..
+]
+[; ;bufferhandler.c: 23: char parsedString[17] = "";
+"24
+[v _index `i ~T0 @X0 1 e ]
+[i _index
+-> 0 `i
+]
+[; ;bufferhandler.c: 24: int index = 0;
+"26
+[v _positions `i ~T0 @X0 -> 11 `i e ]
+[; ;bufferhandler.c: 26: int positions[11];
+"29
+[v _appendChar `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;bufferhandler.c: 29: void appendChar(char data){
+[e :U _appendChar ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;bufferhandler.c: 30: tmpString[index] = data;
+"30
+[e = *U + &U _tmpString * -> -> _index `ui `ux -> -> # *U &U _tmpString `ui `ux _data ]
+[; ;bufferhandler.c: 31: index++;
+"31
+[e ++ _index -> 1 `i ]
+[; ;bufferhandler.c: 32: }
+"32
+[e :UE 917 ]
+}
+"35
+[v _isItLongEnough `(uc ~T0 @X0 1 ef ]
+"36
+{
+[; ;bufferhandler.c: 35: char isItLongEnough()
+[; ;bufferhandler.c: 36: {
+[e :U _isItLongEnough ]
+[f ]
+[; ;bufferhandler.c: 37: if(index == 64){
+"37
+[e $ ! == _index -> 64 `i 919  ]
+{
+[; ;bufferhandler.c: 38: return 1;
+"38
+[e ) -> -> 1 `i `uc ]
+[e $UE 918  ]
 "39
+}
+[; ;bufferhandler.c: 39: }else{
+[e $U 920  ]
+[e :U 919 ]
 {
-[; ;interrupts.c: 30: void interrupt high_isr(void)
-[; ;interrupts.c: 39: {
-[e :U _high_isr ]
+[; ;bufferhandler.c: 40: return 0;
+"40
+[e ) -> -> 0 `i `uc ]
+[e $UE 918  ]
+"41
+}
+[e :U 920 ]
+[; ;bufferhandler.c: 41: }
+[; ;bufferhandler.c: 42: }
+"42
+[e :UE 918 ]
+}
+"44
+[v _clearBuffer `(v ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 44: void clearBuffer() {
+[e :U _clearBuffer ]
 [f ]
-[; ;interrupts.c: 45: if(RC1IF){
+[; ;bufferhandler.c: 45: for(int i = 0; i<strlen(tmpString); i++){
 "45
-[e $ ! _RC1IF 913  ]
 {
-[; ;interrupts.c: 46: LATAbits.LATA0 = !LATAbits.LATA0;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 925  ]
+[e :U 922 ]
+{
+[; ;bufferhandler.c: 46: tmpString[i] = "";
 "46
-[e = . . _LATAbits 0 0 -> -> ! != -> . . _LATAbits 0 0 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[; ;interrupts.c: 47: appendChar(RCREG1);
+[e = *U + &U _tmpString * -> -> _i `ui `ux -> -> # *U &U _tmpString `ui `ux -> :s 1C `uc ]
 "47
-[e ( _appendChar (1 _RCREG1 ]
-[; ;interrupts.c: 49: RC1IF = 0;
+}
+"45
+[e ++ _i -> 1 `i ]
+[e :U 925 ]
+[e $ < -> _i `ui ( _strlen (1 -> &U _tmpString `*Cuc 922  ]
+[e :U 923 ]
+"47
+}
+[; ;bufferhandler.c: 47: }
+[; ;bufferhandler.c: 48: tmpString[0] = '\0';
+"48
+[e = *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux -> -> 0 `ui `uc ]
+[; ;bufferhandler.c: 49: index = 0;
 "49
-[e = _RC1IF -> -> 0 `i `b ]
+[e = _index -> 0 `i ]
+[; ;bufferhandler.c: 50: }
 "50
+[e :UE 921 ]
 }
-[e :U 913 ]
-[; ;interrupts.c: 50: }
-[; ;interrupts.c: 52: if(RC2IF){
 "52
-[e $ ! _RC2IF 914  ]
+[v _copyTmpBuffer `(v ~T0 @X0 1 ef ]
 {
-[; ;interrupts.c: 57: RC2IF = 0;
-"57
-[e = _RC2IF -> -> 0 `i `b ]
-"58
-}
-[e :U 914 ]
-[; ;interrupts.c: 58: }
-[; ;interrupts.c: 62: }
-"62
-[e :UE 912 ]
-}
-[v F8213 `(v ~T0 @X0 1 tf ]
-"66
-[v _low_isr `ILF8213 ~T0 @X0 1 e ]
-"74
-{
-[; ;interrupts.c: 66: void low_priority interrupt low_isr(void)
-[; ;interrupts.c: 74: {
-[e :U _low_isr ]
+[; ;bufferhandler.c: 52: void copyTmpBuffer(){
+[e :U _copyTmpBuffer ]
 [f ]
-[; ;interrupts.c: 84: }
-"84
-[e :UE 915 ]
+[; ;bufferhandler.c: 53: for(int i = 0; i<index; i++){
+"53
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 930  ]
+[e :U 927 ]
+{
+[; ;bufferhandler.c: 54: allDataString[i] = tmpString[i];
+"54
+[e = *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux *U + &U _tmpString * -> -> _i `ui `ux -> -> # *U &U _tmpString `ui `ux ]
+"55
 }
+"53
+[e ++ _i -> 1 `i ]
+[e :U 930 ]
+[e $ < _i _index 927  ]
+[e :U 928 ]
+"55
+}
+[; ;bufferhandler.c: 55: }
+[; ;bufferhandler.c: 56: }
+"56
+[e :UE 926 ]
+}
+"58
+[v _writeResult `(v ~T0 @X0 1 ef1`uc ]
+"59
+{
+[; ;bufferhandler.c: 58: void writeResult(char dev)
+[; ;bufferhandler.c: 59: {
+[e :U _writeResult ]
+"58
+[v _dev `uc ~T0 @X0 1 r1 ]
+"59
+[f ]
+[; ;bufferhandler.c: 61: writeString(allDataString, dev);
+"61
+[e ( _writeString (2 , &U _allDataString _dev ]
+[; ;bufferhandler.c: 62: wait_ms(1000);
+"62
+[e ( _wait_ms (1 -> 1000 `i ]
+[; ;bufferhandler.c: 63: }
+"63
+[e :UE 931 ]
+}
+"65
+[v _isEmpty `(uc ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 65: char isEmpty(){
+[e :U _isEmpty ]
+[f ]
+[; ;bufferhandler.c: 66: if(tmpString[0] == '\0'){
+"66
+[e $ ! == -> *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `ui -> 0 `ui 933  ]
+{
+[; ;bufferhandler.c: 67: return 1;
+"67
+[e ) -> -> 1 `i `uc ]
+[e $UE 932  ]
+"68
+}
+[; ;bufferhandler.c: 68: }else{
+[e $U 934  ]
+[e :U 933 ]
+{
+[; ;bufferhandler.c: 69: return 0;
+"69
+[e ) -> -> 0 `i `uc ]
+[e $UE 932  ]
+"70
+}
+[e :U 934 ]
+[; ;bufferhandler.c: 70: }
+[; ;bufferhandler.c: 71: }
+"71
+[e :UE 932 ]
+}
+"73
+[v _isValid `(uc ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 73: char isValid(){
+[e :U _isValid ]
+[f ]
+[; ;bufferhandler.c: 74: if(tmpString[0] == 0x54 &&
+[; ;bufferhandler.c: 75: tmpString[1] == 0x59 &&
+[; ;bufferhandler.c: 76: tmpString[2] == 0x52 &&
+[; ;bufferhandler.c: 77: tmpString[3] == 0x49 &&
+[; ;bufferhandler.c: 78: tmpString[4] == 0x5F){
+"78
+[e $ ! && && && && == -> *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 84 `i == -> *U + &U _tmpString * -> -> -> 1 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 89 `i == -> *U + &U _tmpString * -> -> -> 2 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 82 `i == -> *U + &U _tmpString * -> -> -> 3 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 73 `i == -> *U + &U _tmpString * -> -> -> 4 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 95 `i 936  ]
+{
+[; ;bufferhandler.c: 79: return 1;
+"79
+[e ) -> -> 1 `i `uc ]
+[e $UE 935  ]
+"80
+}
+[e :U 936 ]
+[; ;bufferhandler.c: 80: }
+[; ;bufferhandler.c: 81: return 0;
+"81
+[e ) -> -> 0 `i `uc ]
+[e $UE 935  ]
+[; ;bufferhandler.c: 82: }
+"82
+[e :UE 935 ]
+}
+"90
+[v _SOC `i ~T0 @X0 -> 3 `i e ]
+[i _SOC
+:U ..
+-> 0 `i
+..
+]
+[; ;bufferhandler.c: 90: int SOC[3] = 0;
+"91
+[v _toCharArray `i ~T0 @X0 -> 3 `i e ]
+[i _toCharArray
+:U ..
+-> 0 `i
+..
+]
+[; ;bufferhandler.c: 91: int toCharArray[3] = 0;
+"92
+[v _charSOC `uc ~T0 @X0 -> 3 `i e ]
+[i _charSOC
+:U ..
+-> 0 `c
+..
+]
+[; ;bufferhandler.c: 92: char charSOC[3] = "";
+"94
+[v _parseString `(uc ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 94: char parseString(){
+[e :U _parseString ]
+[f ]
+"99
+[v _socStartPos `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 99: int socStartPos = positions[8]+1;
+[e = _socStartPos + *U + &U _positions * -> -> -> 8 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"100
+[v _socEndPos `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 100: int socEndPos = positions[9]-1;
+[e = _socEndPos - *U + &U _positions * -> -> -> 9 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"101
+[v _socSize `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 101: int socSize = (socEndPos - socStartPos)+1;
+[e = _socSize + - _socEndPos _socStartPos -> 1 `i ]
+"104
+[v _k `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 104: int k = 0;
+[e = _k -> 0 `i ]
+[; ;bufferhandler.c: 105: for(int i = socStartPos; i<=socEndPos; i++){
+"105
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i _socStartPos ]
+[e $U 941  ]
+[e :U 938 ]
+{
+[; ;bufferhandler.c: 106: SOC[k] = allDataString[i];
+"106
+[e = *U + &U _SOC * -> -> _k `ui `ux -> -> # *U &U _SOC `ui `ux -> *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux `i ]
+[; ;bufferhandler.c: 107: k++;
+"107
+[e ++ _k -> 1 `i ]
+"108
+}
+"105
+[e ++ _i -> 1 `i ]
+[e :U 941 ]
+[e $ <= _i _socEndPos 938  ]
+[e :U 939 ]
+"108
+}
+"110
+[v _tmp `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 108: }
+[; ;bufferhandler.c: 110: int tmp = transformToTwoDigitNumber(SOC, socSize);
+[e = _tmp ( _transformToTwoDigitNumber (2 , &U _SOC _socSize ]
+"113
+[v _count `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 113: int count = lenHelper(tmp) - 1;
+[e = _count - ( _lenHelper (1 _tmp -> 1 `i ]
+[; ;bufferhandler.c: 114: while(tmp > 0){
+"114
+[e $U 942  ]
+[e :U 943 ]
+{
+[; ;bufferhandler.c: 115: toCharArray[count] = tmp%10;
+"115
+[e = *U + &U _toCharArray * -> -> _count `ui `ux -> -> # *U &U _toCharArray `ui `ux % _tmp -> 10 `i ]
+[; ;bufferhandler.c: 116: charSOC[count] = (tmp%10)+48;
+"116
+[e = *U + &U _charSOC * -> -> _count `ui `ux -> -> # *U &U _charSOC `ui `ux -> + % _tmp -> 10 `i -> 48 `i `uc ]
+[; ;bufferhandler.c: 117: tmp /= 10;
+"117
+[e =/ _tmp -> -> 10 `uc `i ]
+[; ;bufferhandler.c: 118: count --;
+"118
+[e -- _count -> 1 `i ]
+"119
+}
+[e :U 942 ]
+"114
+[e $ > _tmp -> 0 `i 943  ]
+[e :U 944 ]
+"123
+[v _chgStart `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 119: }
+[; ;bufferhandler.c: 123: int chgStart = positions[6] + 1;
+[e = _chgStart + *U + &U _positions * -> -> -> 6 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"124
+[v _chgStop `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 124: int chgStop = positions[7] - 1;
+[e = _chgStop - *U + &U _positions * -> -> -> 7 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"127
+[v _CHG `uc ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 127: char CHG = '0';
+[e = _CHG -> -> 48 `ui `uc ]
+[; ;bufferhandler.c: 129: if(allDataString[chgStart] == 0x2D){
+"129
+[e $ ! == -> *U + &U _allDataString * -> -> _chgStart `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> 45 `i 945  ]
+{
+[; ;bufferhandler.c: 130: CHG = '1';
+"130
+[e = _CHG -> -> 49 `ui `uc ]
+"131
+}
+[e :U 945 ]
+"136
+[v _parsedStringSize `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 131: }
+[; ;bufferhandler.c: 136: int parsedStringSize = 13 + count;
+[e = _parsedStringSize + -> 13 `i _count ]
+"137
+[v _n `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 137: int n = 4;
+[e = _n -> 4 `i ]
+[; ;bufferhandler.c: 139: parsedString[0] = 'S';
+"139
+[e = *U + &U _parsedString * -> -> -> 0 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> -> 83 `ui `uc ]
+[; ;bufferhandler.c: 140: parsedString[1] = 'O';
+"140
+[e = *U + &U _parsedString * -> -> -> 1 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> -> 79 `ui `uc ]
+[; ;bufferhandler.c: 141: parsedString[2] = 'C';
+"141
+[e = *U + &U _parsedString * -> -> -> 2 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> -> 67 `ui `uc ]
+[; ;bufferhandler.c: 142: parsedString[3] = charSOC[0];
+"142
+[e = *U + &U _parsedString * -> -> -> 3 `i `ui `ux -> -> # *U &U _parsedString `ui `ux *U + &U _charSOC * -> -> -> 0 `i `ui `ux -> -> # *U &U _charSOC `ui `ux ]
+[; ;bufferhandler.c: 143: if(count > 0){
+"143
+[e $ ! > _count -> 0 `i 946  ]
+{
+[; ;bufferhandler.c: 144: parsedString[4] = charSOC[1];
+"144
+[e = *U + &U _parsedString * -> -> -> 4 `i `ui `ux -> -> # *U &U _parsedString `ui `ux *U + &U _charSOC * -> -> -> 1 `i `ui `ux -> -> # *U &U _charSOC `ui `ux ]
+[; ;bufferhandler.c: 145: n ++;
+"145
+[e ++ _n -> 1 `i ]
+"146
+}
+[e :U 946 ]
+[; ;bufferhandler.c: 146: }
+[; ;bufferhandler.c: 147: parsedString[n] = ";";
+"147
+[e = *U + &U _parsedString * -> -> _n `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 2C `uc ]
+[; ;bufferhandler.c: 148: parsedString[n+1] = "C";
+"148
+[e = *U + &U _parsedString * -> -> + _n -> 1 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 3C `uc ]
+[; ;bufferhandler.c: 149: parsedString[n+2] = "H";
+"149
+[e = *U + &U _parsedString * -> -> + _n -> 2 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 4C `uc ]
+[; ;bufferhandler.c: 150: parsedString[n+3] = "G";
+"150
+[e = *U + &U _parsedString * -> -> + _n -> 3 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 5C `uc ]
+[; ;bufferhandler.c: 151: parsedString[n+4] = CHG;
+"151
+[e = *U + &U _parsedString * -> -> + _n -> 4 `i `ui `ux -> -> # *U &U _parsedString `ui `ux _CHG ]
+[; ;bufferhandler.c: 152: parsedString[n+5] = ";";
+"152
+[e = *U + &U _parsedString * -> -> + _n -> 5 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 6C `uc ]
+[; ;bufferhandler.c: 153: parsedString[n+6] = "A";
+"153
+[e = *U + &U _parsedString * -> -> + _n -> 6 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 7C `uc ]
+[; ;bufferhandler.c: 154: parsedString[n+7] = "C";
+"154
+[e = *U + &U _parsedString * -> -> + _n -> 7 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 8C `uc ]
+[; ;bufferhandler.c: 155: parsedString[n+8] = "K";
+"155
+[e = *U + &U _parsedString * -> -> + _n -> 8 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 9C `uc ]
+[; ;bufferhandler.c: 156: parsedString[n+9] = ";";
+"156
+[e = *U + &U _parsedString * -> -> + _n -> 9 `i `ui `ux -> -> # *U &U _parsedString `ui `ux -> :s 10C `uc ]
+[; ;bufferhandler.c: 160: return 1;
+"160
+[e ) -> -> 1 `i `uc ]
+[e $UE 937  ]
+[; ;bufferhandler.c: 161: }
+"161
+[e :UE 937 ]
+}
+"165
+[v _lenHelper `(i ~T0 @X0 1 ef1`i ]
+{
+[; ;bufferhandler.c: 165: int lenHelper(int x){
+[e :U _lenHelper ]
+[v _x `i ~T0 @X0 1 r1 ]
+[f ]
+[; ;bufferhandler.c: 166: if(x>=1000) return 4;
+"166
+[e $ ! >= _x -> 1000 `i 948  ]
+[e ) -> 4 `i ]
+[e $UE 947  ]
+[e :U 948 ]
+[; ;bufferhandler.c: 167: if(x>=100) return 3;
+"167
+[e $ ! >= _x -> 100 `i 949  ]
+[e ) -> 3 `i ]
+[e $UE 947  ]
+[e :U 949 ]
+[; ;bufferhandler.c: 168: if(x>=10) return 2;
+"168
+[e $ ! >= _x -> 10 `i 950  ]
+[e ) -> 2 `i ]
+[e $UE 947  ]
+[e :U 950 ]
+[; ;bufferhandler.c: 169: return 1;
+"169
+[e ) -> 1 `i ]
+[e $UE 947  ]
+[; ;bufferhandler.c: 170: }
+"170
+[e :UE 947 ]
+}
+"176
+[v _transformToTwoDigitNumber `(i ~T0 @X0 1 ef2`*i`i ]
+{
+[; ;bufferhandler.c: 176: int transformToTwoDigitNumber(int number[], int size){
+[e :U _transformToTwoDigitNumber ]
+[v _number `*i ~T0 @X0 1 r1 ]
+[v _size `i ~T0 @X0 1 r2 ]
+[f ]
+"178
+[v _result `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 178: int result = 0;
+[e = _result -> 0 `i ]
+[; ;bufferhandler.c: 179: switch(size){
+"179
+[e $U 953  ]
+{
+[; ;bufferhandler.c: 180: case 1:
+"180
+[e :U 954 ]
+[; ;bufferhandler.c: 181: if(number[0] >= 5){
+"181
+[e $ ! >= *U + _number * -> -> 0 `i `x -> -> # *U _number `i `x -> 5 `i 955  ]
+{
+[; ;bufferhandler.c: 182: return 1;
+"182
+[e ) -> 1 `i ]
+[e $UE 951  ]
+"183
+}
+[; ;bufferhandler.c: 183: }else{
+[e $U 956  ]
+[e :U 955 ]
+{
+[; ;bufferhandler.c: 184: return 0;
+"184
+[e ) -> 0 `i ]
+[e $UE 951  ]
+"185
+}
+[e :U 956 ]
+[; ;bufferhandler.c: 185: }
+[; ;bufferhandler.c: 186: case 2:
+"186
+[e :U 957 ]
+[; ;bufferhandler.c: 187: result = number[0];
+"187
+[e = _result *U + _number * -> -> 0 `i `x -> -> # *U _number `i `x ]
+[; ;bufferhandler.c: 188: if(number[1] >= 5){
+"188
+[e $ ! >= *U + _number * -> -> 1 `i `x -> -> # *U _number `i `x -> 5 `i 958  ]
+{
+[; ;bufferhandler.c: 189: return result++;
+"189
+[e ) ++ _result -> 1 `i ]
+[e $UE 951  ]
+"190
+}
+[; ;bufferhandler.c: 190: }else{
+[e $U 959  ]
+[e :U 958 ]
+{
+[; ;bufferhandler.c: 191: return result;
+"191
+[e ) _result ]
+[e $UE 951  ]
+"192
+}
+[e :U 959 ]
+[; ;bufferhandler.c: 192: }
+[; ;bufferhandler.c: 193: case 3:
+"193
+[e :U 960 ]
+[; ;bufferhandler.c: 194: result = (number[0]*10)+(number[1]);
+"194
+[e = _result + * *U + _number * -> -> 0 `i `x -> -> # *U _number `i `x -> 10 `i *U + _number * -> -> 1 `i `x -> -> # *U _number `i `x ]
+[; ;bufferhandler.c: 195: if(number[2] >= 5){
+"195
+[e $ ! >= *U + _number * -> -> 2 `i `x -> -> # *U _number `i `x -> 5 `i 961  ]
+{
+[; ;bufferhandler.c: 196: result++;
+"196
+[e ++ _result -> 1 `i ]
+[; ;bufferhandler.c: 197: return result;
+"197
+[e ) _result ]
+[e $UE 951  ]
+"198
+}
+[; ;bufferhandler.c: 198: }else{
+[e $U 962  ]
+[e :U 961 ]
+{
+[; ;bufferhandler.c: 199: return result;
+"199
+[e ) _result ]
+[e $UE 951  ]
+"200
+}
+[e :U 962 ]
+"201
+}
+[; ;bufferhandler.c: 200: }
+[; ;bufferhandler.c: 201: }
+[e $U 952  ]
+"179
+[e :U 953 ]
+[e [\ _size , $ -> 1 `i 954
+ , $ -> 2 `i 957
+ , $ -> 3 `i 960
+ 952 ]
+"201
+[e :U 952 ]
+[; ;bufferhandler.c: 203: }
+"203
+[e :UE 951 ]
+}
+"207
+[v _checkString `(v ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 207: void checkString(){
+[e :U _checkString ]
+[f ]
+[; ;bufferhandler.c: 212: positions[0] = 8;
+"212
+[e = *U + &U _positions * -> -> -> 0 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 8 `i ]
+[; ;bufferhandler.c: 214: for(int i = 0; i<10;i++){
+"214
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 964  ]
+[e $U 965  ]
+[e :U 964 ]
+{
+[; ;bufferhandler.c: 215: positions[i] = checkPos(i);
+"215
+[e = *U + &U _positions * -> -> _i `ui `ux -> -> # *U &U _positions `ui `ux ( _checkPos (1 _i ]
+[; ;bufferhandler.c: 216: positions[i+1] = positions[i] + 1;
+"216
+[e = *U + &U _positions * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _positions `ui `ux + *U + &U _positions * -> -> _i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"217
+}
+"214
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 964  ]
+[e :U 965 ]
+"217
+}
+[; ;bufferhandler.c: 217: }
+[; ;bufferhandler.c: 219: positions[10] = '\0';
+"219
+[e = *U + &U _positions * -> -> -> 10 `i `ui `ux -> -> # *U &U _positions `ui `ux -> -> 0 `ui `i ]
+[; ;bufferhandler.c: 220: }
+"220
+[e :UE 963 ]
+}
+"223
+[v _checkPos `(i ~T0 @X0 1 ef1`i ]
+{
+[; ;bufferhandler.c: 223: int checkPos(int pos){
+[e :U _checkPos ]
+[v _pos `i ~T0 @X0 1 r1 ]
+[f ]
+[; ;bufferhandler.c: 224: for(int i = pos+1; i < strlen(allDataString); i++){
+"224
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i + _pos -> 1 `i ]
+[e $U 971  ]
+[e :U 968 ]
+{
+[; ;bufferhandler.c: 225: if(allDataString[i] == 0x3B){
+"225
+[e $ ! == -> *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> 59 `i 972  ]
+{
+[; ;bufferhandler.c: 226: pos = i;
+"226
+[e = _pos _i ]
+[; ;bufferhandler.c: 227: break;
+"227
+[e $U 969  ]
+"228
+}
+[e :U 972 ]
+"229
+}
+"224
+[e ++ _i -> 1 `i ]
+[e :U 971 ]
+[e $ < -> _i `ui ( _strlen (1 -> &U _allDataString `*Cuc 968  ]
+[e :U 969 ]
+"229
+}
+[; ;bufferhandler.c: 228: }
+[; ;bufferhandler.c: 229: }
+[; ;bufferhandler.c: 230: return pos;
+"230
+[e ) _pos ]
+[e $UE 967  ]
+[; ;bufferhandler.c: 231: }
+"231
+[e :UE 967 ]
+}
+[a 9C 75 0 ]
+[a 4C 72 0 ]
+[a 5C 71 0 ]
+[a 3C 67 0 ]
+[a 8C 67 0 ]
+[a 7C 65 0 ]
+[a 2C 59 0 ]
+[a 6C 59 0 ]
+[a 10C 59 0 ]
+[a 1C 0 ]

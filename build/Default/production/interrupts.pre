@@ -10229,7 +10229,13 @@ char isValid();
 
 char parseString();
 
-char* createCHG(int);
+int lenHelper(int);
+
+int transformToTwoDigitNumber(int [], int);
+
+void checkString();
+
+int checkPos(int);
 
 # 30 "interrupts.c"
 void interrupt high_isr(void)
