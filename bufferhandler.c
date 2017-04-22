@@ -89,6 +89,7 @@ char isValid(){
  */
 int SOC[3] = 0;
 int toCharArray[3] = 0;
+char charSOC[3] = "";
     
 char parseString(){
     
@@ -105,17 +106,29 @@ char parseString(){
         SOC[k] = allDataString[i];
         k++;
     }
-    
     //transform the int into a char
     int tmp = transformToTwoDigitNumber(SOC, socSize);
     
+    //put the int into an array of ints and chars
     int count = lenHelper(tmp) - 1;
     while(tmp > 0){
         toCharArray[count] = tmp%10;
+        charSOC[count] = (tmp%10)+48;
         tmp /= 10;
         count --;
     }
     
+    //find CHG: if <0 = 1 if >0 = 0
+    //CHG should start at positions[6] and end at positions[7]
+    int chgStart = positions[6] + 1;
+    int chgStop = positions[7] - 1;
+    
+    //guessing that we only have to check for a '-' = 0x2D
+    int CHG = 0;
+    //if the first letter/number is a '-'
+    if(allDataString[chgStart] == 0x2D){
+        CHG = 1;
+    }
       
     return 1;
 }
