@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.41\dat\en_msgs.txt -cs \
   -h+dist/Default/production\PicClicker.production.sym \
   --cmf=dist/Default/production\PicClicker.production.cmf -z -Q18F47J53 \
-  -oC:\Users\tomas\AppData\Local\Temp\sakg.2 \
+  -oC:\Users\tomas\AppData\Local\Temp\s17o.2 \
   -Mdist/Default/production/PicClicker.production.map -E1 -ver=XC8 \
   -ASTACK=0146h-0eafh -pstack=STACK -ACODE=00h-01FFF7h -ACONST=00h-01FFF7h \
   -ASMALLCONST=0F00h-0FFFhx496,01FF00h-01FFF7h \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\tomas\AppData\Local\Temp\sakg.obj \
+  C:\Users\tomas\AppData\Local\Temp\s17o.obj \
   dist/Default/production\PicClicker.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tomas\AppData\Local\Temp\sakg.obj
+C:\Users\tomas\AppData\Local\Temp\s17o.obj
                 init                                 A6       A6        4        C       0
                 reset_vec                             0        0        4        0       0
                 config                            1FFF8    1FFF8        8    1FFF8       0

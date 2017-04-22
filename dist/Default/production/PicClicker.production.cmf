@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\tomas\AppData\Local\Temp\sakg.obj
+$C:\Users\tomas\AppData\Local\Temp\s17o.obj
 init CODE 0 A6 A6 4 1
 reset_vec CODE 0 0 0 4 1
 config CONFIG 0 1FFF8 1FFF8 8 1
@@ -344,32 +344,32 @@ FF8 text6 CODE >113:C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 1432 text0 CODE >85:C:\Users\tomas\Documents\GIT\PicClicker\main.c
 1436 text0 CODE >86:C:\Users\tomas\Documents\GIT\PicClicker\main.c
 143C text0 CODE >68:C:\Users\tomas\Documents\GIT\PicClicker\main.c
-1874 cinit CODE >5073:C:\Users\tomas\AppData\Local\Temp\sakg.
-1874 cinit CODE >5075:C:\Users\tomas\AppData\Local\Temp\sakg.
-1874 cinit CODE >5078:C:\Users\tomas\AppData\Local\Temp\sakg.
-1874 cinit CODE >5119:C:\Users\tomas\AppData\Local\Temp\sakg.
-1878 cinit CODE >5120:C:\Users\tomas\AppData\Local\Temp\sakg.
-187A cinit CODE >5121:C:\Users\tomas\AppData\Local\Temp\sakg.
-187A cinit CODE >5122:C:\Users\tomas\AppData\Local\Temp\sakg.
-187C cinit CODE >5123:C:\Users\tomas\AppData\Local\Temp\sakg.
-187E cinit CODE >5124:C:\Users\tomas\AppData\Local\Temp\sakg.
-1880 cinit CODE >5127:C:\Users\tomas\AppData\Local\Temp\sakg.
-1884 cinit CODE >5128:C:\Users\tomas\AppData\Local\Temp\sakg.
-1886 cinit CODE >5129:C:\Users\tomas\AppData\Local\Temp\sakg.
-1886 cinit CODE >5130:C:\Users\tomas\AppData\Local\Temp\sakg.
-1888 cinit CODE >5131:C:\Users\tomas\AppData\Local\Temp\sakg.
-188A cinit CODE >5132:C:\Users\tomas\AppData\Local\Temp\sakg.
-188C cinit CODE >5135:C:\Users\tomas\AppData\Local\Temp\sakg.
-188E cinit CODE >5136:C:\Users\tomas\AppData\Local\Temp\sakg.
-1890 cinit CODE >5137:C:\Users\tomas\AppData\Local\Temp\sakg.
-1892 cinit CODE >5138:C:\Users\tomas\AppData\Local\Temp\sakg.
-1894 cinit CODE >5139:C:\Users\tomas\AppData\Local\Temp\sakg.
-1896 cinit CODE >5140:C:\Users\tomas\AppData\Local\Temp\sakg.
-1898 cinit CODE >5146:C:\Users\tomas\AppData\Local\Temp\sakg.
-1898 cinit CODE >5148:C:\Users\tomas\AppData\Local\Temp\sakg.
-189A cinit CODE >5149:C:\Users\tomas\AppData\Local\Temp\sakg.
-189C cinit CODE >5150:C:\Users\tomas\AppData\Local\Temp\sakg.
-189E cinit CODE >5151:C:\Users\tomas\AppData\Local\Temp\sakg.
+1874 cinit CODE >5073:C:\Users\tomas\AppData\Local\Temp\s17o.
+1874 cinit CODE >5075:C:\Users\tomas\AppData\Local\Temp\s17o.
+1874 cinit CODE >5078:C:\Users\tomas\AppData\Local\Temp\s17o.
+1874 cinit CODE >5119:C:\Users\tomas\AppData\Local\Temp\s17o.
+1878 cinit CODE >5120:C:\Users\tomas\AppData\Local\Temp\s17o.
+187A cinit CODE >5121:C:\Users\tomas\AppData\Local\Temp\s17o.
+187A cinit CODE >5122:C:\Users\tomas\AppData\Local\Temp\s17o.
+187C cinit CODE >5123:C:\Users\tomas\AppData\Local\Temp\s17o.
+187E cinit CODE >5124:C:\Users\tomas\AppData\Local\Temp\s17o.
+1880 cinit CODE >5127:C:\Users\tomas\AppData\Local\Temp\s17o.
+1884 cinit CODE >5128:C:\Users\tomas\AppData\Local\Temp\s17o.
+1886 cinit CODE >5129:C:\Users\tomas\AppData\Local\Temp\s17o.
+1886 cinit CODE >5130:C:\Users\tomas\AppData\Local\Temp\s17o.
+1888 cinit CODE >5131:C:\Users\tomas\AppData\Local\Temp\s17o.
+188A cinit CODE >5132:C:\Users\tomas\AppData\Local\Temp\s17o.
+188C cinit CODE >5135:C:\Users\tomas\AppData\Local\Temp\s17o.
+188E cinit CODE >5136:C:\Users\tomas\AppData\Local\Temp\s17o.
+1890 cinit CODE >5137:C:\Users\tomas\AppData\Local\Temp\s17o.
+1892 cinit CODE >5138:C:\Users\tomas\AppData\Local\Temp\s17o.
+1894 cinit CODE >5139:C:\Users\tomas\AppData\Local\Temp\s17o.
+1896 cinit CODE >5140:C:\Users\tomas\AppData\Local\Temp\s17o.
+1898 cinit CODE >5146:C:\Users\tomas\AppData\Local\Temp\s17o.
+1898 cinit CODE >5148:C:\Users\tomas\AppData\Local\Temp\s17o.
+189A cinit CODE >5149:C:\Users\tomas\AppData\Local\Temp\s17o.
+189C cinit CODE >5150:C:\Users\tomas\AppData\Local\Temp\s17o.
+189E cinit CODE >5151:C:\Users\tomas\AppData\Local\Temp\s17o.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -389,15 +389,15 @@ __Hspace_1 146 0 ABS 0 - dist/Default/production\PicClicker.production.obj
 __Hspace_2 0 0 ABS 0 - dist/Default/production\PicClicker.production.obj
 _parsedString 76 0 BANK0 1 bssBANK0 dist/Default/production\PicClicker.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/Default/production\PicClicker.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tomas\AppData\Local\Temp\sakg.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tomas\AppData\Local\Temp\s17o.obj
 __CFG_WPCFG$OFF 0 0 ABS 0 - dist/Default/production\PicClicker.production.obj
 parseString@socSize E0 0 BANK0 1 cstackBANK0 dist/Default/production\PicClicker.production.obj
 __Lsmallconst F00 0 SMALLCONST 0 smallconst dist/Default/production\PicClicker.production.obj
 _RCIF 7CF5 0 ABS 0 - dist/Default/production\PicClicker.production.obj
-___sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\sakg.obj
+___sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\s17o.obj
 _main 1398 0 CODE 0 text0 dist/Default/production\PicClicker.production.obj
 btemp 39 0 COMRAM 1 temp dist/Default/production\PicClicker.production.obj
-start A6 0 CODE 0 init C:\Users\tomas\AppData\Local\Temp\sakg.obj
+start A6 0 CODE 0 init C:\Users\tomas\AppData\Local\Temp\s17o.obj
 __size_of___awdiv 0 0 ABS 0 - dist/Default/production\PicClicker.production.obj
 __size_of___awmod 0 0 ABS 0 - dist/Default/production\PicClicker.production.obj
 __size_of_main 0 0 ABS 0 - dist/Default/production\PicClicker.production.obj
@@ -410,11 +410,11 @@ __size_of_appendChar 0 0 ABS 0 - dist/Default/production\PicClicker.production.o
 ___awmod@sign 27 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
 __end_of_ConfigureOscillator 1958 0 CODE 0 text19 dist/Default/production\PicClicker.production.obj
 __size_of_low_isr 0 0 ABS 0 - dist/Default/production\PicClicker.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\sakg.obj
-intlevel0 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\sakg.obj
-intlevel1 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\sakg.obj
-intlevel2 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\sakg.obj
-intlevel3 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\sakg.obj
+__accesstop 60 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\s17o.obj
+intlevel0 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\s17o.obj
+intlevel1 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\s17o.obj
+intlevel2 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\s17o.obj
+intlevel3 0 0 CODE 0 text C:\Users\tomas\AppData\Local\Temp\s17o.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/Default/production\PicClicker.production.obj
 writeString@dev 2A 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
 writeString@str 28 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
@@ -431,8 +431,8 @@ parseString@chgStop DC 0 BANK0 1 cstackBANK0 dist/Default/production\PicClicker.
 _clearBuffer 1782 0 CODE 0 text15 dist/Default/production\PicClicker.production.obj
 ___wmul@multiplicand 24 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
 ___awdiv@dividend 22 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\sakg.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\sakg.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\s17o.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\s17o.obj
 UART_Init@baudrate 22 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/Default/production\PicClicker.production.obj
 __end_of___lmul 172E 0 CODE 0 text5 dist/Default/production\PicClicker.production.obj
@@ -531,7 +531,7 @@ __Hbank13 0 0 ABS 0 bank13 dist/Default/production\PicClicker.production.obj
 __Hbank14 0 0 ABS 0 bank14 dist/Default/production\PicClicker.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/Default/production\PicClicker.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/Default/production\PicClicker.production.obj
-__smallconst F00 0 SMALLCONST 0 smallconst C:\Users\tomas\AppData\Local\Temp\sakg.obj
+__smallconst F00 0 SMALLCONST 0 smallconst C:\Users\tomas\AppData\Local\Temp\s17o.obj
 __Hcomram 0 0 ABS 0 comram dist/Default/production\PicClicker.production.obj
 __Hconfig 20000 0 CONFIG 0 config dist/Default/production\PicClicker.production.obj
 __end_of_isValid 1842 0 CODE 0 text12 dist/Default/production\PicClicker.production.obj
@@ -679,8 +679,8 @@ __Lfardata 0 0 FARRAM 0 fardata dist/Default/production\PicClicker.production.ob
 _appendChar 1922 0 CODE 0 text22 dist/Default/production\PicClicker.production.obj
 __size_of_transformToTwoDigitNumber 0 0 ABS 0 - dist/Default/production\PicClicker.production.obj
 _low_isr 18 0 CODE 0 intcodelo dist/Default/production\PicClicker.production.obj
-stackhi EAF 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\sakg.obj
-stacklo 146 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\sakg.obj
+stackhi EAF 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\s17o.obj
+stacklo 146 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\s17o.obj
 __end_of_writeResult 18E8 0 CODE 0 text1 dist/Default/production\PicClicker.production.obj
 _positions 60 0 BANK0 1 bssBANK0 dist/Default/production\PicClicker.production.obj
 parseString@parsedStringSize DE 0 BANK0 1 cstackBANK0 dist/Default/production\PicClicker.production.obj
@@ -743,7 +743,7 @@ __Ltext18 0 0 ABS 0 text18 dist/Default/production\PicClicker.production.obj
 __Ltext19 0 0 ABS 0 text19 dist/Default/production\PicClicker.production.obj
 __Ltext22 0 0 ABS 0 text22 dist/Default/production\PicClicker.production.obj
 copyTmpBuffer@i 23 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\tomas\AppData\Local\Temp\sakg.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\tomas\AppData\Local\Temp\s17o.obj
 __Lpowerup A6 0 CODE 0 powerup dist/Default/production\PicClicker.production.obj
 UART_Write@data 23 0 COMRAM 1 cstackCOMRAM dist/Default/production\PicClicker.production.obj
 __end_of_appendChar 193A 0 CODE 0 text22 dist/Default/production\PicClicker.production.obj

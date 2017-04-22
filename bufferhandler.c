@@ -87,9 +87,9 @@ char isValid(){
  * SOCxx;CHGzz;ACK;
  * 
  */
-int SOC[3] = 0;
-int toCharArray[3] = 0;
-char charSOC[3] = "";
+int SOC[3] = 0; //needed to hold the SOC int
+int toCharArray[3] = 0; //perhaps not needed
+char charSOC[3] = ""; //needed to turn the int into an array of chars so i can print it
     
 char parseString(){
     
