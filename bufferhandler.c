@@ -24,6 +24,10 @@ char parsedString[17] = "SOCxx;CHGx;ACK;";
 int index = 0; //index for tmpString
 
 int positions[11]; //variable to save all the positions of the BMS string, to be used in parsing
+int SOC[3] = 0; //needed to hold the SOC int
+char toCharArray[4] = ""; //perhaps not needed
+char charSOC[3] = ""; //needed to turn the int into an array of chars so i can print it
+
 
 
 //append the received char to the tmpString
@@ -58,8 +62,9 @@ void copyTmpBuffer(){
 
 void writeResult(char dev)
 {
-    writeString(parsedString, dev);
-    writeString(allDataString, dev);
+    //writeString(parsedString, dev);
+    writeString(toCharArray, dev);
+    //writeString(allDataString, dev);
     wait_ms(1000);
 }
 
@@ -88,9 +93,6 @@ char isValid(){
  * SOCxx;CHGzz;ACK;
  * 
  */
-int SOC[3] = 0; //needed to hold the SOC int
-int toCharArray[3] = 0; //perhaps not needed
-char charSOC[3] = ""; //needed to turn the int into an array of chars so i can print it
 
 
 char parseString(){
@@ -109,8 +111,12 @@ char parseString(){
     int k = 0;
     for(int i = socStartPos; i<=socEndPos; i++){
         SOC[k] = allDataString[i];
+        toCharArray[k] = allDataString[i] +48;
         k++;
     }
+    
+        
+    
     //transform the int into a char
     int tmp = transformToTwoDigitNumber(SOC, socSize);
     char tmpSOC = 'a';
@@ -118,8 +124,7 @@ char parseString(){
     if(lenHelper(tmp) == 1){
         charSOC[0] = (tmp) + 48;
     }else{
-        //tmpSOC = (tmp/10) + 48;
-        charSOC[0] = (tmp/10) + 48;
+        charSOC[0] = (tmp/10) + 48;   
     }
     
     //find CHG: if <0 = 1 if >0 = 0

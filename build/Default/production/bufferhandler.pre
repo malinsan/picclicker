@@ -10316,6 +10316,10 @@ char parsedString[17] = "SOCxx;CHGx;ACK;";
 int index = 0;
 
 int positions[11];
+int SOC[3] = 0;
+char toCharArray[4] = "";
+char charSOC[3] = "";
+
 
 
 
@@ -10350,8 +10354,9 @@ allDataString[i] = tmpString[i];
 
 void writeResult(char dev)
 {
-writeString(parsedString, dev);
-writeString(allDataString, dev);
+
+writeString(toCharArray, dev);
+
 wait_ms(1000);
 }
 
@@ -10374,17 +10379,12 @@ return 1;
 return 0;
 }
 
-# 91
-int SOC[3] = 0;
-int toCharArray[3] = 0;
-char charSOC[3] = "";
-
-
+# 98
 char parseString(){
 
 checkString();
 
-# 104
+# 106
 int socStartPos = positions[8]+1;
 int socEndPos = positions[9]-1;
 int socSize = (socEndPos - socStartPos)+1;
@@ -10393,8 +10393,12 @@ int socSize = (socEndPos - socStartPos)+1;
 int k = 0;
 for(int i = socStartPos; i<=socEndPos; i++){
 SOC[k] = allDataString[i];
+toCharArray[k] = allDataString[i] +48;
 k++;
 }
+
+
+
 
 int tmp = transformToTwoDigitNumber(SOC, socSize);
 char tmpSOC = 'a';
@@ -10402,7 +10406,6 @@ char tmpSOC = 'a';
 if(lenHelper(tmp) == 1){
 charSOC[0] = (tmp) + 48;
 }else{
-
 charSOC[0] = (tmp/10) + 48;
 }
 
@@ -10440,7 +10443,7 @@ if(x>=10) return 2;
 return 1;
 }
 
-# 163
+# 168
 int transformToTwoDigitNumber(int number[], int size){
 
 int result = 0;

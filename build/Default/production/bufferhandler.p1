@@ -7798,516 +7798,516 @@ Version 3.2 HI-TECH Software Intermediate Code
 "26
 [v _positions `i ~T0 @X0 -> 11 `i e ]
 [; ;bufferhandler.c: 26: int positions[11];
-"30
-[v _appendChar `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;bufferhandler.c: 30: void appendChar(char data){
-[e :U _appendChar ]
-[v _data `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;bufferhandler.c: 31: tmpString[index] = data;
-"31
-[e = *U + &U _tmpString * -> -> _index `ui `ux -> -> # *U &U _tmpString `ui `ux _data ]
-[; ;bufferhandler.c: 32: index++;
-"32
-[e ++ _index -> 1 `i ]
-[; ;bufferhandler.c: 33: }
-"33
-[e :UE 917 ]
-}
-"36
-[v _isItLongEnough `(uc ~T0 @X0 1 ef ]
-"37
-{
-[; ;bufferhandler.c: 36: char isItLongEnough()
-[; ;bufferhandler.c: 37: {
-[e :U _isItLongEnough ]
-[f ]
-[; ;bufferhandler.c: 38: if(index >= 64){
-"38
-[e $ ! >= _index -> 64 `i 919  ]
-{
-[; ;bufferhandler.c: 39: return 1;
-"39
-[e ) -> -> 1 `i `uc ]
-[e $UE 918  ]
-"40
-}
-[; ;bufferhandler.c: 40: }else{
-[e $U 920  ]
-[e :U 919 ]
-{
-[; ;bufferhandler.c: 41: return 0;
-"41
-[e ) -> -> 0 `i `uc ]
-[e $UE 918  ]
-"42
-}
-[e :U 920 ]
-[; ;bufferhandler.c: 42: }
-[; ;bufferhandler.c: 43: }
-"43
-[e :UE 918 ]
-}
-"45
-[v _clearBuffer `(v ~T0 @X0 1 ef ]
-{
-[; ;bufferhandler.c: 45: void clearBuffer() {
-[e :U _clearBuffer ]
-[f ]
-[; ;bufferhandler.c: 46: for(int i = 0; i<strlen(tmpString); i++){
-"46
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 925  ]
-[e :U 922 ]
-{
-[; ;bufferhandler.c: 47: tmpString[i] = "";
-"47
-[e = *U + &U _tmpString * -> -> _i `ui `ux -> -> # *U &U _tmpString `ui `ux -> :s 1C `uc ]
-"48
-}
-"46
-[e ++ _i -> 1 `i ]
-[e :U 925 ]
-[e $ < -> _i `ui ( _strlen (1 -> &U _tmpString `*Cuc 922  ]
-[e :U 923 ]
-"48
-}
-[; ;bufferhandler.c: 48: }
-[; ;bufferhandler.c: 49: tmpString[0] = '\0';
-"49
-[e = *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux -> -> 0 `ui `uc ]
-[; ;bufferhandler.c: 50: index = 0;
-"50
-[e = _index -> 0 `i ]
-[; ;bufferhandler.c: 51: }
-"51
-[e :UE 921 ]
-}
-"53
-[v _copyTmpBuffer `(v ~T0 @X0 1 ef ]
-{
-[; ;bufferhandler.c: 53: void copyTmpBuffer(){
-[e :U _copyTmpBuffer ]
-[f ]
-[; ;bufferhandler.c: 54: for(int i = 0; i<index; i++){
-"54
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 930  ]
-[e :U 927 ]
-{
-[; ;bufferhandler.c: 55: allDataString[i] = tmpString[i];
-"55
-[e = *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux *U + &U _tmpString * -> -> _i `ui `ux -> -> # *U &U _tmpString `ui `ux ]
-"56
-}
-"54
-[e ++ _i -> 1 `i ]
-[e :U 930 ]
-[e $ < _i _index 927  ]
-[e :U 928 ]
-"56
-}
-[; ;bufferhandler.c: 56: }
-[; ;bufferhandler.c: 57: }
-"57
-[e :UE 926 ]
-}
-"59
-[v _writeResult `(v ~T0 @X0 1 ef1`uc ]
-"60
-{
-[; ;bufferhandler.c: 59: void writeResult(char dev)
-[; ;bufferhandler.c: 60: {
-[e :U _writeResult ]
-"59
-[v _dev `uc ~T0 @X0 1 r1 ]
-"60
-[f ]
-[; ;bufferhandler.c: 61: writeString(parsedString, dev);
-"61
-[e ( _writeString (2 , &U _parsedString _dev ]
-[; ;bufferhandler.c: 62: writeString(allDataString, dev);
-"62
-[e ( _writeString (2 , &U _allDataString _dev ]
-[; ;bufferhandler.c: 63: wait_ms(1000);
-"63
-[e ( _wait_ms (1 -> 1000 `i ]
-[; ;bufferhandler.c: 64: }
-"64
-[e :UE 931 ]
-}
-"66
-[v _isEmpty `(uc ~T0 @X0 1 ef ]
-{
-[; ;bufferhandler.c: 66: char isEmpty(){
-[e :U _isEmpty ]
-[f ]
-[; ;bufferhandler.c: 67: if(tmpString[0] == '\0'){
-"67
-[e $ ! == -> *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `ui -> 0 `ui 933  ]
-{
-[; ;bufferhandler.c: 68: return 1;
-"68
-[e ) -> -> 1 `i `uc ]
-[e $UE 932  ]
-"69
-}
-[; ;bufferhandler.c: 69: }else{
-[e $U 934  ]
-[e :U 933 ]
-{
-[; ;bufferhandler.c: 70: return 0;
-"70
-[e ) -> -> 0 `i `uc ]
-[e $UE 932  ]
-"71
-}
-[e :U 934 ]
-[; ;bufferhandler.c: 71: }
-[; ;bufferhandler.c: 72: }
-"72
-[e :UE 932 ]
-}
-"74
-[v _isValid `(uc ~T0 @X0 1 ef ]
-{
-[; ;bufferhandler.c: 74: char isValid(){
-[e :U _isValid ]
-[f ]
-[; ;bufferhandler.c: 75: if(tmpString[0] == 0x54 &&
-[; ;bufferhandler.c: 76: tmpString[1] == 0x59 &&
-[; ;bufferhandler.c: 77: tmpString[2] == 0x52 &&
-[; ;bufferhandler.c: 78: tmpString[3] == 0x49 &&
-[; ;bufferhandler.c: 79: tmpString[4] == 0x5F){
-"79
-[e $ ! && && && && == -> *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 84 `i == -> *U + &U _tmpString * -> -> -> 1 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 89 `i == -> *U + &U _tmpString * -> -> -> 2 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 82 `i == -> *U + &U _tmpString * -> -> -> 3 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 73 `i == -> *U + &U _tmpString * -> -> -> 4 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 95 `i 936  ]
-{
-[; ;bufferhandler.c: 80: return 1;
-"80
-[e ) -> -> 1 `i `uc ]
-[e $UE 935  ]
-"81
-}
-[e :U 936 ]
-[; ;bufferhandler.c: 81: }
-[; ;bufferhandler.c: 82: return 0;
-"82
-[e ) -> -> 0 `i `uc ]
-[e $UE 935  ]
-[; ;bufferhandler.c: 83: }
-"83
-[e :UE 935 ]
-}
-"91
+"27
 [v _SOC `i ~T0 @X0 -> 3 `i e ]
 [i _SOC
 :U ..
 -> 0 `i
 ..
 ]
-[; ;bufferhandler.c: 91: int SOC[3] = 0;
-"92
-[v _toCharArray `i ~T0 @X0 -> 3 `i e ]
+[; ;bufferhandler.c: 27: int SOC[3] = 0;
+"28
+[v _toCharArray `uc ~T0 @X0 -> 4 `i e ]
 [i _toCharArray
 :U ..
--> 0 `i
+-> 0 `c
 ..
 ]
-[; ;bufferhandler.c: 92: int toCharArray[3] = 0;
-"93
+[; ;bufferhandler.c: 28: char toCharArray[4] = "";
+"29
 [v _charSOC `uc ~T0 @X0 -> 3 `i e ]
 [i _charSOC
 :U ..
 -> 0 `c
 ..
 ]
-[; ;bufferhandler.c: 93: char charSOC[3] = "";
-"96
+[; ;bufferhandler.c: 29: char charSOC[3] = "";
+"34
+[v _appendChar `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;bufferhandler.c: 34: void appendChar(char data){
+[e :U _appendChar ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;bufferhandler.c: 35: tmpString[index] = data;
+"35
+[e = *U + &U _tmpString * -> -> _index `ui `ux -> -> # *U &U _tmpString `ui `ux _data ]
+[; ;bufferhandler.c: 36: index++;
+"36
+[e ++ _index -> 1 `i ]
+[; ;bufferhandler.c: 37: }
+"37
+[e :UE 917 ]
+}
+"40
+[v _isItLongEnough `(uc ~T0 @X0 1 ef ]
+"41
+{
+[; ;bufferhandler.c: 40: char isItLongEnough()
+[; ;bufferhandler.c: 41: {
+[e :U _isItLongEnough ]
+[f ]
+[; ;bufferhandler.c: 42: if(index >= 64){
+"42
+[e $ ! >= _index -> 64 `i 919  ]
+{
+[; ;bufferhandler.c: 43: return 1;
+"43
+[e ) -> -> 1 `i `uc ]
+[e $UE 918  ]
+"44
+}
+[; ;bufferhandler.c: 44: }else{
+[e $U 920  ]
+[e :U 919 ]
+{
+[; ;bufferhandler.c: 45: return 0;
+"45
+[e ) -> -> 0 `i `uc ]
+[e $UE 918  ]
+"46
+}
+[e :U 920 ]
+[; ;bufferhandler.c: 46: }
+[; ;bufferhandler.c: 47: }
+"47
+[e :UE 918 ]
+}
+"49
+[v _clearBuffer `(v ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 49: void clearBuffer() {
+[e :U _clearBuffer ]
+[f ]
+[; ;bufferhandler.c: 50: for(int i = 0; i<strlen(tmpString); i++){
+"50
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 925  ]
+[e :U 922 ]
+{
+[; ;bufferhandler.c: 51: tmpString[i] = "";
+"51
+[e = *U + &U _tmpString * -> -> _i `ui `ux -> -> # *U &U _tmpString `ui `ux -> :s 1C `uc ]
+"52
+}
+"50
+[e ++ _i -> 1 `i ]
+[e :U 925 ]
+[e $ < -> _i `ui ( _strlen (1 -> &U _tmpString `*Cuc 922  ]
+[e :U 923 ]
+"52
+}
+[; ;bufferhandler.c: 52: }
+[; ;bufferhandler.c: 53: tmpString[0] = '\0';
+"53
+[e = *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux -> -> 0 `ui `uc ]
+[; ;bufferhandler.c: 54: index = 0;
+"54
+[e = _index -> 0 `i ]
+[; ;bufferhandler.c: 55: }
+"55
+[e :UE 921 ]
+}
+"57
+[v _copyTmpBuffer `(v ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 57: void copyTmpBuffer(){
+[e :U _copyTmpBuffer ]
+[f ]
+[; ;bufferhandler.c: 58: for(int i = 0; i<index; i++){
+"58
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 930  ]
+[e :U 927 ]
+{
+[; ;bufferhandler.c: 59: allDataString[i] = tmpString[i];
+"59
+[e = *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux *U + &U _tmpString * -> -> _i `ui `ux -> -> # *U &U _tmpString `ui `ux ]
+"60
+}
+"58
+[e ++ _i -> 1 `i ]
+[e :U 930 ]
+[e $ < _i _index 927  ]
+[e :U 928 ]
+"60
+}
+[; ;bufferhandler.c: 60: }
+[; ;bufferhandler.c: 61: }
+"61
+[e :UE 926 ]
+}
+"63
+[v _writeResult `(v ~T0 @X0 1 ef1`uc ]
+"64
+{
+[; ;bufferhandler.c: 63: void writeResult(char dev)
+[; ;bufferhandler.c: 64: {
+[e :U _writeResult ]
+"63
+[v _dev `uc ~T0 @X0 1 r1 ]
+"64
+[f ]
+[; ;bufferhandler.c: 66: writeString(toCharArray, dev);
+"66
+[e ( _writeString (2 , &U _toCharArray _dev ]
+[; ;bufferhandler.c: 68: wait_ms(1000);
+"68
+[e ( _wait_ms (1 -> 1000 `i ]
+[; ;bufferhandler.c: 69: }
+"69
+[e :UE 931 ]
+}
+"71
+[v _isEmpty `(uc ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 71: char isEmpty(){
+[e :U _isEmpty ]
+[f ]
+[; ;bufferhandler.c: 72: if(tmpString[0] == '\0'){
+"72
+[e $ ! == -> *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `ui -> 0 `ui 933  ]
+{
+[; ;bufferhandler.c: 73: return 1;
+"73
+[e ) -> -> 1 `i `uc ]
+[e $UE 932  ]
+"74
+}
+[; ;bufferhandler.c: 74: }else{
+[e $U 934  ]
+[e :U 933 ]
+{
+[; ;bufferhandler.c: 75: return 0;
+"75
+[e ) -> -> 0 `i `uc ]
+[e $UE 932  ]
+"76
+}
+[e :U 934 ]
+[; ;bufferhandler.c: 76: }
+[; ;bufferhandler.c: 77: }
+"77
+[e :UE 932 ]
+}
+"79
+[v _isValid `(uc ~T0 @X0 1 ef ]
+{
+[; ;bufferhandler.c: 79: char isValid(){
+[e :U _isValid ]
+[f ]
+[; ;bufferhandler.c: 80: if(tmpString[0] == 0x54 &&
+[; ;bufferhandler.c: 81: tmpString[1] == 0x59 &&
+[; ;bufferhandler.c: 82: tmpString[2] == 0x52 &&
+[; ;bufferhandler.c: 83: tmpString[3] == 0x49 &&
+[; ;bufferhandler.c: 84: tmpString[4] == 0x5F){
+"84
+[e $ ! && && && && == -> *U + &U _tmpString * -> -> -> 0 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 84 `i == -> *U + &U _tmpString * -> -> -> 1 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 89 `i == -> *U + &U _tmpString * -> -> -> 2 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 82 `i == -> *U + &U _tmpString * -> -> -> 3 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 73 `i == -> *U + &U _tmpString * -> -> -> 4 `i `ui `ux -> -> # *U &U _tmpString `ui `ux `i -> 95 `i 936  ]
+{
+[; ;bufferhandler.c: 85: return 1;
+"85
+[e ) -> -> 1 `i `uc ]
+[e $UE 935  ]
+"86
+}
+[e :U 936 ]
+[; ;bufferhandler.c: 86: }
+[; ;bufferhandler.c: 87: return 0;
+"87
+[e ) -> -> 0 `i `uc ]
+[e $UE 935  ]
+[; ;bufferhandler.c: 88: }
+"88
+[e :UE 935 ]
+}
+"98
 [v _parseString `(uc ~T0 @X0 1 ef ]
 {
-[; ;bufferhandler.c: 96: char parseString(){
+[; ;bufferhandler.c: 98: char parseString(){
 [e :U _parseString ]
 [f ]
-[; ;bufferhandler.c: 98: checkString();
-"98
+[; ;bufferhandler.c: 100: checkString();
+"100
 [e ( _checkString ..  ]
-"104
-[v _socStartPos `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 104: int socStartPos = positions[8]+1;
-[e = _socStartPos + *U + &U _positions * -> -> -> 8 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
-"105
-[v _socEndPos `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 105: int socEndPos = positions[9]-1;
-[e = _socEndPos - *U + &U _positions * -> -> -> 9 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
 "106
+[v _socStartPos `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 106: int socStartPos = positions[8]+1;
+[e = _socStartPos + *U + &U _positions * -> -> -> 8 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"107
+[v _socEndPos `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 107: int socEndPos = positions[9]-1;
+[e = _socEndPos - *U + &U _positions * -> -> -> 9 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"108
 [v _socSize `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 106: int socSize = (socEndPos - socStartPos)+1;
+[; ;bufferhandler.c: 108: int socSize = (socEndPos - socStartPos)+1;
 [e = _socSize + - _socEndPos _socStartPos -> 1 `i ]
-"109
+"111
 [v _k `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 109: int k = 0;
+[; ;bufferhandler.c: 111: int k = 0;
 [e = _k -> 0 `i ]
-[; ;bufferhandler.c: 110: for(int i = socStartPos; i<=socEndPos; i++){
-"110
+[; ;bufferhandler.c: 112: for(int i = socStartPos; i<=socEndPos; i++){
+"112
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i _socStartPos ]
 [e $U 941  ]
 [e :U 938 ]
 {
-[; ;bufferhandler.c: 111: SOC[k] = allDataString[i];
-"111
-[e = *U + &U _SOC * -> -> _k `ui `ux -> -> # *U &U _SOC `ui `ux -> *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux `i ]
-[; ;bufferhandler.c: 112: k++;
-"112
-[e ++ _k -> 1 `i ]
+[; ;bufferhandler.c: 113: SOC[k] = allDataString[i];
 "113
+[e = *U + &U _SOC * -> -> _k `ui `ux -> -> # *U &U _SOC `ui `ux -> *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux `i ]
+[; ;bufferhandler.c: 114: toCharArray[k] = allDataString[i] +48;
+"114
+[e = *U + &U _toCharArray * -> -> _k `ui `ux -> -> # *U &U _toCharArray `ui `ux -> + -> *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> 48 `i `uc ]
+[; ;bufferhandler.c: 115: k++;
+"115
+[e ++ _k -> 1 `i ]
+"116
 }
-"110
+"112
 [e ++ _i -> 1 `i ]
 [e :U 941 ]
 [e $ <= _i _socEndPos 938  ]
 [e :U 939 ]
-"113
-}
-"115
-[v _tmp `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 113: }
-[; ;bufferhandler.c: 115: int tmp = transformToTwoDigitNumber(SOC, socSize);
-[e = _tmp ( _transformToTwoDigitNumber (2 , &U _SOC _socSize ]
 "116
+}
+"121
+[v _tmp `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 116: }
+[; ;bufferhandler.c: 121: int tmp = transformToTwoDigitNumber(SOC, socSize);
+[e = _tmp ( _transformToTwoDigitNumber (2 , &U _SOC _socSize ]
+"122
 [v _tmpSOC `uc ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 116: char tmpSOC = 'a';
+[; ;bufferhandler.c: 122: char tmpSOC = 'a';
 [e = _tmpSOC -> -> 97 `ui `uc ]
-[; ;bufferhandler.c: 118: if(lenHelper(tmp) == 1){
-"118
+[; ;bufferhandler.c: 124: if(lenHelper(tmp) == 1){
+"124
 [e $ ! == ( _lenHelper (1 _tmp -> 1 `i 942  ]
 {
-[; ;bufferhandler.c: 119: charSOC[0] = (tmp) + 48;
-"119
+[; ;bufferhandler.c: 125: charSOC[0] = (tmp) + 48;
+"125
 [e = *U + &U _charSOC * -> -> -> 0 `i `ui `ux -> -> # *U &U _charSOC `ui `ux -> + _tmp -> 48 `i `uc ]
-"120
+"126
 }
-[; ;bufferhandler.c: 120: }else{
+[; ;bufferhandler.c: 126: }else{
 [e $U 943  ]
 [e :U 942 ]
 {
-[; ;bufferhandler.c: 122: charSOC[0] = (tmp/10) + 48;
-"122
+[; ;bufferhandler.c: 127: charSOC[0] = (tmp/10) + 48;
+"127
 [e = *U + &U _charSOC * -> -> -> 0 `i `ui `ux -> -> # *U &U _charSOC `ui `ux -> + / _tmp -> 10 `i -> 48 `i `uc ]
-"123
+"128
 }
 [e :U 943 ]
-"127
+"132
 [v _chgStart `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 123: }
-[; ;bufferhandler.c: 127: int chgStart = positions[6] + 1;
+[; ;bufferhandler.c: 128: }
+[; ;bufferhandler.c: 132: int chgStart = positions[6] + 1;
 [e = _chgStart + *U + &U _positions * -> -> -> 6 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
-"128
-[v _chgStop `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 128: int chgStop = positions[7] - 1;
-[e = _chgStop - *U + &U _positions * -> -> -> 7 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
-"131
-[v _CHG `uc ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 131: char CHG = '0';
-[e = _CHG -> -> 48 `ui `uc ]
-[; ;bufferhandler.c: 133: if(allDataString[chgStart] == 0x2D){
 "133
+[v _chgStop `i ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 133: int chgStop = positions[7] - 1;
+[e = _chgStop - *U + &U _positions * -> -> -> 7 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
+"136
+[v _CHG `uc ~T0 @X0 1 a ]
+[; ;bufferhandler.c: 136: char CHG = '0';
+[e = _CHG -> -> 48 `ui `uc ]
+[; ;bufferhandler.c: 138: if(allDataString[chgStart] == 0x2D){
+"138
 [e $ ! == -> *U + &U _allDataString * -> -> _chgStart `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> 45 `i 944  ]
 {
-[; ;bufferhandler.c: 134: CHG = '1';
-"134
+[; ;bufferhandler.c: 139: CHG = '1';
+"139
 [e = _CHG -> -> 49 `ui `uc ]
-"135
+"140
 }
 [e :U 944 ]
-[; ;bufferhandler.c: 135: }
-[; ;bufferhandler.c: 138: parsedString[3] = charSOC[0];
-"138
-[e = *U + &U _parsedString * -> -> -> 3 `i `ui `ux -> -> # *U &U _parsedString `ui `ux *U + &U _charSOC * -> -> -> 0 `i `ui `ux -> -> # *U &U _charSOC `ui `ux ]
-[; ;bufferhandler.c: 139: parsedString[4] = charSOC[0];
-"139
-[e = *U + &U _parsedString * -> -> -> 4 `i `ui `ux -> -> # *U &U _parsedString `ui `ux *U + &U _charSOC * -> -> -> 0 `i `ui `ux -> -> # *U &U _charSOC `ui `ux ]
-[; ;bufferhandler.c: 143: parsedString[9] = CHG;
+[; ;bufferhandler.c: 140: }
+[; ;bufferhandler.c: 143: parsedString[3] = charSOC[0];
 "143
+[e = *U + &U _parsedString * -> -> -> 3 `i `ui `ux -> -> # *U &U _parsedString `ui `ux *U + &U _charSOC * -> -> -> 0 `i `ui `ux -> -> # *U &U _charSOC `ui `ux ]
+[; ;bufferhandler.c: 144: parsedString[4] = charSOC[0];
+"144
+[e = *U + &U _parsedString * -> -> -> 4 `i `ui `ux -> -> # *U &U _parsedString `ui `ux *U + &U _charSOC * -> -> -> 0 `i `ui `ux -> -> # *U &U _charSOC `ui `ux ]
+[; ;bufferhandler.c: 148: parsedString[9] = CHG;
+"148
 [e = *U + &U _parsedString * -> -> -> 9 `i `ui `ux -> -> # *U &U _parsedString `ui `ux _CHG ]
-[; ;bufferhandler.c: 147: return 1;
-"147
+[; ;bufferhandler.c: 152: return 1;
+"152
 [e ) -> -> 1 `i `uc ]
 [e $UE 937  ]
-[; ;bufferhandler.c: 148: }
-"148
+[; ;bufferhandler.c: 153: }
+"153
 [e :UE 937 ]
 }
-"152
+"157
 [v _lenHelper `(i ~T0 @X0 1 ef1`i ]
 {
-[; ;bufferhandler.c: 152: int lenHelper(int x){
+[; ;bufferhandler.c: 157: int lenHelper(int x){
 [e :U _lenHelper ]
 [v _x `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;bufferhandler.c: 153: if(x>=1000) return 4;
-"153
+[; ;bufferhandler.c: 158: if(x>=1000) return 4;
+"158
 [e $ ! >= _x -> 1000 `i 946  ]
 [e ) -> 4 `i ]
 [e $UE 945  ]
 [e :U 946 ]
-[; ;bufferhandler.c: 154: if(x>=100) return 3;
-"154
+[; ;bufferhandler.c: 159: if(x>=100) return 3;
+"159
 [e $ ! >= _x -> 100 `i 947  ]
 [e ) -> 3 `i ]
 [e $UE 945  ]
 [e :U 947 ]
-[; ;bufferhandler.c: 155: if(x>=10) return 2;
-"155
+[; ;bufferhandler.c: 160: if(x>=10) return 2;
+"160
 [e $ ! >= _x -> 10 `i 948  ]
 [e ) -> 2 `i ]
 [e $UE 945  ]
 [e :U 948 ]
-[; ;bufferhandler.c: 156: return 1;
-"156
+[; ;bufferhandler.c: 161: return 1;
+"161
 [e ) -> 1 `i ]
 [e $UE 945  ]
-[; ;bufferhandler.c: 157: }
-"157
+[; ;bufferhandler.c: 162: }
+"162
 [e :UE 945 ]
 }
-"163
+"168
 [v _transformToTwoDigitNumber `(i ~T0 @X0 1 ef2`*i`i ]
 {
-[; ;bufferhandler.c: 163: int transformToTwoDigitNumber(int number[], int size){
+[; ;bufferhandler.c: 168: int transformToTwoDigitNumber(int number[], int size){
 [e :U _transformToTwoDigitNumber ]
 [v _number `*i ~T0 @X0 1 r1 ]
 [v _size `i ~T0 @X0 1 r2 ]
 [f ]
-"165
+"170
 [v _result `i ~T0 @X0 1 a ]
-[; ;bufferhandler.c: 165: int result = 0;
+[; ;bufferhandler.c: 170: int result = 0;
 [e = _result -> 0 `i ]
-[; ;bufferhandler.c: 166: switch(size){
-"166
+[; ;bufferhandler.c: 171: switch(size){
+"171
 [e $U 951  ]
 {
-[; ;bufferhandler.c: 167: case 1:
-"167
+[; ;bufferhandler.c: 172: case 1:
+"172
 [e :U 952 ]
-[; ;bufferhandler.c: 168: if(number[0] >= 5){
-"168
+[; ;bufferhandler.c: 173: if(number[0] >= 5){
+"173
 [e $ ! >= *U + _number * -> -> 0 `i `x -> -> # *U _number `i `x -> 5 `i 953  ]
 {
-[; ;bufferhandler.c: 169: return 1;
-"169
+[; ;bufferhandler.c: 174: return 1;
+"174
 [e ) -> 1 `i ]
 [e $UE 949  ]
-"170
+"175
 }
-[; ;bufferhandler.c: 170: }else{
+[; ;bufferhandler.c: 175: }else{
 [e $U 954  ]
 [e :U 953 ]
 {
-[; ;bufferhandler.c: 171: return 0;
-"171
-[e ) -> 0 `i ]
-[e $UE 949  ]
-"172
-}
-[e :U 954 ]
-[; ;bufferhandler.c: 172: }
-[; ;bufferhandler.c: 173: case 2:
-"173
-[e :U 955 ]
-[; ;bufferhandler.c: 174: result = number[0];
-"174
-[e = _result *U + _number * -> -> 0 `i `x -> -> # *U _number `i `x ]
-[; ;bufferhandler.c: 175: if(number[1] >= 5){
-"175
-[e $ ! >= *U + _number * -> -> 1 `i `x -> -> # *U _number `i `x -> 5 `i 956  ]
-{
-[; ;bufferhandler.c: 176: return result++;
+[; ;bufferhandler.c: 176: return 0;
 "176
-[e ) ++ _result -> 1 `i ]
+[e ) -> 0 `i ]
 [e $UE 949  ]
 "177
 }
-[; ;bufferhandler.c: 177: }else{
+[e :U 954 ]
+[; ;bufferhandler.c: 177: }
+[; ;bufferhandler.c: 178: case 2:
+"178
+[e :U 955 ]
+[; ;bufferhandler.c: 179: result = number[0];
+"179
+[e = _result *U + _number * -> -> 0 `i `x -> -> # *U _number `i `x ]
+[; ;bufferhandler.c: 180: if(number[1] >= 5){
+"180
+[e $ ! >= *U + _number * -> -> 1 `i `x -> -> # *U _number `i `x -> 5 `i 956  ]
+{
+[; ;bufferhandler.c: 181: return result++;
+"181
+[e ) ++ _result -> 1 `i ]
+[e $UE 949  ]
+"182
+}
+[; ;bufferhandler.c: 182: }else{
 [e $U 957  ]
 [e :U 956 ]
 {
-[; ;bufferhandler.c: 178: return result;
-"178
+[; ;bufferhandler.c: 183: return result;
+"183
 [e ) _result ]
 [e $UE 949  ]
-"179
+"184
 }
 [e :U 957 ]
-[; ;bufferhandler.c: 179: }
-[; ;bufferhandler.c: 180: case 3:
-"180
+[; ;bufferhandler.c: 184: }
+[; ;bufferhandler.c: 185: case 3:
+"185
 [e :U 958 ]
-[; ;bufferhandler.c: 181: result = (number[0]*10)+(number[1]);
-"181
+[; ;bufferhandler.c: 186: result = (number[0]*10)+(number[1]);
+"186
 [e = _result + * *U + _number * -> -> 0 `i `x -> -> # *U _number `i `x -> 10 `i *U + _number * -> -> 1 `i `x -> -> # *U _number `i `x ]
-[; ;bufferhandler.c: 182: if(number[2] >= 5){
-"182
+[; ;bufferhandler.c: 187: if(number[2] >= 5){
+"187
 [e $ ! >= *U + _number * -> -> 2 `i `x -> -> # *U _number `i `x -> 5 `i 959  ]
 {
-[; ;bufferhandler.c: 183: result++;
-"183
+[; ;bufferhandler.c: 188: result++;
+"188
 [e ++ _result -> 1 `i ]
-[; ;bufferhandler.c: 184: return result;
-"184
+[; ;bufferhandler.c: 189: return result;
+"189
 [e ) _result ]
 [e $UE 949  ]
-"185
+"190
 }
-[; ;bufferhandler.c: 185: }else{
+[; ;bufferhandler.c: 190: }else{
 [e $U 960  ]
 [e :U 959 ]
 {
-[; ;bufferhandler.c: 186: return result;
-"186
+[; ;bufferhandler.c: 191: return result;
+"191
 [e ) _result ]
 [e $UE 949  ]
-"187
+"192
 }
 [e :U 960 ]
-"188
+"193
 }
-[; ;bufferhandler.c: 187: }
-[; ;bufferhandler.c: 188: }
+[; ;bufferhandler.c: 192: }
+[; ;bufferhandler.c: 193: }
 [e $U 950  ]
-"166
+"171
 [e :U 951 ]
 [e [\ _size , $ -> 1 `i 952
  , $ -> 2 `i 955
  , $ -> 3 `i 958
  950 ]
-"188
+"193
 [e :U 950 ]
-[; ;bufferhandler.c: 190: return 1;
-"190
+[; ;bufferhandler.c: 195: return 1;
+"195
 [e ) -> 1 `i ]
 [e $UE 949  ]
-[; ;bufferhandler.c: 192: }
-"192
+[; ;bufferhandler.c: 197: }
+"197
 [e :UE 949 ]
 }
-"196
+"201
 [v _checkString `(v ~T0 @X0 1 ef ]
 {
-[; ;bufferhandler.c: 196: void checkString(){
+[; ;bufferhandler.c: 201: void checkString(){
 [e :U _checkString ]
 [f ]
-[; ;bufferhandler.c: 201: positions[0] = 8;
-"201
+[; ;bufferhandler.c: 206: positions[0] = 8;
+"206
 [e = *U + &U _positions * -> -> -> 0 `i `ui `ux -> -> # *U &U _positions `ui `ux -> 8 `i ]
-[; ;bufferhandler.c: 203: for(int i = 0; i<10;i++){
-"203
+[; ;bufferhandler.c: 208: for(int i = 0; i<10;i++){
+"208
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -8315,67 +8315,67 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 963  ]
 [e :U 962 ]
 {
-[; ;bufferhandler.c: 204: positions[i] = checkPos(positions[i]);
-"204
+[; ;bufferhandler.c: 209: positions[i] = checkPos(positions[i]);
+"209
 [e = *U + &U _positions * -> -> _i `ui `ux -> -> # *U &U _positions `ui `ux ( _checkPos (1 *U + &U _positions * -> -> _i `ui `ux -> -> # *U &U _positions `ui `ux ]
-[; ;bufferhandler.c: 205: positions[i+1] = positions[i] + 1;
-"205
+[; ;bufferhandler.c: 210: positions[i+1] = positions[i] + 1;
+"210
 [e = *U + &U _positions * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _positions `ui `ux + *U + &U _positions * -> -> _i `ui `ux -> -> # *U &U _positions `ui `ux -> 1 `i ]
-"206
+"211
 }
-"203
+"208
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 10 `i 962  ]
 [e :U 963 ]
-"206
+"211
 }
-[; ;bufferhandler.c: 206: }
-[; ;bufferhandler.c: 208: positions[10] = '\0';
-"208
+[; ;bufferhandler.c: 211: }
+[; ;bufferhandler.c: 213: positions[10] = '\0';
+"213
 [e = *U + &U _positions * -> -> -> 10 `i `ui `ux -> -> # *U &U _positions `ui `ux -> -> 0 `ui `i ]
-[; ;bufferhandler.c: 209: }
-"209
+[; ;bufferhandler.c: 214: }
+"214
 [e :UE 961 ]
 }
-"212
+"217
 [v _checkPos `(i ~T0 @X0 1 ef1`i ]
 {
-[; ;bufferhandler.c: 212: int checkPos(int pos){
+[; ;bufferhandler.c: 217: int checkPos(int pos){
 [e :U _checkPos ]
 [v _pos `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;bufferhandler.c: 213: for(int i = pos+1; i < strlen(allDataString); i++){
-"213
+[; ;bufferhandler.c: 218: for(int i = pos+1; i < strlen(allDataString); i++){
+"218
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i + _pos -> 1 `i ]
 [e $U 969  ]
 [e :U 966 ]
 {
-[; ;bufferhandler.c: 214: if(allDataString[i] == 0x3B){
-"214
+[; ;bufferhandler.c: 219: if(allDataString[i] == 0x3B){
+"219
 [e $ ! == -> *U + &U _allDataString * -> -> _i `ui `ux -> -> # *U &U _allDataString `ui `ux `i -> 59 `i 970  ]
 {
-[; ;bufferhandler.c: 215: return i;
-"215
+[; ;bufferhandler.c: 220: return i;
+"220
 [e ) _i ]
 [e $UE 965  ]
-"216
+"221
 }
 [e :U 970 ]
-"217
+"222
 }
-"213
+"218
 [e ++ _i -> 1 `i ]
 [e :U 969 ]
 [e $ < -> _i `ui ( _strlen (1 -> &U _allDataString `*Cuc 966  ]
 [e :U 967 ]
-"217
+"222
 }
-[; ;bufferhandler.c: 216: }
-[; ;bufferhandler.c: 217: }
-[; ;bufferhandler.c: 218: }
-"218
+[; ;bufferhandler.c: 221: }
+[; ;bufferhandler.c: 222: }
+[; ;bufferhandler.c: 223: }
+"223
 [e :UE 965 ]
 }
 [a 1C 0 ]
