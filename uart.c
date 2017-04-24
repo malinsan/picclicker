@@ -47,7 +47,7 @@ char UART_Init(const long int baudrate)
   TXSTA2 = 0b00100100;
   RC2IE = 1; //enable interrupt
   BAUDCON2bits.BRG16 = 0; //8-bit baudrate generator
-  SPBRG2 = 25;          //baudrate 115200
+  SPBRG2 = 25;          //baudrate 115200 = 25
   SPBRGH2 = 25; 
   TRISB4 = 1;
   TRISB5 = 0;

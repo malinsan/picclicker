@@ -7830,12 +7830,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 75: copyTmpBuffer();
 "75
 [e ( _copyTmpBuffer ..  ]
-[; ;main.c: 76: clearBuffer();
+[; ;main.c: 76: parseString();
 "76
-[e ( _clearBuffer ..  ]
-[; ;main.c: 77: parseString();
-"77
 [e ( _parseString ..  ]
+[; ;main.c: 77: clearBuffer();
+"77
+[e ( _clearBuffer ..  ]
 "78
 }
 [; ;main.c: 78: }else{

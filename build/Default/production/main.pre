@@ -10311,8 +10311,8 @@ if(isValid()){
 LATAbits.LATA1 = 1;
 wait_ms(1000);
 copyTmpBuffer();
-clearBuffer();
 parseString();
+clearBuffer();
 }else{
 clearBuffer();
 }

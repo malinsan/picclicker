@@ -20,10 +20,11 @@
 
 char tmpString[70] = "";
 char allDataString[70] = "";
-char parsedString[17] = "";
+char parsedString[17] = "SOCxx;CHGx;ACK;";
 int index = 0; //index for tmpString
 
 int positions[11]; //variable to save all the positions of the BMS string, to be used in parsing
+
 
 //append the received char to the tmpString
 void appendChar(char data){
@@ -34,7 +35,7 @@ void appendChar(char data){
 //checks if the temporary string is long enough to be put into the other string
 char isItLongEnough()
 {
-    if(index == LENGTH){
+    if(index >= LENGTH){
         return 1;
     }else{
         return 0;
@@ -57,7 +58,7 @@ void copyTmpBuffer(){
 
 void writeResult(char dev)
 {
-//    writeString(parsedString, dev);
+    writeString(parsedString, dev);
     writeString(allDataString, dev);
     wait_ms(1000);
 }
@@ -90,8 +91,12 @@ char isValid(){
 int SOC[3] = 0; //needed to hold the SOC int
 int toCharArray[3] = 0; //perhaps not needed
 char charSOC[3] = ""; //needed to turn the int into an array of chars so i can print it
-    
+
+
 char parseString(){
+    //first of all check the string
+    checkString();
+    
     
     //find SOC
     //SOCs startposition should be at the end of the one before SOC in the string, that is position[8]
@@ -108,14 +113,13 @@ char parseString(){
     }
     //transform the int into a char
     int tmp = transformToTwoDigitNumber(SOC, socSize);
+    char tmpSOC = 'a';
     
-    //put the int into an array of ints and chars
-    int count = lenHelper(tmp) - 1;
-    while(tmp > 0){
-        toCharArray[count] = tmp%10;
-        charSOC[count] = (tmp%10)+48;
-        tmp /= 10;
-        count --;
+    if(lenHelper(tmp) == 1){
+        charSOC[0] = (tmp) + 48;
+    }else{
+        //tmpSOC = (tmp/10) + 48;
+        charSOC[0] = (tmp/10) + 48;
     }
     
     //find CHG: if <0 = 1 if >0 = 0
@@ -129,31 +133,14 @@ char parseString(){
     if(allDataString[chgStart] == 0x2D){
         CHG = '1';
     }
-    
+   
     //now we have SOC and CHG
-    //since strcpy(array, sentence) doesn't work and i can't seem to find any other way around this...
-    //lets fill it the hard way then!
-    int parsedStringSize = 13 + count;
-    int n = 4;
-    
-    parsedString[0] = 'S';
-    parsedString[1] = 'O';
-    parsedString[2] = 'C';
     parsedString[3] = charSOC[0];
-    if(count > 0){
-        parsedString[4] = charSOC[1];
-        n ++; //n becomes 5
-    }
-    parsedString[n] = ";";
-    parsedString[n+1] = "C";
-    parsedString[n+2] = "H";
-    parsedString[n+3] = "G";
-    parsedString[n+4] = CHG;
-    parsedString[n+5] = ";";
-    parsedString[n+6] = "A";
-    parsedString[n+7] = "C";
-    parsedString[n+8] = "K";
-    parsedString[n+9] = ";";
+    parsedString[4] = charSOC[0];
+   
+   // parsedString[3] = tmpSOC;
+   // parsedString[4] = tmpSOC;
+    parsedString[9] = CHG;
     
     
       
@@ -200,6 +187,8 @@ int transformToTwoDigitNumber(int number[], int size){
             }           
     }
     
+    return 1;
+    
 }
 
 
@@ -212,7 +201,7 @@ void checkString(){
     positions[0] = 8;
     
     for(int i = 0; i<10;i++){
-        positions[i] = checkPos(i);
+        positions[i] = checkPos(positions[i]);
         positions[i+1] = positions[i] + 1;
     }
     
@@ -223,10 +212,8 @@ void checkString(){
 int checkPos(int pos){
     for(int i = pos+1; i < strlen(allDataString); i++){
         if(allDataString[i] == 0x3B){
-            pos = i;
-            break;
+            return i;
         }
     }
-    return pos;
 }
 
