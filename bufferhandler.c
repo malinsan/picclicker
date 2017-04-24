@@ -62,9 +62,9 @@ void copyTmpBuffer(){
 
 void writeResult(char dev)
 {
-    //writeString(parsedString, dev);
-    writeString(toCharArray, dev);
-    //writeString(allDataString, dev);
+    writeString(parsedString, dev);
+    //writeString(toCharArray, dev);
+    writeString(allDataString, dev);
     wait_ms(1000);
 }
 
@@ -103,18 +103,18 @@ char parseString(){
     //find SOC
     //SOCs startposition should be at the end of the one before SOC in the string, that is position[8]
     //SOCs endposition should be at positions[9]
-    int socStartPos = positions[8]+1; //+1 and -1 to get rid of the ;
+    int socStartPos = positions[8]+2; //+2 and -1 to get rid of the ; 
     int socEndPos = positions[9]-1;
     int socSize = (socEndPos - socStartPos)+1; //get size of SOC
     //take what is at SOC and transform into a two-digit number 
     //put SOC from allDataString into SOC
     int k = 0;
     for(int i = socStartPos; i<=socEndPos; i++){
-        SOC[k] = allDataString[i];
-        toCharArray[k] = allDataString[i] +48;
+        SOC[k] = allDataString[i] - 48;
+        toCharArray[k] = allDataString[i];
         k++;
     }
-    
+    toCharArray[3] = '\0';
         
     
     //transform the int into a char
@@ -125,6 +125,7 @@ char parseString(){
         charSOC[0] = (tmp) + 48;
     }else{
         charSOC[0] = (tmp/10) + 48;   
+        charSOC[1] = (tmp%10) + 48;
     }
     
     //find CHG: if <0 = 1 if >0 = 0
@@ -141,7 +142,7 @@ char parseString(){
    
     //now we have SOC and CHG
     parsedString[3] = charSOC[0];
-    parsedString[4] = charSOC[0];
+    parsedString[4] = charSOC[1];
    
    // parsedString[3] = tmpSOC;
    // parsedString[4] = tmpSOC;

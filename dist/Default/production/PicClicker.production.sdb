@@ -17,16 +17,18 @@
 [v _isValid isValid `(uc  1 e 1 0 ]
 "98
 [v _parseString parseString `(uc  1 e 1 0 ]
-"157
+"158
 [v _lenHelper lenHelper `(i  1 e 2 0 ]
-"168
+"169
 [v _transformToTwoDigitNumber transformToTwoDigitNumber `(i  1 e 2 0 ]
-"201
+"202
 [v _checkString checkString `(v  1 e 1 0 ]
-"217
+"218
 [v _checkPos checkPos `(i  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftadd.c
@@ -351,7 +353,7 @@
 [v _main main `(v  1 e 1 0 ]
 {
 "56
-[v main@var var `uc  1 a 1 50 ]
+[v main@var var `uc  1 a 1 34 ]
 "134
 } 0
 "63 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
@@ -359,18 +361,18 @@
 {
 [v writeResult@dev dev `uc  1 a 1 wreg ]
 [v writeResult@dev dev `uc  1 a 1 wreg ]
-"66
-[v writeResult@dev dev `uc  1 a 1 47 ]
+"65
+[v writeResult@dev dev `uc  1 a 1 37 ]
 "69
 } 0
 "97 C:\Users\tomas\Documents\GIT\PicClicker\uart.c
 [v _writeString writeString `(v  1 e 1 0 ]
 {
 "99
-[v writeString@i i `i  1 a 2 44 ]
+[v writeString@i i `i  1 a 2 7 ]
 "97
-[v writeString@str str `*.34uc  1 p 2 39 ]
-[v writeString@dev dev `uc  1 p 1 41 ]
+[v writeString@str str `*.34uc  1 p 2 2 ]
+[v writeString@dev dev `uc  1 p 1 4 ]
 "103
 } 0
 "61
@@ -386,7 +388,7 @@
 "35 C:\Users\tomas\Documents\GIT\PicClicker\system.c
 [v _wait_ms wait_ms `(v  1 e 1 0 ]
 {
-[v wait_ms@time time `i  1 p 2 45 ]
+[v wait_ms@time time `i  1 p 2 8 ]
 "37
 [v wait_ms@timel timel `l  1 s 4 timel ]
 "40
@@ -395,87 +397,98 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 {
 "17
-[v ___lmul@product product `ul  1 a 4 41 ]
+[v ___lmul@product product `ul  1 a 4 33 ]
 "15
-[v ___lmul@multiplier multiplier `ul  1 p 4 33 ]
-[v ___lmul@multiplicand multiplicand `ul  1 p 4 37 ]
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
 "98 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _parseString parseString `(uc  1 e 1 0 ]
 {
 "112
-[v parseString@i i `i  1 a 2 18 ]
+[v parseString@i i `i  1 a 2 30 ]
 "121
-[v parseString@tmp tmp `i  1 a 2 16 ]
+[v parseString@tmp tmp `i  1 a 2 32 ]
 "111
-[v parseString@k k `i  1 a 2 14 ]
+[v parseString@k k `i  1 a 2 28 ]
 "107
-[v parseString@socEndPos socEndPos `i  1 a 2 12 ]
+[v parseString@socEndPos socEndPos `i  1 a 2 26 ]
 "106
-[v parseString@socStartPos socStartPos `i  1 a 2 10 ]
-"132
-[v parseString@chgStart chgStart `i  1 a 2 7 ]
-"108
-[v parseString@socSize socSize `i  1 a 2 5 ]
+[v parseString@socStartPos socStartPos `i  1 a 2 24 ]
 "133
-[v parseString@chgStop chgStop `i  1 a 2 2 ]
-"136
-[v parseString@CHG CHG `uc  1 a 1 9 ]
+[v parseString@chgStart chgStart `i  1 a 2 21 ]
+"108
+[v parseString@socSize socSize `i  1 a 2 19 ]
+"134
+[v parseString@chgStop chgStop `i  1 a 2 16 ]
+"137
+[v parseString@CHG CHG `uc  1 a 1 23 ]
 "122
-[v parseString@tmpSOC tmpSOC `uc  1 a 1 4 ]
-"153
+[v parseString@tmpSOC tmpSOC `uc  1 a 1 18 ]
+"154
 } 0
-"168
+"169
 [v _transformToTwoDigitNumber transformToTwoDigitNumber `(i  1 e 2 0 ]
 {
-"170
-[v transformToTwoDigitNumber@result result `i  1 a 2 45 ]
-"168
-[v transformToTwoDigitNumber@number number `*.39i  1 p 2 39 ]
-[v transformToTwoDigitNumber@size size `i  1 p 2 41 ]
-"197
+"171
+[v transformToTwoDigitNumber@result result `i  1 a 2 8 ]
+"169
+[v transformToTwoDigitNumber@number number `*.39i  1 p 2 2 ]
+[v transformToTwoDigitNumber@size size `i  1 p 2 4 ]
+"198
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 37 ]
+[v ___wmul@product product `ui  1 a 2 0 ]
 "15
 [v ___wmul@multiplier multiplier `ui  1 p 2 33 ]
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 35 ]
 "53
 } 0
-"157 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
+"158 C:\Users\tomas\Documents\GIT\PicClicker\bufferhandler.c
 [v _lenHelper lenHelper `(i  1 e 2 0 ]
 {
 [v lenHelper@x x `i  1 p 2 33 ]
-"162
+"163
 } 0
-"201
+"202
 [v _checkString checkString `(v  1 e 1 0 ]
 {
-"208
-[v checkString@i i `i  1 a 2 48 ]
-"214
+"209
+[v checkString@i i `i  1 a 2 10 ]
+"215
 } 0
-"217
+"218
 [v _checkPos checkPos `(i  1 e 2 0 ]
 {
+"219
+[v checkPos@i i `i  1 a 2 4 ]
 "218
-[v checkPos@i i `i  1 a 2 42 ]
-"217
-[v checkPos@pos pos `i  1 p 2 39 ]
-"223
+[v checkPos@pos pos `i  1 p 2 2 ]
+"224
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 1 ]
+[v ___awmod@counter counter `uc  1 a 1 0 ]
+"8
+[v ___awmod@dividend dividend `i  1 p 2 33 ]
+[v ___awmod@divisor divisor `i  1 p 2 35 ]
+"35
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "11
-[v ___awdiv@quotient quotient `i  1 a 2 39 ]
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
 "12
-[v ___awdiv@sign sign `uc  1 a 1 38 ]
-[v ___awdiv@counter counter `uc  1 a 1 37 ]
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
 "8
 [v ___awdiv@dividend dividend `i  1 p 2 33 ]
 [v ___awdiv@divisor divisor `i  1 p 2 35 ]
@@ -502,14 +515,14 @@
 [v _clearBuffer clearBuffer `(v  1 e 1 0 ]
 {
 "50
-[v clearBuffer@i i `i  1 a 2 39 ]
+[v clearBuffer@i i `i  1 a 2 2 ]
 "55
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "6
-[v strlen@cp cp `*.34Cuc  1 a 2 37 ]
+[v strlen@cp cp `*.34Cuc  1 a 2 0 ]
 "4
 [v strlen@s s `*.34Cuc  1 p 2 33 ]
 "13
